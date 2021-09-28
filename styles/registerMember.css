@@ -1,0 +1,141 @@
+body{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.anc-back{
+position: absolute;
+top: 4rem;
+left:1rem;
+}
+
+.login-page{
+  height: 100%;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image: url('./public/img/background-landing.png');
+  background-repeat: no-repeat;
+  background-size: 20%;
+  background-position-x: right;
+  background-position-y: bottom;
+}
+
+.login-page .landing{
+  max-width: 32rem;
+}
+
+.login-page .landing .title{
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--title-strong);
+  
+}
+
+.login-page .landing .title .brand{
+  font-weight: 900;
+}
+
+.login-page .landing .subtitle{
+  margin-top: 0.3rem;
+  font-size: 1.2rem;
+  font-weight: 300;  
+}
+
+.login-page .landing, .main{ 
+  margin: 0.8rem;
+}
+
+.login-page .main{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.login-page .main form{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.login-page .main form label{
+  margin-top: 1rem;
+  font-size: 1rem;
+  font-weight: 500; 
+  color: var(--text-color); 
+}
+
+.login-page .main form input{
+  border: 0;
+}
+
+.login-page .main form input[type=text],.main form input[type=password]{
+  border:0.1rem solid #e4e4e4;
+  margin-bottom: 0.2rem;
+  width: 100%;
+  padding: 1.2rem;
+  border-radius: 0.5rem;
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+.login-page .main form input[type=text]:focus,
+.main form input[type=password]:focus{
+  background-color: #fbfbfb;
+}
+
+.login-page .main .btn-begin{
+  margin-top: 1.1rem;
+  background-color: var(--secondary-green);
+  color: #fff;
+  padding: 1.2rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  width: 14rem;
+}
+
+.login-page .main .anc-admin{
+  font-size: 0.9rem;
+  color: var(--title-animed);
+  font-weight: 300;
+}
+
+.toRegisterMember{
+  color: var(--text-color);
+  font-size: 1rem;
+  font-weight: 300;  
+}
+
+.toRegisterMember a{
+  color: var(--primary-green);
+}
+
+@media (min-width: 1080px) {
+  .login-page {
+      background-size: 10%;
+  }
+
+  .login-page .landing, .main{ 
+      margin: 0.7rem;
+      margin-left: 3.5rem;
+  }
+  
+  .login-page .main form{
+      max-width: 32rem;
+  }
+
+  .anc-back{
+      position: absolute;
+      top: 4rem;
+      left:3rem;
+  }
+
+  .login-page .main form input[type=text],.main form input[type=password]{
+      border:0.1rem solid #e4e4e4;
+  }
+}

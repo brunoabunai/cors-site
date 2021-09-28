@@ -1,0 +1,148 @@
+body{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.bt-ops{
+  position: absolute;
+  top: 4rem;
+  right:1rem;
+  background-color: transparent;
+  border: 0;
+}
+
+.bt-menu{
+  position: absolute;
+  top: 4rem;
+  right:4rem;
+  background-color: transparent;
+  border: 0;
+}
+
+.portable-page{
+  height: 100%;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url('./public/img/background-landing.png');
+  background-repeat: no-repeat;
+  background-size: 20%;
+  background-position-x: right;
+  background-position-y: bottom;
+}
+
+.portable-page .landing{
+  max-width: 32rem;
+  text-align: center;
+}
+
+.portable-page .landing .title{
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--title-strong);
+  margin-bottom: 1.2rem;
+}
+
+
+.portable-page .landing .subtitle{
+  margin-top: 0.3rem;
+  font-size: 1.2rem;
+  font-weight: 300;  
+}
+
+.portable-page .landing, .main{ 
+  margin: 0.8rem;
+}
+
+.portable-page .main{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  
+}
+.portable-page .main .ops{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+
+
+.portable-page .main .ops .btn{
+  margin-top: 1.1rem;
+  background-color: transparent;
+  padding: 1.2rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  text-align: left;
+  min-width: 30rem;
+
+  display: flex;
+  align-items: center;
+}
+
+.portable-page .main .ops .btn svg{
+  margin-right: 0.5rem;
+}
+
+
+.portable-page .main .ops .btn-post{
+  border: 0.1rem solid var(--text-color);
+  color: var(--text-color);
+}
+
+.portable-page .main .ops .btn-new{
+  border: 0.1rem solid var(--text-color);
+  color: var(--text-color);
+}
+
+.portable-page .main .ops .btn-goSite{
+  border: 0.1rem solid var(--text-color);
+  color: var(--text-color);
+}
+
+.boxGear{
+  top: 5.8rem;
+  right: 2.8rem; 
+}
+
+.anc-back{
+  position: absolute;
+  top: 4.5rem;
+  left: 2.5rem;
+}
+
+@media (min-width: 1080px) {
+  .portable-page {
+      background-size: 10%;
+  }
+
+  .portable-page .landing, .main{ 
+      margin: 0.7rem;
+      margin-left: 3.5rem;
+  }
+
+  .bt-ops{
+      position: absolute;
+      top: 4rem;
+      right:3rem;
+  }
+  .bt-menu{
+      position: absolute;
+      top: 4rem;
+      right:6rem;
+  }
+
+  .boxGear{
+      top: 6rem;
+      right: 5rem;
+  }
+}

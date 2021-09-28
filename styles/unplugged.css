@@ -1,0 +1,53 @@
+.unpg-content{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-image: url('./public/img/background-landing.png');
+  background-repeat: no-repeat;
+  background-size: 20%;
+  background-position-x: right;
+  background-position-y: bottom;
+}
+
+
+.unpg-content .firstTitles{
+  display: flex;
+  align-items: flex-end;
+}
+
+.unpg-content .firstTitles .ops{
+  font-size: 2.2rem;
+  
+}
+
+.unpg-content .firstTitles h1{
+  color:var(--text-color);
+}
+
+.unpg-content span{
+
+  color: var(--danger);
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.unpg-content .firstTitles h1,.unpg-content span{
+  margin-bottom: 1rem;
+}
+
+.unpg-content .btn-loginBack{
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  border: 0.1rem solid;
+  border-color: var(--text-color);
+  color: var(--text-color);
+  border-radius:2rem;
+  padding: 0.6rem;
+}
+.unpg-content .btn-loginBack svg{
+  margin-right: 0.5rem;
+}

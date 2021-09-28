@@ -1,0 +1,217 @@
+.home-page{
+  width: 100%;
+  height: auto;
+  
+}
+
+
+.home-page .title{
+  margin-top: 7.3rem;
+
+  margin-left: 2rem;
+  
+}
+
+.home-page .title h2{
+  max-width: 30rem;
+  font-size: 2rem;
+  
+}
+
+.home-page .news{
+  width: 90%;
+  margin-left: 1rem;
+}
+
+.home-page .news .noticie{
+  display: flex;
+  margin-top: 2rem;
+  border-top:0.001rem solid #999;
+  border-radius: 0.1rem 0 0 0;
+  padding: 2rem;
+  align-items: flex-start;
+  
+}
+
+
+.home-page .news .noticieOne .headline{
+  margin-top: 0.8rem;
+  
+}
+
+.home-page .news .headline .head-author{
+  color: var(--text-color);
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.home-page .news .headline .head-title{
+  color: var(--text-color);
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-top: 0.8rem;
+  margin-bottom: 0.4rem;
+  text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.26);
+}
+
+.home-page .news .headline .head-desc{
+  color: var(--text-color);
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+
+.home-page .news .noticie img{
+  width: 15rem;
+  height: 8rem;
+  border-radius: 0.5rem;
+  margin-right: -3rem;
+  margin-left: 3rem;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.26);
+}
+
+.home-page .news .noticieOne img{
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.home-page .news .noticieOne{
+  border:0;
+  margin-top: 1.5rem;
+  flex-direction: column;
+  max-width: 90%;
+  padding: 1rem;
+}
+
+.home-page .news .noticieOne img{
+  width: 90%;
+  height: 10rem;
+}
+
+.home-page .news .noticieOne .lastPost{
+  margin-top: 0.8rem;
+  color: #cabe0d;
+  font-weight: 900;
+  
+}
+
+
+
+
+
+
+.bt-ops{
+  position: absolute;
+  top: 4rem;
+  right:1rem;
+  background-color: transparent;
+  border: 0;
+}
+
+.bt-menu{
+  position: absolute;
+  top: 4rem;
+  right:4rem;
+  background-color: transparent;
+  border: 0;
+}
+
+.boxGear{
+  top: 5.8rem;
+  right: 2.8rem; 
+}
+
+.boxMenu{
+  top: 5.8rem;
+  right: 5.4rem; 
+}
+
+.boxMenu {
+  color: #999;
+}
+
+.optionsHomeDesktop{
+  display: none;
+}
+
+@media (min-width: 1080px) {
+  .home-page .title{
+    margin-top: 7.3rem;
+  
+    margin-left: 5rem;
+    
+  }
+  .home-page .news{
+    width: 50%;
+    margin-left: 4.5rem;
+  }
+  .bt-ops{
+      position: absolute;
+      top: 4rem;
+      right:3rem;
+  }
+  .bt-menu{
+      position: absolute;
+      top: 4rem;
+      right:6rem;
+  }
+
+  .boxGear{
+      top: 6rem;
+      right: 5rem;
+  }
+
+  .home-page .news .noticie img{
+    width: 32rem;
+    height: 14rem;
+  }
+  
+.home-page .news .headline .head-author{
+  
+  font-size: 1rem;
+  
+}
+
+.home-page .news .headline .head-title{
+ 
+  font-size: 1.4rem;
+ 
+}
+
+.home-page .news .headline .head-desc{
+  
+  font-size: 1.2rem;
+
+}
+
+.home-page .news{
+  width:60%;
+}
+
+.home-page .news .noticie{
+  margin-top: 1rem;
+}
+
+.home-page .news .noticieOne{
+  margin-bottom: 1.5rem;
+}
+
+.optionsHomeMobile{
+  display: none;
+}
+
+.optionsHomeDesktop{
+  display: block;
+  top: 4.3rem;
+}
+
+.optionsHomeDesktop a{
+  margin-left: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+.optionsHomeDesktop .opitonActive{
+  font-weight: 700;
+}
+
+}

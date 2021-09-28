@@ -1,0 +1,73 @@
+.symptoms-page{
+  width:100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.symptoms-page ul{
+  margin-left: 1rem;
+}
+
+.anc-back{
+  position: absolute;
+  top: 4.5rem;
+  left: 2.5rem;
+}
+
+.symptoms-page .symptoms-box{
+  margin-top: 8.5rem;
+  width: 90%;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.26);
+}
+
+.symptoms-page .symptoms-box .box-firstLine{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.symptoms-page .symptoms-box .box-firstLine h2{
+  font-size: 1.9rem;
+  margin-left: 0.5rem;
+  width: 100%;
+}
+
+.symptoms-page .symptoms-box img{
+  width: 10rem;
+}
+
+.symptoms-page .symptoms-box .content-desktop{
+  display: none;
+}
+
+.symptoms-page .symptoms-box .content li{
+  font-size: 1.2rem;
+  font-family: 'roboto',sans-serif;
+}
+
+.symptoms-page .symptoms-box .content > .group-box{
+  display: flex;
+}
+
+.symptoms-page .symptoms-box .content .content-box{
+  margin: 0.5rem;
+}
+
+@media (min-width: 900px) {
+  .symptoms-page .symptoms-box{
+    max-width: 70%;
+  }
+
+  .symptoms-page .symptoms-box .content-mobile{
+    display: none;
+  }
+
+  .symptoms-page .symptoms-box .content-desktop{
+    display: flex;
+  }
+}

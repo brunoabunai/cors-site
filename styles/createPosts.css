@@ -1,0 +1,151 @@
+.createpost-page{
+    width: 100%;
+    height: auto;
+    margin-top: 10rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.createpost-page .landing{
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+}
+
+.createpost-page .landing h2{
+    display: flex;
+    align-items: center;
+    font-size: 2.4rem;
+    color: var(--title-strong);
+}
+
+.createpost-page .landing .subtitle{
+    display: flex;
+    align-items: center;
+    font-size: 1.4rem;
+}
+.createpost-page .landing h2 svg{
+    margin-right: 0.2rem;
+}
+
+.createpost-page .main{
+    width: auto;
+    margin-left: 2rem;
+}
+
+.createpost-page .main form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.createpost-page .main form input{
+    font-family: 'roboto',sans-serif;
+    font-size: 1.2rem;
+    font-weight: 300;
+
+    border: 0.1rem solid #e4e4e4;
+    margin-bottom: 0.2rem;
+   
+    padding: 1rem;
+    border-radius: 0.5rem;
+    color: var(--text-color);
+}
+
+.createpost-page .main form textarea{
+    font-family: 'roboto',sans-serif;
+    font-size: 1.2rem;
+    font-weight: 300;
+
+    border: 0.1rem solid #e4e4e4;
+    margin-bottom: 0.2rem;
+   
+    padding: 1rem;
+    border-radius: 0.5rem;
+    color: var(--text-color);
+    max-width: 32rem;
+    height: 20rem;
+    resize: none;
+    
+}
+
+.createpost-page .main form input[type=submit]{
+    font-weight: 500;
+}
+
+.createpost-page .main .btn-register {
+    margin-top: 0.2rem;
+    background-color: var(--secondary-green);
+    color: #fff;
+    
+}
+
+
+
+
+
+
+.anc-back {
+    position: absolute;
+    top: 4rem;
+    left: 2.2rem;
+}
+@media (min-width: 820px) {
+    .createpost-page .main {
+        width: 50%;
+    }
+}
+
+@media (min-width: 1080px) {
+    .createpost-page{
+        margin-top: 8rem;
+    }
+    
+    
+    .createpost-page .landing{
+        margin-left: 4rem;
+        margin-bottom: 1rem;
+    }
+    
+    .createpost-page .landing h2{
+        font-size: 2.2rem;
+    }
+    
+    .createpost-page .landing .subtitle{
+        font-size: 1.2rem;
+    }
+    .createpost-page .landing h2 svg{
+        margin-right: 0.3rem;
+    }
+    
+    
+    .createpost-page .main{
+        margin-left: 4rem;
+    }
+    
+    
+    .createpost-page .main form input{
+        font-size: 1rem;
+        min-width: 22rem;
+        max-width: 32rem;
+    }
+    
+    .createpost-page .main form textarea{
+        font-size: 1rem;
+        min-width: 42rem;
+        max-width: 52rem;
+    }
+    
+    
+    .createpost-page .main .btn-register {
+        min-width: 12rem;
+        max-width: 12rem;
+        
+    }
+    
+    .anc-back {
+        position: absolute;
+        top: 4rem;
+        left: 4.2rem;
+    }
+}

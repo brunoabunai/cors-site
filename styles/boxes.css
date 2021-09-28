@@ -1,0 +1,191 @@
+#box{
+  position: absolute;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.26);
+  padding: 1rem;
+  animation: coming-up 500ms;
+  
+}
+.boxGear {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.26);
+  padding: 1rem;
+  animation: coming-up 500ms;
+}
+
+.boxGear .options {
+  color: #c6c6c6;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 0.001rem solid #c6c6c694;
+}
+
+.boxGear .options span {
+  color: #999;
+}
+
+.boxGear .close{
+  position:absolute;
+  top: 0;
+  right: 0;
+  margin-top: 0.8rem;
+  margin-right: 0.8rem;
+  cursor: pointer;
+  fill: #999;
+}
+
+.boxGear svg path{
+  transition-property: fill;
+  transition-duration: 200ms;
+  transition-timing-function: ease-in-out;
+}
+
+@keyframes coming-up {
+  0% {
+      transform: translateY(10px);
+  }
+  100% {
+      transform: translateY(0);
+  }
+}
+
+
+.boxGear a{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: #999;
+}
+
+
+.boxGear a svg{
+  margin-right: 0.5rem;
+}
+
+
+.boxGear .btn-account {
+  margin-top: 0.4rem;
+}
+
+.boxGear .btn-leave {
+  margin-top: 0.5rem;
+}
+
+/*box menu*/
+
+.boxMenu{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.26);
+  padding: 1rem;
+  animation: coming-up 500ms;
+}
+
+
+.boxMenu .close {
+  position: absolute;
+  top: -0.1rem;
+  right: -0.1rem;
+  cursor: pointer;
+  cursor: pointer;
+  fill: #999;
+}
+
+.boxMenu div {
+  margin-bottom:0.5rem;
+}
+
+.boxMenu a{
+  margin-bottom: 0.8rem;
+}
+
+
+/*end box menu -----*/
+
+.boxInput {
+  position: absolute;
+  top: 30%;
+  right: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--title-animed);
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.26);
+  width: 20rem;
+  height: 15rem;
+  border-radius: 0.5rem;
+}
+
+.boxInput h3 {
+  color: #fff;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.096);
+}
+
+.boxInput div {
+  position: relative;
+}
+
+.boxInput div svg {
+  position: absolute;
+  top: -3rem;
+  right: -9rem;
+  cursor: pointer;
+}
+
+.boxInput input {
+  border: 0;
+  border-radius: 0.4rem;
+  width: 90%;
+  padding: 0.4rem;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.096);
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  color: var(--text-color);
+}
+
+.boxInput button {
+  margin-top: 0.7rem;
+  border: 0;
+  border-radius: 0.3rem;
+  padding: 0.5rem;
+  width: 8rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--title-animed);
+  color: #fff;
+  font-weight: 400;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.349);
+}
+
+
+@media (min-width: 1080px) {
+  .boxInput {
+    top: 30%;
+    right: 36%;
+  }
+}
+
+@media (min-width: 800px) {
+  .boxInput {
+    top: 30%;
+    right: 36%;
+  }
+}
+
+

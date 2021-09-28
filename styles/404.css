@@ -1,0 +1,69 @@
+body{
+  height: 100vh;
+  width: 100vw;
+}
+
+.page-404{
+  height: 100%;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image: url('./public/img/background-landing.png');
+  background-repeat: no-repeat;
+  background-size: 20%;
+  background-position-x: right;
+  background-position-y: bottom;
+}
+
+.page-404 .title-bar{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 3rem;
+}
+
+.page-404 .title-bar svg{
+  margin-right: 0.2rem;
+  width: 5rem;
+  height: 5rem;
+}
+
+.page-404 .title-bar .title{
+  color: var(--grayn);
+}
+
+.page-404 .subtitle{
+  color: var(--null);
+  font-size: 4rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  max-width: 80%;
+  margin-left: 3rem;
+}
+
+.page-404 .btn-back404{
+  color: var(--grayn);
+  display: flex;
+  align-items: center;
+  margin-left: 3rem;
+}
+
+.page-404 .btn-back404 svg{
+  margin-right: 0.4rem;
+}
+
+@media (min-width: 1080px) {
+  .page-404 {
+      background-size: 10%;
+  }
+
+  .page-404 .subtitle{
+      color: var(--null);
+      font-size: 5rem;
+      margin-bottom: 2rem;
+      margin-top: 2rem;
+      max-width: 50%;
+      margin-left: 3rem;
+  }
+}

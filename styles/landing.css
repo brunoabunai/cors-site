@@ -1,0 +1,69 @@
+body{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image: url('./public/img/background-landing.png');
+  background-repeat: no-repeat;
+  background-size: 20%;
+  background-position-x: right;
+  background-position-y: bottom;
+}
+.landing{
+  max-width: 32rem;
+}
+
+.landing .title{
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--title-strong);
+}
+
+.landing .title .brand{
+  font-weight: 900;
+}
+
+.landing .subtitle{
+  margin-top: 0.3rem;
+  font-size: 1.4rem;
+  font-weight: 400;  
+}
+
+.landing, .main{ 
+  margin: 0.8rem;
+}
+
+.main{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.main .btn-begin{
+  background-color: var(--background-purple);
+  color: #fff;
+  padding: 1.2rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.main .anc-admin{
+  font-size: 0.9rem;
+  color: var(--title-animed);
+  font-weight: 300;
+}
+
+
+@media (min-width: 1080px) {
+  body {
+      background-size: 10%;
+  }
+
+  .landing, .main{ 
+      margin: 0.7rem;
+      margin-left: 3.5rem;
+  }
+  
+}
