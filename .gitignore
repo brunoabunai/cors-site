@@ -1,0 +1,5 @@
+# dependencies
+/node_modules
+/.vscode
+connection.php
+roteiro.md
