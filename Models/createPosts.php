@@ -37,7 +37,7 @@ require_once('connection.php');
                                   or pos_title = "'.$this->title.'"
                                 ') or die ($this->conn->error);
       $data = $cmd->fetch_assoc();
-                                
+
       if(isset($data) && count($data) != 0){ //Vê se usuário já está cadastrado...
         $this->err[] = "Post já cadastrado";
       }
