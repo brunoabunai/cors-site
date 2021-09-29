@@ -23,9 +23,26 @@ CREATE TABLE IF NOT EXISTS `posts` (
   `use_idFk` int(11) NOT NULL,
   `pos_title` varchar(50) NOT NULL,
   `pos_description` varchar(9999) NOT NULL,
-  `pos_date` datetime DEFAULT NULL,
-  `pos_dateEdit` datetime DEFAULT NULL,
+  `pos_date` datetime NOT NULL,
+  `pos_dateEdit` datetime NOT NULL,
   PRIMARY KEY (`pos_idPk`),
+  KEY `use_idFk` (`use_idFk`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- ----------------------------------------------------------
+
+--
+-- Table structure for table `recommendations`
+--
+
+CREATE TABLE IF NOT EXISTS `recommendations` (
+  `rec_idPk` int(11) NOT NULL AUTO_INCREMENT,
+  `use_idFk` int(11) NOT NULL,
+  `rec_title` varchar(50) NOT NULL,
+  `rec_description` varchar(9999) NOT NULL,
+  `rec_date` datetime NOT NULL,
+  `rec_response` bit(1) DEFAULT 0 NOT NULL,
+  PRIMARY KEY (`rec_idPk`),
   KEY `use_idFk` (`use_idFk`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
@@ -40,7 +57,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `typ_idFk` int(11) NOT NULL DEFAULT 1,
   `use_name` varchar(150) NOT NULL,
   `use_password` varchar(30) NOT NULL,
-  `use_avatar` varchar(150) DEFAULT ('https://img-16.ccm2.net/_SqzzXVDSG50FWb_UBrCl3XwV78=/440x/1685e17045e747a899925aa16189c7c6/ccm-encyclopedia/99776312_s.jpg'),
+  `use_avatar` varchar(150) NOT NULL DEFAULT ('https://img-16.ccm2.net/_SqzzXVDSG50FWb_UBrCl3XwV78=/440x/1685e17045e747a899925aa16189c7c6/ccm-encyclopedia/99776312_s.jpg'),
   PRIMARY KEY (`use_idPk`),
   KEY `typ_idFk` (`typ_idFk`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
@@ -85,6 +102,13 @@ INSERT INTO `users` (`typ_idFk`, `use_name`, `use_password`) VALUES
 --
 
 ALTER TABLE `posts`
+  ADD FOREIGN KEY (`use_idFk`) REFERENCES `users` (`use_idPk`);
+
+--
+-- FOREIGN KEY for table `recommendations`
+--
+
+ALTER TABLE `recommendations`
   ADD FOREIGN KEY (`use_idFk`) REFERENCES `users` (`use_idPk`);
 
 --
