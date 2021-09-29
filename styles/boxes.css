@@ -74,8 +74,13 @@
   margin-top: 0.4rem;
 }
 
-.boxGear .btn-leave {
+.boxGear .btn-portal {
   margin-top: 0.5rem;
+}
+
+.boxGear .btn-leave {
+  margin-top: 0.7rem;
+  color: var(--danger);
 }
 
 /*box menu*/

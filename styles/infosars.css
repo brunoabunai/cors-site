@@ -1,4 +1,4 @@
-.infosars-page{
+.infosars-page {
   width: 100%;
   height: 100%;
   display: flex;
@@ -6,22 +6,54 @@
   justify-content: center;
 }
 
+.bt-ops {
+  position: absolute;
+  top: 4rem;
+  right: 1rem;
+  background-color: transparent;
+  border: 0;
+}
 
+.bt-menu {
+  position: absolute;
+  top: 4rem;
+  right: 4rem;
+  background-color: transparent;
+  border: 0;
+}
 
-.preventions-page{
-  width:100%;
+.boxGear {
+  top: 5.8rem;
+  right: 2.8rem;
+}
+
+.boxMenu {
+  top: 5.8rem;
+  right: 5.4rem;
+}
+
+.boxMenu {
+  color: #999;
+}
+
+.optionsHomeDesktop {
+  display: none;
+}
+
+.preventions-page {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.anc-back{
+.anc-back {
   position: absolute;
   top: 4.5rem;
   left: 2.5rem;
 }
 
-.preventions-page .prevention-box{
+.preventions-page .prevention-box {
   margin-top: 8.5rem;
   width: 90%;
   padding: 1rem;
@@ -30,47 +62,47 @@
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.26);
 }
 
-.preventions-page .prevention-box .box-firstLine{
+.preventions-page .prevention-box .box-firstLine {
   width: 100%;
   display: flex;
   align-items: center;
   margin-bottom: 0.5rem;
 }
 
-.preventions-page .prevention-box .box-firstLine h2{
+.preventions-page .prevention-box .box-firstLine h2 {
   font-size: 1.5rem;
   margin-left: 0.5rem;
   width: 100%;
 }
 
-.preventions-page .prevention-box img{
+.preventions-page .prevention-box img {
   width: 5rem;
 }
 
 @media (min-width: 800px) {
-  .preventions-page .prevention-box{
+  .preventions-page .prevention-box {
     max-width: 70%;
   }
 }
 
-.symptoms-page{
-  width:100%;
+.symptoms-page {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.symptoms-page ul{
+.symptoms-page ul {
   margin-left: 1rem;
 }
 
-.anc-back{
+.anc-back {
   position: absolute;
   top: 4.5rem;
   left: 2.5rem;
 }
 
-.symptoms-page .symptoms-box{
+.symptoms-page .symptoms-box {
   margin-top: 2.5rem;
   width: 90%;
   padding: 1rem;
@@ -79,27 +111,55 @@
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.26);
 }
 
-.symptoms-page .symptoms-box .box-firstLine{
+.symptoms-page .symptoms-box .box-firstLine {
   width: 100%;
   display: flex;
   align-items: center;
   margin-bottom: 0.5rem;
 }
 
-.symptoms-page .symptoms-box .box-firstLine h2{
+.symptoms-page .symptoms-box .box-firstLine h2 {
   font-size: 1.5rem;
   margin-left: 0.5rem;
   width: 100%;
 }
 
-.symptoms-page .symptoms-box img{
+.symptoms-page .symptoms-box img {
   width: 5rem;
 }
 
-
 @media (min-width: 900px) {
-  .symptoms-page .symptoms-box{
+  .symptoms-page .symptoms-box {
     max-width: 70%;
   }
+  .bt-ops {
+    position: absolute;
+    top: 4rem;
+    right: 3rem;
+  }
+  .bt-menu {
+    position: absolute;
+    top: 4rem;
+    right: 6rem;
+  }
+  .boxGear {
+    top: 6rem;
+    right: 5rem;
+  }
+  .optionsHomeMobile {
+    display: none;
+  }
+  .optionsHomeDesktop {
+    display: block;
+    top: 4.3rem;
+  }
+  .optionsHomeDesktop a {
+    margin-left: 0.3rem;
+    font-size: 1rem;
+    font-weight: 300;
+  }
+  .optionsHomeDesktop .opitonActive {
+    font-weight: 700;
+    text-decoration: underline;
+  }
 }
-

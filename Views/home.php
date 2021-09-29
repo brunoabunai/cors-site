@@ -36,9 +36,9 @@
     </svg>
   </button>
   <div class="bt-menu optionsHomeDesktop">
-    <a class="opitonActive href="#">Home</a>
-    <a href="./menu">Portal do Admin</a>
+    <a class="opitonActive" href="#">Home</a>
     <a href="./infosars">Covid Informações</a>
+    <a href="./recommendations">Recomendações</a>
   </div>
 
   <!-- init of page -->
