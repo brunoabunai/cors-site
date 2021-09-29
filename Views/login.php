@@ -62,11 +62,10 @@
 </html>
 
 <script defer type="module">
-  $('submit').on(
+  $('input[type="submit"]').on(
     'click',
     (e) => {
       e.preventDefault();
-      console.log('potato');
     });
 
   // document.querySelector("form").addEventListener(

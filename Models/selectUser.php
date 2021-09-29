@@ -1,16 +1,14 @@
-a<?php
+<?php
 require_once ('connection.php');
 
   Class selectUser {
     
     private $conn;
     public $data;
-    // public $informations;
 
     public function __construct() {
       $this->conn = connection::getConnection();
       $this->data = array();
-      // $this->informations = array();
     }
 
     /**
@@ -232,10 +230,10 @@ require_once ('connection.php');
                                   FROM users
                                   WHERE use_name = "'.$name.'" ');
       $this->data = $cmd->fetch_assoc();
-      
+
       return ($this->data);
     }
-
+    
     /**
      * ------------------------------------------------------------
      * Select user from view per id

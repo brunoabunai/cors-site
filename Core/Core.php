@@ -36,7 +36,7 @@
         $method = 'index'; //Function active from class of page 'controller'
       }
 
-      $route = 'cors/mvc/Controllers/'.$controller.'.php';
+      $route = 'cors-site/Controllers/'.$controller.'.php';
       
       if (!file_exists($route) && !method_exists($controller, $method)) {
         $controller = 'errorController';
