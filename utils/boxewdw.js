@@ -1,9 +1,9 @@
 var numberOfBoxes = 4;
 var globalStateBox = new Array(numberOfBoxes).fill(false);
 
-const prefix = 'box_'
+var prefix = 'box_'
 
-const html = document.querySelector('html');
+var html = document.querySelector('html');
 
 function mapAllTagsA() {
   const AllTagsA = document.querySelectorAll('a');
