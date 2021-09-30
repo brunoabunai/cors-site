@@ -55,7 +55,7 @@
 
     </div>
   </div>
-
+  <script src="./utils/input.js" defer></script>
   <!-- <script defer src="../node_modules/jquery/dist/jquery.js"></script> -->
 </body>
 

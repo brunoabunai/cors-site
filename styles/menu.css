@@ -108,6 +108,16 @@ body {
   right: 2.8rem;
 }
 
+.boxMenu {
+  top: 5.8rem;
+  right: 5.4rem;
+}
+
+.boxMenu {
+  color: #999;
+}
+
+
 .anc-back {
   position: absolute;
   top: 4.5rem;

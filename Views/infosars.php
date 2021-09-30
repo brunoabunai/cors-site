@@ -37,7 +37,7 @@
   <div class="bt-menu optionsHomeDesktop">
     <a href="./home">Home</a>
     <a class="opitonActive" href="#">Covid Informações</a>
-    <a href="./recommendations">Recomendações</a>
+    <a href="./recommendationsInfos">Recomendações</a>
   </div>
   <div class="infosars-page">
 

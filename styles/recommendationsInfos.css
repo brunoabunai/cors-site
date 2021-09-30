@@ -1,0 +1,109 @@
+.bt-ops {
+  position: absolute;
+  top: 4rem;
+  right: 1rem;
+  background-color: transparent;
+  border: 0;
+}
+
+.bt-menu {
+  position: absolute;
+  top: 4rem;
+  right: 4rem;
+  background-color: transparent;
+  border: 0;
+}
+
+.boxGear {
+  top: 5.8rem;
+  right: 2.8rem;
+}
+
+.boxMenu {
+  top: 5.8rem;
+  right: 5.4rem;
+}
+
+.boxMenu {
+  color: #999;
+}
+
+.optionsHomeDesktop {
+  display: none;
+}
+
+.recommendationsInfos-page {
+  padding: 1rem;
+}
+
+.recommendationsInfos-page h2 {
+  margin-top: 8.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+.recommendationsInfos-page ul {
+  margin-left: 2rem;
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
+}
+
+.recommendationsInfos-page .title {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+}
+
+.recommendationsInfos-page .subtitle {
+  font-size: 1.2rem;
+}
+
+.recommendationsInfos-page a {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  font-weight: 300;
+  border: 0.1rem solid #e4e4e4;
+  margin-bottom: 0.2rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  color: #fff;
+  background-color: var(--secondary-green);
+  font-weight: 500;
+}
+
+@media (min-width: 900px) {
+  .recommendationsInfos-page {
+    max-width: 50rem;
+  }
+  .bt-ops {
+    position: absolute;
+    top: 4rem;
+    right: 3rem;
+  }
+  .bt-menu {
+    position: absolute;
+    top: 4rem;
+    right: 6rem;
+  }
+  .boxGear {
+    top: 6rem;
+    right: 5rem;
+  }
+  .optionsHomeMobile {
+    display: none;
+  }
+  .optionsHomeDesktop {
+    display: block;
+    top: 4.3rem;
+  }
+  .optionsHomeDesktop a {
+    margin-left: 0.3rem;
+    font-size: 1rem;
+    font-weight: 300;
+  }
+  .optionsHomeDesktop .opitonActive {
+    font-weight: 700;
+    text-decoration: underline;
+  }
+}

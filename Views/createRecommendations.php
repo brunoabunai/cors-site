@@ -13,7 +13,7 @@
 
   <body>
     <div class="createpost-page">
-      <a class="anc-back" href="./menu">
+      <a class="anc-back" href="./recommendationsInfos">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M6 16V13L22 13V11L6 11L6 8L2 12L6 16Z" fill="#343434"></path>
         </svg>
@@ -25,11 +25,11 @@
           <path d="M21 12H19V15H8.334C7.90107 14.9988 7.47964 15.1393 7.134 15.4L5 17V5H12V3H5C3.89543 3 3 3.89543 3 5V21L7.8 17.4C8.14582 17.1396 8.56713 16.9992 9 17H19C20.1046 17 21 16.1046 21 15V12Z" fill="var(--title-strong)"></path>
         </svg>
         
-          Criar Recomendação
+          Mandar Recomendação
         </h2>
 
         <span class="subtitle">
-          Pegue as suas sugestões e nos envie por aqui!
+          Escrava sua sugestão de repostagem e nos envie!
         </span>
       </div>
 

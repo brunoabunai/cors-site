@@ -1,0 +1,92 @@
+.anc-back {
+  position: absolute;
+  top: 4rem;
+  left: 2.2rem;
+}
+
+.recommendationsList-page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.recommendationsList-page input {
+  margin-top: 8.5rem;
+  font-family: 'roboto', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 300;
+  border: 0.1rem solid #e4e4e4;
+  margin-bottom: 0.2rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  color: var(--text-color);
+  width: 80%;
+}
+
+.recommendationsList-page .rec-list {
+  width: 90%;
+  margin-top: 1rem;
+}
+
+.recommendationsList-page .rec-list a {
+  width: 100%;
+}
+
+.recommendationsList-page .rec-list .rec {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: #ebe9e9;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.062);
+}
+
+.recommendationsList-page .rec-list .rec .rec-author {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ebe9e9;
+}
+
+.recommendationsList-page .rec-list .rec .rec-author img {
+  width: 5rem;
+}
+
+.recommendationsList-page .rec-list .rec .rec-author span {
+  font-size: 1.2rem;
+  font-family: 'roboto', sans-serif;
+  font-weight: 400;
+}
+
+.recommendationsList-page .rec-list .rec .rec-infos {
+  display: flex;
+  flex-direction: column;
+}
+
+.recommendationsList-page .rec-list .rec .rec-infos h3 {
+  font-size: 1.4rem;
+}
+
+.recommendationsList-page .rec-list .rec .rec-infos span {
+  max-width: 18rem;
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+.recommendationsList-page .rec-list .rec button {
+  background-color: transparent;
+  border: 0;
+}
+
+@media (min-width: 900px) {
+  .recommendationsList-page .rec-list {
+    max-width: 50%;
+  }
+  .recommendationsList-page input {
+    max-width: 50%;
+  }
+
+}

@@ -59,7 +59,7 @@
   padding: 1rem;
   border-radius: 0.5rem;
   background-color: #fff;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.26);
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.13);
 }
 
 .preventions-page .prevention-box .box-firstLine {
@@ -108,7 +108,7 @@
   padding: 1rem;
   border-radius: 0.5rem;
   background-color: #fff;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.26);
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.13);
 }
 
 .symptoms-page .symptoms-box .box-firstLine {
@@ -161,5 +161,12 @@
   .optionsHomeDesktop .opitonActive {
     font-weight: 700;
     text-decoration: underline;
+  }
+
+  .preventions-page .prevention-box {
+    max-width: 50%;
+  }
+  .symptoms-page .symptoms-box {
+    max-width: 50%;
   }
 }

@@ -20,7 +20,7 @@ $option="admin";
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    <?php include_once('styles/home.css'); ?>
+    <?php include_once('styles/recommendationsInfos.css'); ?>
   </style>
   <title>Home</title>
 </head>
@@ -38,72 +38,31 @@ $option="admin";
     </svg>
   </button>
   <div class="bt-menu optionsHomeDesktop">
-    <a class="opitonActive" href="#">Home</a>
+    <a  href="./home">Home</a>
     <a href="./infosars">Covid Informações</a>
-    <a href="./recommendationsInfos">Recomendações</a>
+    <a class="opitonActive" href="./recommendationsInfos">Recomendações</a>
   </div>
 
   <!-- init of page -->
 
-  <div class="home-page">
-    <div class="title">
-      <h2>Ultimas Postagens Sobre o Corona Vírus</h2>
-    </div>
-    <div class="news">
-      <a href="./notice">
-        <div class="noticie noticieOne">
-          <img src="./public/img/banner_corona.jpg" alt="">
+  <div class="recommendationsInfos-page">
+    <h2>No Cors, ouvimos você.</h2>
+    <h3 class="title firstTitle">Nos diga sua recomendação de postagem:</h3>
+    <span class="subtitle firstSubtitle">
+      É muito simples, basta nos dizer sobre o que você quer que nós escrevamos
+      <ul>
+        <li>Sobre uma notícia que você recebeu no zap?</li>
+        <li>Sobre algo que você ouviu na roda de amigos?</li>
+        <li>Sobre aquela informação que parece falsa?</li>
+      </ul>
+      Não importa o que seja, nós pesquisaremos e faremos a melhor matéria sobre o assunto, permitindo que você descubra a verdade e que o mundo se livre das fake news sobre o vírus SARS-COVID 2019 
+    </span>
 
-          <div class="headline">
-            <span class="head-author">Carlos Calixto</span>
-            <h3 class="head-title">
-              Ibespa derrete 2% em reação à reforma do IR; Via (VIIA3) afunda 6%
-            </h3>
-            <span class="head-desc">
-              Takimata eos kasd diam dolor dolor magna sanctus...
-            </span>
-
-            <p class="lastPost">
-              Ultima Postagem
-            </p>
-          </div>
-
-        </div>
-      </a>
-
-
-      <a href="#">
-        <div class="noticie">
-          <div class="headline">
-            <span class="head-author">Carlos Calixto</span>
-            <h3 class="head-title">
-              Ibespa derrete 2% em reação à reforma do IR; Via (VIIA3) afunda 6%
-            </h3>
-            <span class="head-desc">
-              Takimata eos kasd diam dolor dolor magna sanctus...
-            </span>
-          </div>
-
-          <img src="./public/img/banner_corona.jpg" alt="">
-        </div>
-      </a>
-
-      <a href="#">
-        <div class="noticie">
-          <div class="headline">
-            <span class="head-author">Carlos Calixto</span>
-            <h3 class="head-title">
-              Ibespa derrete 2% em reação à reforma do IR; Via (VIIA3) afunda 6%
-            </h3>
-            <span class="head-desc">
-              Takimata eos kasd diam dolor dolor magna sanctus...
-            </span>
-          </div>
-
-          <img src="./public/img/banner_corona.jpg" alt="">
-        </div>
-      </a>
-    </div>
+    <h3 class="title secondTitle">Para nos mandar sua recomendação:</h3>
+    <span class="subtitle secondSubtitle">
+      Basta um titulo legal e um textinho sobre o que quer quer falemos nas nossas matérias, é muito simples!
+    </span> <br>
+    <a href="./createRecommendations">Mandar Uma Recomendação Agora!</a>
   </div>
 </body>
 
