@@ -9,6 +9,7 @@
     public function submit() {
       $l = new login();
       $l -> login();
+      
     }
 
   }
