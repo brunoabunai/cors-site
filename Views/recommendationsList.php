@@ -23,7 +23,7 @@
 
 
       <div class="rec-list">
-        <a href="./recommendations">
+        <!-- <a href="./recommendations">
           <div class="rec rec-one">
             <div class="rec-author">
               <img src="./public/img/cv2.png" alt="avatar">
@@ -45,7 +45,7 @@
               </svg>
             </button>
           </div>
-        </a>
+        </a> -->
       </div>
 
     </div>
@@ -57,6 +57,29 @@
 
 <script defer type="module">
   $(document).ready(function(){
-    
+    loadDatas(1);
+
+    function loadDatas(page, query = '') {
+      $.ajax({
+        type: "POST",
+        url: 'recommendationsList/search/',
+        data: {
+          actualPage: page,
+          action: query
+        },
+        success: function(html) {
+          $('.rec-list').html(html);
+        },
+        error: function(html) {
+          console.log('error');
+        }
+      });
+
+    }
+
+    $('.search').keyup(function() {
+      let query = $('.search').val();
+      loadDatas(1, query);
+    });
   });
 </script>
