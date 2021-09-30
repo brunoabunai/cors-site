@@ -1,11 +1,11 @@
-const allInputs = document.querySelectorAll('input');
-const allTextareas = document.querySelectorAll('textarea');
+const allInputsOfPage = document.querySelectorAll('input');
+const allTextareasOfPage = document.querySelectorAll('textarea');
 
-let inputIsActive= new Array(allInputs.length).fill(true);
-let textareaIsActive= new Array(allTextareas.length).fill(true);
+let inputIsActive= new Array(allInputsOfPage.length).fill(true);
+let textareaIsActive= new Array(allTextareasOfPage.length).fill(true);
 
 
-allInputs.forEach( (input,indexOfInput) => {
+allInputsOfPage.forEach( (input,indexOfInput) => {
     input.onkeyup = () => UserDigitedIn(input,indexOfInput);
     input.addEventListener('blur', function() {
         UserDigitedIn(input,indexOfInput);
@@ -22,7 +22,7 @@ allInputs.forEach( (input,indexOfInput) => {
 })
 
 
-allTextareas.forEach( (textarea,indexOfInput) => {
+allTextareasOfPage.forEach( (textarea,indexOfInput) => {
     textarea.onkeyup = () => UserDigitedIn(textarea,indexOfInput);
     textarea.onclick= () => {
         if(textareaIsActive[indexOfInput]){
