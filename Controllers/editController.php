@@ -21,6 +21,10 @@
       $this->loadTemplate('edit', $data);
     }
 
+    public function submitEditUser() {
+      
+    }
+
   }
 
 ?>

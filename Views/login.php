@@ -66,6 +66,11 @@
     'click',
     (e) => {
       e.preventDefault();
+
+      $.ajax({
+        type: "POST",
+        url: 'login/submit'
+      })
     });
 
   // document.querySelector("form").addEventListener(
