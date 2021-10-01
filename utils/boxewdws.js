@@ -44,34 +44,53 @@ function processWhenIsOpen(event) {
   makeProcessToRemoveBox(getBoxOpen());
 }
 
-html.onmouseup = (evt) => {
-  const [[boxActiverClicked, witchBoxActiver], svgClicked, boxDivClicked, [aClicked, aDidCLicked]] = getValidationsToMouseClick(evt);
-  const haveBoxOpen = getBoxOpen() != -1 || false;
-  if ((haveBoxOpen && !boxActiverClicked) && (haveBoxOpen && !boxDivClicked)) {
-    makeProcessToRemoveBox(getBoxOpen());
-    return;
-  }
+try {
 
-  let boxOp;
-  if (boxActiverClicked) {
-    const classesOfBoxActiver = (witchBoxActiver.classList.value).split(' ');
-    const classFiltered = classesOfBoxActiver.filter((theClass, indexClass) => {
-      const classSpelled = theClass.split('');
-      return (classSpelled[0] + classSpelled[1] + classSpelled[2] + classSpelled[3] == prefix)
-    });
-    boxOp = Number(classFiltered[0].replace(prefix, ''));
-  }
+  html.onmouseup = (evt) => {
+    const [[boxActiverClicked, witchBoxActiver], svgClicked, boxDivClicked, [aClicked, aDidCLicked]] = getValidationsToMouseClick(evt);
+    const haveBoxOpen = getBoxOpen() != -1 || false;
+    if ((haveBoxOpen && !boxActiverClicked) && (haveBoxOpen && !boxDivClicked)) {
+      makeProcessToRemoveBox(getBoxOpen());
+      return;
+    }
+    let boxes = document.querySelectorAll('.box');
+    if(boxes.length>1){
+      document.querySelector(`.${prefix + getBoxOpen()} > svg > path`).style.fill = 'var(--text-color)';
+      changeStateBox(getBoxOpen());
+      boxes.forEach(boxOfArray => {
+        boxOfArray.remove();
+      })
+      mapAllTagsA();
+      alert("Por favor não clique tão rápido")
+    }
+    
 
-  if (!haveBoxOpen && boxActiverClicked) {
-    makeProcessToCreateBox(boxOp);
-    return;
-  }
+    let boxOp;
+    if (boxActiverClicked) {
+      const classesOfBoxActiver = (witchBoxActiver.classList.value).split(' ');
+      const classFiltered = classesOfBoxActiver.filter((theClass, indexClass) => {
+        const classSpelled = theClass.split('');
+        return (classSpelled[0] + classSpelled[1] + classSpelled[2] + classSpelled[3] == prefix)
+      });
+      boxOp = Number(classFiltered[0].replace(prefix, ''));
+    }
 
-  if (haveBoxOpen && boxActiverClicked) {
-    makeProcessToRemoveBox(boxOp);
-    return;
+    if (!haveBoxOpen && boxActiverClicked) {
+      makeProcessToCreateBox(boxOp);
+      return;
+    }
+
+    if (haveBoxOpen && boxActiverClicked) {
+      makeProcessToRemoveBox(getBoxOpen());
+      return;
+    }
   }
+} catch (error) {
+  alert(error);
+  console.log(error);
 }
+
+
 
 function getValidationsToMouseClick(evt) {
   function validationCLassActiver() {
@@ -111,8 +130,10 @@ function makeProcessToCreateBox(op) {
 function makeProcessToRemoveBox() {
   document.querySelector(`.${prefix + getBoxOpen()} > svg > path`).style.fill = 'var(--text-color)';
   removeBox();
-  changeStateBox(getBoxOpen());
+  setTimeout(function () { changeStateBox(getBoxOpen()); }, 200);
   mapAllTagsA();
+
+
 }
 
 function createBox(op) {
@@ -120,7 +141,7 @@ function createBox(op) {
   addInPage(box);
 }
 function removeBox() {
-  const box = localizeID('box');
+  let box = localizeID('box');
   let endAnimationOfBox = box.animate([
     // keyframes
     { opacity: 1 },
@@ -149,7 +170,7 @@ function constructorBox(op) {
       box.name = "box of config";
       box.content =/*html*/
         `
-                <div id="box" class="boxGear">
+                <div id="box" class="box boxGear">
                   <div class="options">
                     <span>Opções:</span>
                     
@@ -184,7 +205,7 @@ function constructorBox(op) {
       box.name = "box of config but when menu open";
       box.content =/*html*/
         `
-                  <div id="box" class="boxGear">
+                  <div id="box" class="box boxGear">
                     <div class="options">
                       <span>Opções:</span>
                       
