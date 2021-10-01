@@ -1,8 +1,8 @@
 
 <style>
-  <?php include_once('./styles/global.css'); ?>
-  <?php include_once('./styles/boxes.css'); ?>
-  <?php include_once('./styles/classes.css'); ?>
+  <?php include_once('./styles/global/global.css'); ?>
+  <?php include_once('./styles/global/boxes.css'); ?>
+  <?php include_once('./styles/global/classes.css'); ?>
 </style>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
