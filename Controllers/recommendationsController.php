@@ -12,7 +12,7 @@
 
       if(isset($data[0]) && $data[0]){
         array_shift($data);
-        $this->loadTemplate('menu');
+        $this->loadTemplate('success', $data[0]);
       } else {
         array_shift($data);
         $this->loadTemplate('errorLog', $data);

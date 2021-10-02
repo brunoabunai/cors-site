@@ -138,6 +138,10 @@ require_once('connection.php');
                                   ")
       );
 
-      return array('name' => $this->name); //Return (array) name registred
+      return array(
+        'text' => $this->name.' Registrado ',
+        'previousPage' => 'login',
+        'buttonText' => 'Logar'
+      ); //Return (array) name registred
     }
   }

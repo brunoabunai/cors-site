@@ -94,10 +94,9 @@ require_once('connection.php');
                                ");
 
       return array(
-        'user' => $this->user,
-        'title' => $this->title,
-        'dateCreation' => $this->date,
-        'dateEdited' => $this->date,
+        'text' => '"'.$this->title.'" Criado ',
+        'previousPage' => 'menu',
+        'buttonText' => 'Menu'
       );
     }
   }

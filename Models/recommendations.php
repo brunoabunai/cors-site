@@ -48,7 +48,7 @@ require_once('connection.php');
       if(count($this->err) == 0) {
         return [true, $this->insertRegister()];
       } else {
-        return [false, $this->err, 'previousPage' => 'recommendations'];
+        return [false, $this->err, 'previousPage' => 'recommendationsInfos'];
       }
     }
 
@@ -100,9 +100,9 @@ require_once('connection.php');
                                 ");
 
       return array(
-        'user' => $this->user,
-        'title' => $this->title,
-        'dateCreation' => $this->date
+        'text' => '"'.$this->title.'" Registrado ',
+        'previousPage' => 'home',
+        'buttonText' => 'Home'
       );
     }
 
