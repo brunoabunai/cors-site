@@ -17,8 +17,9 @@ $outputPrefixOfSucessProcess = " Com Sucesso!";
 //$lastRoute= $_POST["nameOfLastRoute"];
 
 //TEST
-$outputSucess = "Usuário Cadastrado";
-$lastRoute = "register";
+$outputSucess = $text;
+$lastRoute = $previousPage;
+$textButton = $buttonText;
 ?>
 
 <!DOCTYPE html>
@@ -37,15 +38,15 @@ $lastRoute = "register";
 <body>
   <div class="success-page">
     <div class="page-title">
-      <img src="./public/img/sucess.png" alt="sucess">
+      <img src="../public/img/sucess.png" alt="sucess">
       <div>
         <h2><?php echo $outputSucess . $outputPrefixOfSucessProcess ?></h2>
-        <a class="opacty-button" href="./<?php echo $lastRoute ?>">
+        <a class="opacty-button" href="../<?php echo $lastRoute ?>">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M6 16V13L22 13V11L6 11L6 8L2 12L6 16Z" fill="#fff"></path>
           </svg>
 
-          Voltar
+          <?php echo $textButton ?>
         </a>
       </div>
     </div>

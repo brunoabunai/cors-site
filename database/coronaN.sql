@@ -56,7 +56,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `use_idPk` int(11) NOT NULL AUTO_INCREMENT,
   `typ_idFk` int(11) NOT NULL DEFAULT 1,
   `use_name` varchar(150) NOT NULL,
-  `use_password` varchar(30) NOT NULL,
+  `use_password` varchar(32) NOT NULL,
   `use_avatar` varchar(150) NOT NULL DEFAULT ('https://img-16.ccm2.net/_SqzzXVDSG50FWb_UBrCl3XwV78=/440x/1685e17045e747a899925aa16189c7c6/ccm-encyclopedia/99776312_s.jpg'),
   PRIMARY KEY (`use_idPk`),
   KEY `typ_idFk` (`typ_idFk`)
@@ -89,7 +89,7 @@ INSERT INTO `types` (`typ_name`) VALUES
 --
 
 INSERT INTO `users` (`typ_idFk`, `use_name`, `use_password`) VALUES
-((SELECT typ_idPk from types WHERE typ_name='admin'), 'admin', 'c3284d0f94606de1fd2af172aba15b');
+((SELECT typ_idPk from types WHERE typ_name='admin'), 'admin', 'c3284d0f94606de1fd2af172aba15bf3');
 
 --
 -- Dumping data for table `posts`

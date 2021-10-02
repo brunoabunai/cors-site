@@ -62,16 +62,21 @@
 </html>
 
 <script defer type="module">
-  $('input[type="submit"]').on(
-    'click',
-    (e) => {
-      e.preventDefault();
+  // $('input[type="submit"]').on(
+  //   'click',
+  //   (e) => {
+  //     // e.preventDefault();
 
-      $.ajax({
-        type: "POST",
-        url: 'login/submit'
-      })
-    });
+  //     $.ajax({
+  //       type: "POST",
+  //       url: 'login/submit',
+  //       success: function(html) {
+  //         // console.log(html);
+  //         // console.log('potato');
+  //       }
+  //     })
+  //   });
+  
 
   // document.querySelector("form").addEventListener(
   //   "click", 
