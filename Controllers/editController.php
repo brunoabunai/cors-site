@@ -21,8 +21,17 @@
       $this->loadTemplate('edit', $data);
     }
 
-    public function submitEditUser() {
-      
+    public function submitEditUser($userId) {
+      $u = new selectUser();
+      $data = $u -> setEditValues($_POST['edi_id'], $_POST['edi_name'], $_POST['edi_password']);
+      // print_r($data);
+      if(isset($data[0]) && $data[0]){
+        array_shift($data);
+        $this->loadTemplate('success', $data[0]);
+      } else {
+        array_shift($data);
+        $this->loadTemplate('errorLog', $data);
+      }
     }
 
   }

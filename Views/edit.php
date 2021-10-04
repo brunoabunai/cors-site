@@ -43,9 +43,10 @@
   
         </div>
 
-        <form action='./../portable/portable.html'>
-          <input class='user' id='user' type='text' placeholder='Usuário' value='<?php echo $use_name; ?>' readonly>
-          <input class='password' id='password' type='password' placeholder='Senha' readonly>
+        <form name="form_edit" action="../submitEditUser/<?php echo $use_name ?>" method="POST">
+          <input class='user' name='edi_id' id='user' type='text' placeholder='Id' value='<?php echo $use_idPk; ?>' readonly>
+          <input class='user' name='edi_name' id='user' type='text' placeholder='Usuário' value='<?php echo $use_name; ?>'>
+          <input class='password' name='edi_password' id='password' type='password' placeholder='Senha'>
           <input id='sub' type='submit' class='btn-register opacty-button' value='Concluir Edição'>
           <input onclick='resetEdition()' id='res' type='reset' class='btn-reset opacty-button' value='Resetar'>
         </form>
@@ -56,7 +57,3 @@
   </body>
 
 </html>
-
-<script defer type="module">
-  
-</script>

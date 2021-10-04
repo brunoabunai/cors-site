@@ -37,7 +37,7 @@ require_once('connection.php');
       if(strlen($this->password) == 0){ //Vê se o campo "Password" está vazio
         $this->err[] = "Preencha a senha.";
       } else
-      if(strlen($this->password) <= 5){ //Vê se o campo "Password" tem menos de 6 caracteres
+      if(strlen($this->password) <= 4){ //Vê se o campo "Password" tem menos de 6 caracteres
         $this->err[] = "Senha muito pequena.";
       } else
       if(!($this->password === $this->confirmPassword)){ //Vê se a senha bate com a confirmação da senha

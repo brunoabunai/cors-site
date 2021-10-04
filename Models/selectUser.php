@@ -4,30 +4,17 @@ require_once ('connection.php');
   Class selectUser {
     
     private $conn;
+    private $err;
+    private $aux;
     public $data;
+
+    private $id, $name, $password;
 
     public function __construct() {
       $this->conn = connection::getConnection();
+      $this->err = array();
       $this->data = array();
-    }
-
-    /**
-     * ------------------------------------------------------------
-     * Get all users regitereds
-     * ------------------------------------------------------------
-     */
-    public function getUsers() {
-      // $data = array();
-      $cmd = $this->conn->query(' SELECT use_idPk, use_name, use_avatar 
-                                  FROM users ');
-
-      // foreach ($cmd->fetch_assoc() as $row) {
-      //   $data[] = $row;
-      // }
-      while($row = $cmd->fetch_assoc()) {
-        $this->data[] = $row;
-      }
-      return $this->data;
+      $this->aux = new auxiliary();
     }
 
     /**
@@ -224,9 +211,9 @@ require_once ('connection.php');
      * ------------------------------------------------------------
      */
     public function getUserPerName($name) {
-      $Name = str_replace("-", " ", $name);
+      $name = str_replace("-", " ", $name);
       // $data = array();
-      $cmd = $this->conn->query(' SELECT use_name, use_avatar 
+      $cmd = $this->conn->query(' SELECT use_idPk, use_name, use_avatar 
                                   FROM users
                                   WHERE use_name = "'.$name.'" ');
       $this->data = $cmd->fetch_assoc();
@@ -245,6 +232,75 @@ require_once ('connection.php');
                                   WHERE typ_idPk = "'.$id.'" ');
       $ret = $cmd->fetch_assoc(); //retorno
       return ($ret['typ_name']);
+    }
+    
+    /**
+     * ------------------------------------------------------------
+     * Submit edit from database
+     * ------------------------------------------------------------
+     */
+    private function editValidation() {
+      /** Validar name */
+      if(strlen($this->name) == 0) {
+        $this->err[] = 'Preencha o nome';
+      } else
+      if(strlen($this->name) <= 4) {
+        $this->err[] = 'Nome muito pequeno';
+      }
+
+      /** Validar password */
+      if(strlen($this->password) == 0) {
+        $this->err[] = 'Preencha a senha';
+      } else
+      if(strlen($this->password) <= 4) {
+        $this->err[] = 'Senha muito pequena';
+      }
+
+      /** Vê se o name está em uso */
+      // $cmd = $this->conn->query('
+      //                       SELECT use_name 
+      //                       FROM users 
+      //                       WHERE use_name = "'.$this->name.'"
+      //                     ') or die ($this->conn->error);
+      // $data = $cmd->fetch_assoc();
+
+      if(isset($data) && count($data) != 0) {
+        $this->err[] = 'User name já em uso';
+      }
+
+      /** Visualiza se existe alguma falha e qual será o redirecionamento */
+      if(count($this->err) == 0) {
+        return [true, $this->editUserSubmit()];
+      } else {
+        return [false, $this->err, 'previousPage' => 'editUser/'.$this->aux->getUserPerId($this->id)['name']];
+      }
+
+    }
+
+    public function setEditValues($id, $name, $password) {
+      $this->id = $id;
+      $this->name = $name;
+      $this->password = $password;
+
+      return $this->editValidation();
+    }
+
+    public function editUserSubmit() {
+      // DELETE from livros WHERE id=2; <- deletar uma linha do database
+      $cmd = $this->conn->query("
+        UPDATE users
+        SET use_name = '".$this->name."',
+        use_password = '".md5(md5($this->password))."'
+        WHERE use_idPk = ".$this->id."
+      ") or die ($this->conn->error);
+      // $data = $cmd->fetch_assoc();
+
+      return array(
+        'text' => $this->name.' alterado ',
+        'previousPage' => 'menu',
+        'buttonText' => 'Menu',
+        'pos' => '../../'
+      );
     }
 
   }
