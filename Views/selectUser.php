@@ -71,7 +71,7 @@
         // },
         success: function(html) {
           $('.users').html(html);
-          console.log('success');
+          // console.log('success');
         },
         error: function(html) {
           console.log('error');

@@ -21,7 +21,7 @@ USE `coronaN`;
 CREATE TABLE IF NOT EXISTS `posts` (
   `pos_idPk` int(11) NOT NULL AUTO_INCREMENT,
   `use_idFk` int(11) NOT NULL,
-  `pos_title` varchar(50) NOT NULL,
+  `pos_title` varchar(150) NOT NULL,
   `pos_description` varchar(9999) NOT NULL,
   `pos_date` datetime NOT NULL,
   `pos_dateEdit` datetime NOT NULL,
@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS `posts` (
 CREATE TABLE IF NOT EXISTS `recommendations` (
   `rec_idPk` int(11) NOT NULL AUTO_INCREMENT,
   `use_idFk` int(11) NOT NULL,
-  `rec_title` varchar(50) NOT NULL,
+  `rec_title` varchar(150) NOT NULL,
   `rec_description` varchar(9999) NOT NULL,
   `rec_date` datetime NOT NULL,
   `rec_response` bit(1) DEFAULT 0 NOT NULL,

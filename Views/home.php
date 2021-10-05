@@ -44,67 +44,24 @@ $option="admin";
   </div>
 
   <!-- init of page -->
-
-  <div class="home-page">
-    <div class="title">
-      <h2>Ultimas Postagens Sobre o Corona Vírus</h2>
-    </div>
-    <div class="news">
-      <a href="./notice">
-        <div class="noticie noticieOne">
-          <img src="./public/img/banner_corona.jpg" alt="">
-
-          <div class="headline">
-            <span class="head-author">Carlos Calixto</span>
-            <h3 class="head-title">
-              Ibespa derrete 2% em reação à reforma do IR; Via (VIIA3) afunda 6%
-            </h3>
-            <span class="head-desc">
-              Takimata eos kasd diam dolor dolor magna sanctus...
-            </span>
-
-            <p class="lastPost">
-              Ultima Postagem
-            </p>
-          </div>
-
-        </div>
-      </a>
-
-
-      <a href="#">
-        <div class="noticie">
-          <div class="headline">
-            <span class="head-author">Carlos Calixto</span>
-            <h3 class="head-title">
-              Ibespa derrete 2% em reação à reforma do IR; Via (VIIA3) afunda 6%
-            </h3>
-            <span class="head-desc">
-              Takimata eos kasd diam dolor dolor magna sanctus...
-            </span>
-          </div>
-
-          <img src="./public/img/banner_corona.jpg" alt="">
-        </div>
-      </a>
-
-      <a href="#">
-        <div class="noticie">
-          <div class="headline">
-            <span class="head-author">Carlos Calixto</span>
-            <h3 class="head-title">
-              Ibespa derrete 2% em reação à reforma do IR; Via (VIIA3) afunda 6%
-            </h3>
-            <span class="head-desc">
-              Takimata eos kasd diam dolor dolor magna sanctus...
-            </span>
-          </div>
-
-          <img src="./public/img/banner_corona.jpg" alt="">
-        </div>
-      </a>
-    </div>
+  
+  <div class="home-page">    
+    
   </div>
 </body>
 
 </html>
+
+<script defer type='module'>
+  $(document).ready(function(){
+    $.ajax({
+      type: "POST",
+      url: "home/recentViews",
+      success: function(html) {
+        $('.home-page').html(html);
+        console.log('potato');
+      }
+    })
+  });
+
+</script>

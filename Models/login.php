@@ -45,13 +45,14 @@ require_once('connection.php');
         SELECT use_idPk 
         FROM users 
         WHERE use_name = '".$this->name."' 
-        AND use_password = '".md5(md5($this->password))."' 
+        AND use_password = '".md5(md5($this->password))."'
       ";
       $query = $this->conn->query($cmd) or die ($this->conn->error);
       $data = $query->fetch_assoc();
       
       if(empty($data)){
         $this->err[] = "User not Found";
+        $this->err[] = $cmd;
       }
 
       /** View if not existe err, if return = true (login), else (errorLog) */

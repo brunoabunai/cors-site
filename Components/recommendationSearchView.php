@@ -40,7 +40,7 @@
             <img src="<?= $key['user']['avatar']; ?>" alt="avatar">
             <span><?= $key['user']['name']; ?></span>
           </div>
-  
+
           <div class="rec-infos">
             <h3 class="rec-title">
               <?= $key['title']; ?>
