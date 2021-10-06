@@ -39,7 +39,7 @@ $option="admin";
   </button>
   <div class="bt-menu optionsHomeDesktop">
     <a class="opitonActive" href="#">Home</a>
-    <a href="./infosars">Covid Informações</a>
+    <a href="./covidInformations">Covid Informações</a>
     <a href="./recommendationsInfos">Recomendações</a>
   </div>
 

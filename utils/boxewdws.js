@@ -248,7 +248,7 @@ function constructorBox(op) {
                     <svg class="close" onclick="makeProcessToRemoveBox()" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="transform: ;msFilter:;"><path d="m16.192 6.344-4.243 4.242-4.242-4.242-1.414 1.414L10.535 12l-4.242 4.242 1.414 1.414 4.242-4.242 4.243 4.242 1.414-1.414L13.364 12l4.242-4.242z"></path></svg>
                   </div>
                     <a href="./home">Home</a>
-                    <a href="./infosars">Covid Informações</a>
+                    <a href="./covidInformations">Covid Informações</a>
                     <a href="./recommendationsInfos">Recomendações</a>
                 </div>
             `;

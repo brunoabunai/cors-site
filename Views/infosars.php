@@ -41,7 +41,7 @@
   </div>
   <div class="infosars-page">
 
-    <a href="./preventions">
+    <a href="./covidInformations/preventions">
       <div class="preventions-page">
         <div class="prevention-box">
           <div class="box-firstLine">
@@ -52,7 +52,7 @@
       </div>
     </a>
 
-    <a href="./symptoms">
+    <a href="./covidInformations/symptoms">
       <div class="symptoms-page">
         <div class="symptoms-box">
           <div class="box-firstLine">
