@@ -16,6 +16,7 @@ require_once('connection.php');
     private $password;
     private $confirmPassword;
     private $avatar;
+    private $type;
 
     public function __construct(){
       $this->err = array();
@@ -87,7 +88,7 @@ require_once('connection.php');
     /**
      * Set users var from receipt of data
      */
-    public function setUserInformations($name, $password, $confirmPassword, $avatar = ''){
+    public function setUserInformations($name, $password, $confirmPassword, $avatar = '', $type = 1){
       while((strpos($name, "  ") != 0)){ //Enquanto existir doble space
         (strpos($name, "  ") != 0) ? $name = $this->removeDoubleSpace($name) : $name = $name;
       }
@@ -97,6 +98,7 @@ require_once('connection.php');
       $this->password = $password;
       $this->confirmPassword = $confirmPassword;
       $this->avatar = $avatar;
+      $this->type = $type;
 
       /**
        * Agora com as sessions é possível remover as variaveis de users
@@ -130,7 +132,7 @@ require_once('connection.php');
                                       use_password,
                                       use_avatar
                                     ) VALUES (
-                                      '".(2)."',
+                                      '".$this->type."',
                                       '".$this->name."',
                                       '".md5(md5($this->password))."',
                                       '".$this->avatar."'
