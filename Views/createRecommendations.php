@@ -8,7 +8,7 @@
     <style>
       <?php include_once('./styles/createPosts.css'); ?>
     </style>
-    <title>Recommendations</title>
+    <title>Criar Recomendação</title>
   </head>
 
   <body>

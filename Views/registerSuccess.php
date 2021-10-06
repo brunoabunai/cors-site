@@ -15,6 +15,7 @@
       <style>
         <?php include_once('./styles/registerSuccess.css'); ?>
       </style>
+      <title>Registrado com Sucesso</title>
   </head>
 
   <body>

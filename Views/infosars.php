@@ -20,7 +20,7 @@
   <style>
     <?php include_once('styles/infosars.css'); ?>
   </style>
-  <title>Home</title>
+  <title>Informações Sobre COVID2019</title>
 </head>
 
 <body>

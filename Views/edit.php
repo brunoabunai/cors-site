@@ -8,7 +8,7 @@
     <style>
       <?php include_once('./styles/edit.css'); ?>
     </style>
-    <title>Edit</title>
+    <title>Editar Usuário</title>
   </head>
 
   <body>

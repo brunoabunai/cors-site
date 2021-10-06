@@ -7,7 +7,7 @@
     <style>
       <?php include_once('./styles/404.css'); ?>
     </style>
-    <title>Error page</title>
+    <title>Erro</title>
   </head>
 
   <body>

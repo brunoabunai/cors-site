@@ -22,7 +22,7 @@ $option="admin";
   <style>
     <?php include_once('styles/recommendationsInfos.css'); ?>
   </style>
-  <title>Home</title>
+  <title>Recomendações</title>
 </head>
 
 <body>

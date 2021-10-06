@@ -20,7 +20,7 @@
   <style>
     <?php include_once('styles/registerMember.css'); ?>
   </style>
-  <title>Member</title>
+  <title>Registre-se</title>
 </head>
 
 <body>

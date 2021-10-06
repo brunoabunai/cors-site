@@ -20,7 +20,7 @@ unset(
   <style>
     <?php include_once('styles/unplugged.css'); ?>
   </style>
-  <title>Home</title>
+  <title>Desconectado</title>
 </head>
 
 <body>

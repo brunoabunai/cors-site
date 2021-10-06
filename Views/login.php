@@ -12,7 +12,7 @@
   <style>
     <?php include_once('./styles/login.css'); ?>
   </style>
-  <title>Login</title>
+  <title>Loge-se</title>
 </head>
 
 <body>

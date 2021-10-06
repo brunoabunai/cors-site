@@ -33,7 +33,7 @@ $position = isset($pos) ? $pos : '../';
   <style>
     <?php include_once('styles/success.css'); ?>
   </style>
-  <title>Sucess</title>
+  <title>Sucesso</title>
 </head>
 
 <body>

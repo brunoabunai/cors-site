@@ -8,7 +8,7 @@
     <style>
       <?php include_once('./styles/register.css'); ?>
     </style>
-    <title>Register</title>
+    <title>Registrar Admin</title>
   </head>
 
   <body>

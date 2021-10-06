@@ -8,7 +8,7 @@
     <style>
       <?php include_once('./styles/createPosts.css'); ?>
     </style>
-    <title>Create Posts</title>
+    <title>Criar Postagem</title>
   </head>
 
   <body>
