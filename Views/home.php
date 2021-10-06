@@ -23,6 +23,7 @@ $option = "admin";
     <?php include_once('styles/home.css'); ?>
   </style>
   <title>Home</title>
+  
 </head>
 
 <body>

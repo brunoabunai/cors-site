@@ -18,6 +18,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <?php include "cssm.php" ?>
+    <link rel="shortcut icon" type="imagex/png" href="./public/img/covid.png">
     
 
   </head>
