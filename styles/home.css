@@ -119,6 +119,13 @@
   display: none;
 }
 
+.logo{
+  position: absolute;
+  top: 4.5rem;
+  left: 2rem;
+  color: var(--title-animed);
+}
+
 @media (min-width: 1080px) {
   .home-page .title {
     margin-top: 7.3rem;
@@ -178,6 +185,9 @@
   }
   .optionsHomeDesktop .opitonActive {
     font-weight: 700;
-    text-decoration: underline;
+  }
+
+  .logo{
+    left: 5rem;
   }
 }

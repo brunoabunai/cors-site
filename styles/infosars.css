@@ -41,10 +41,8 @@
 }
 
 .preventions-page {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  margin-left: 2rem;
+  
 }
 
 .anc-back {
@@ -54,7 +52,7 @@
 }
 
 .preventions-page .prevention-box {
-  margin-top: 8.5rem;
+  margin-top: 7.3rem;
   width: 90%;
   padding: 1rem;
   border-radius: 0.5rem;
@@ -80,16 +78,16 @@
 }
 
 @media (min-width: 800px) {
+  .preventions-page {
+    margin-left: 5rem;
+  }
   .preventions-page .prevention-box {
     max-width: 70%;
   }
 }
 
 .symptoms-page {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  margin-left: 2rem;
 }
 
 .symptoms-page ul {
@@ -128,7 +126,17 @@
   width: 5rem;
 }
 
+.logo{
+  position: absolute;
+  top: 4.5rem;
+  left: 2rem;
+  color: var(--title-animed);
+}
+
 @media (min-width: 900px) {
+  .symptoms-page{
+    margin-left: 5rem;
+  }
   .symptoms-page .symptoms-box {
     max-width: 70%;
   }
@@ -160,7 +168,7 @@
   }
   .optionsHomeDesktop .opitonActive {
     font-weight: 700;
-    text-decoration: underline;
+   
   }
 
   .preventions-page .prevention-box {
@@ -168,5 +176,8 @@
   }
   .symptoms-page .symptoms-box {
     max-width: 50%;
+  }
+  .logo{
+    left: 5rem;
   }
 }

@@ -34,6 +34,9 @@
       <path d="M21 16H3V14H21V16ZM21 10H3V8H21V10Z" fill="var(--text-color)"></path>
     </svg>
   </button>
+  <div class="logo">
+    <h4>CORS</h4>
+  </div>
   <div class="bt-menu optionsHomeDesktop">
     <a href="./home">Home</a>
     <a class="opitonActive" href="#">Covid Informações</a>

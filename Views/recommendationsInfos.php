@@ -42,6 +42,9 @@ $option="admin";
     <a href="./covidInformations">Covid Informações</a>
     <a class="opitonActive" href="./recommendationsInfos">Recomendações</a>
   </div>
+  <div class="logo">
+    <h4>CORS</h4>
+  </div>
 
   <!-- init of page -->
 

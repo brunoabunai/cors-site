@@ -33,11 +33,11 @@
 }
 
 .recommendationsInfos-page {
-  padding: 1rem;
+  margin-left: 2rem;
 }
 
 .recommendationsInfos-page h2 {
-  margin-top: 8.5rem;
+  margin-top: 7.3rem;
   margin-bottom: 1rem;
   font-size: 1.8rem;
 }
@@ -71,10 +71,17 @@
   background-color: var(--secondary-green);
   font-weight: 500;
 }
+.logo{
+  position: absolute;
+  top: 4.5rem;
+  left: 2rem;
+  color: var(--title-animed);
+}
 
 @media (min-width: 900px) {
   .recommendationsInfos-page {
     max-width: 50rem;
+    margin-left: 5rem;
   }
   .bt-ops {
     position: absolute;
@@ -104,6 +111,8 @@
   }
   .optionsHomeDesktop .opitonActive {
     font-weight: 700;
-    text-decoration: underline;
+  }
+  .logo{
+    left: 5rem;
   }
 }
