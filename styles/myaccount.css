@@ -1,0 +1,71 @@
+
+.bt-ops {
+  position: absolute;
+  top: 4rem;
+  right: 2rem;
+  background-color: transparent;
+  border: 0;
+}
+.boxGear {
+  top: 5.8rem;
+  right: 3.8rem;
+}
+
+.myaccount-page{
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.myaccount-page .infos-session {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+.myaccount-page .infos-session input{
+  border: 0.1rem solid #e4e4e4;
+  background-color: #fbfbfb;
+  margin-bottom: 0.2rem;
+  width: 100%;
+  padding: 1.2rem;
+  border-radius: 0.5rem;
+  color: var(--null);
+  font-weight: 500;
+  font-family: sans-serif;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+.myaccount-page .infos-session label{
+  margin-top: 0.3rem;
+}
+
+.myaccount-page a{
+  margin-top: 1.1rem;
+  background-color: var(--secondary-green);
+  color: #fff;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.myaccount-page a svg{
+  margin-right: 0.3rem;
+}
+
+@media(min-width:900px){
+  .myaccount-page .infos-session {
+    width: 40%;
+  }
+  
+}
