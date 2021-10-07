@@ -52,14 +52,16 @@ require_once ('connection.php');
       $row = $limitQueryPages->fetch_assoc();
 
       $output = '
-      <label>Total de Registros - '.$totalData.'</label>
+      <!-- <label>Total de Registros - '.$totalData.'</label>-->
       <table class="search-users">
         <tr class="head-users">
-          <th class="id">Type</th>
-
-          <th>Avatar</th>
-          <th>Nome de usuário</th>
+          
           <th class="id">ID</th>
+          <th>Avatar</th>
+          <th>Usuário</th>
+          
+          <th class="id">Tipo</th>
+          
 
           <th class="options">Opções</th>
         </tr>
@@ -69,11 +71,12 @@ require_once ('connection.php');
         foreach ($limitQueryPages as $row) {
           $output .= '
           <tr class="column-user">
-            <td class="id">'.$this->getTypePerId($row["typ_IdFk"]).'</td>
-
+            
+            <td class="id">'.$row["typ_IdFk"].'</td>
             <td><img src="'.$row["use_avatar"].'"/></td>
             <td>'.$row["use_name"].'</td>
-            <td class="id">'.$row["typ_IdFk"].'</td>
+            
+            <td class="id">'.$this->getTypePerId($row["typ_IdFk"]).'</td>
 
             <td class="options-user options">
               <button class="btn-delete-user">
@@ -96,7 +99,7 @@ require_once ('connection.php');
       } else {
         $output .= '
         <tr>
-          <td colspan="4" align="center">No Data Found</td>
+          <td colspan="4" align="center" style="color:var(--danger);">Usuário Não Encontrado</td>
         </tr>
         </table>
         ';
@@ -105,102 +108,117 @@ require_once ('connection.php');
       /** Final das configurações básicas */
 
       /** -------------------------------- */
-      // $totalLinks = ceil($totalData / $limit);
-      // $pageArray = array();
-      // $previewsLink = '';
-      // $nextLink = '';
-      // $pageLink = '';
+      $totalLinks = ceil($totalData / $limit);
+      $pageArray = array();
+      $previewsLink = '';
+      $nextLink = '';
+      $pageLink = '';
 
-      // /** Iniciao da paginação */
-      // if($totalLinks > 4){
-      //   if($pages < 5){
-      //     for($count = 1; $count <= 5; $count++){
-      //       $pageArray[] = $count;
-      //     }
-      //     $pageArray[] = '...';
-      //     $pageArray[] = $totalLinks;
+      /** Iniciao da paginação */
+      if($totalLinks > 4){
+        if($pages < 5){
+          for($count = 1; $count <= 5; $count++){
+            $pageArray[] = $count;
+          }
+          $pageArray[] = '...';
+          $pageArray[] = $totalLinks;
 
-      //   }else{
-      //     $endLimit = $totalLinks - 5;
-      //     if($pages > $endLimit){
-      //       $pageArray[] = 1;
-      //       $pageArray[] = '...';
-      //       for($count = $endLimit; $count <= $totalLinks; $count++){
-      //         $pageArray[] = $count;
-      //       }
+        }else{
+          $endLimit = $totalLinks - 5;
+          if($pages > $endLimit){
+            $pageArray[] = 1;
+            $pageArray[] = '...';
+            for($count = $endLimit; $count <= $totalLinks; $count++){
+              $pageArray[] = $count;
+            }
 
-      //     }else{
-      //       $pageArray[] = 1;
-      //       $pageArray[] = '...';
-      //       for($count = $pages - 1; $count <= $pages + 1; $count++){
-      //         $pageArray[] = $count;
-      //       }
-      //       $pageArray[] = '...';
-      //       $pageArray[] = $totalLinks;
+          }else{
+            $pageArray[] = 1;
+            $pageArray[] = '...';
+            for($count = $pages - 1; $count <= $pages + 1; $count++){
+              $pageArray[] = $count;
+            }
+            $pageArray[] = '...';
+            $pageArray[] = $totalLinks;
 
-      //     }
-      //   }
+          }
+        }
 
-      // }else{
-      //   for($count = 1; $count <= $totalLinks; $count++){
-      //     $pageArray[] = $count;
-      //   }
+      }else{
+        for($count = 1; $count <= $totalLinks; $count++){
+          $pageArray[] = $count;
+        }
 
-      // }
-      // /** Paginação final */
+      }
+      /** Paginação final */
 
-      // /** --------------------- */
+      /** --------------------- */
 
-      // /** Inicio do controle da paginação */
+      /** Inicio do controle da paginação */
 
-      // for($count = 0; $count < count($pageArray); $count++){
-      //   if($pages == $pageArray[$count]){
-      //     $pageLink .= '
+      for($count = 0; $count < count($pageArray); $count++){
+        if($pages == $pageArray[$count]){
+          $pageLink .= '
           
-      //       <a class="" href="#">'.$pageArray[$count].'</a>
+            <a class="" href="#">'.$pageArray[$count].'</a>
           
-      //     ';
+          ';
     
-      //     $previousId = $pageArray[$count] - 1;
-      //     if($previousId > 0){
-      //       $previewsLink = '<a class="" href="javascript:void(0)" data-page_number="'.$previousId.'">Previous</a>';
-      //     }else{
-      //       $previewsLink = '
+          $previousId = $pageArray[$count] - 1;
+          if($previousId > 0){
+            $previewsLink = '<a class="" href="javascript:void(0)" data-page_number="'.$previousId.'">Previous</a>';
+          }else{
+            $previewsLink = '
             
-      //       <a class="" href="#">Previous</a>
-      //       ';
-      //     }
+            <a class="" href="#">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15.535 3.515L7.05005 12L15.535 20.485L16.95 19.071L9.87805 12L16.95 4.929L15.535 3.515Z" fill="var(--text-color)"></path>
+              </svg>
+            
+            </a>
+            ';
+          }
     
-      //     $nextId = $pageArray[$count] + 1;
-      //     if($nextId > $totalLinks){
-      //       $nextLink = '
+          $nextId = $pageArray[$count] + 1;
+          if($nextId > $totalLinks){
+            $nextLink = '
             
-      //         <a class="page-link" href="#">Next</a>
+              <a class="page-link" href="#">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8.46495 20.485L16.95 12L8.46495 3.515L7.04995 4.929L14.122 12L7.04995 19.071L8.46495 20.485Z" fill="var(--text-color)"></path>
+                </svg>
+              
+              </a>
            
-      //         ';
-      //     }else{
-      //       $nextLink = '<a class="page-link" href="javascript:void(0)" data-page_number="'.$nextId.'">Next</a>';
-      //     }
-      //   }else{
-      //     if($pageArray[$count] == '...'){
-      //       $pageLink .= '
-      //       <li class="page-item disabled">
-      //           <a class="page-link" href="#">...</a>
-      //       </li>
-      //       ';
-      //     }else{
-      //       $pageLink .= '
-      //       <li class=""><a class="" href="javascript:void(0)" data-page_number="'.$pageArray[$count].'">'.$pageArray[$count].'</a></li>
-      //       ';
-      //     }
-      //   }
-      // }
+              ';
+          }else{
+            $nextLink = '<a class="page-link" href="javascript:void(0)" data-page_number="'.$nextId.'">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8.46495 20.485L16.95 12L8.46495 3.515L7.04995 4.929L14.122 12L7.04995 19.071L8.46495 20.485Z" fill="var(--text-color)"></path>
+              </svg>
+            
+            </a>';
+          }
+        }else{
+          if($pageArray[$count] == '...'){
+            $pageLink .= '
+            <li class="page-item disabled">
+                <a class="page-link" href="#">...</a>
+            </li>
+            ';
+          }else{
+            $pageLink .= '
+            <li class=""><a class="" href="javascript:void(0)" data-page_number="'.$pageArray[$count].'">'.$pageArray[$count].'</a></li>
+            ';
+          }
+        }
+      }
 
-      // $output .= $previewsLink . $pageLink . $nextLink;
-      // $output .= '
-      //   </>
-      // </div>
-      // ';
+      $output .= "<div class='pagination'> ". $previewsLink . $pageLink . $nextLink . "</div>";
+      $output .= '
+        </>
+      </div>
+      ';
 
       echo $output;
     }
@@ -304,5 +322,3 @@ require_once ('connection.php');
     }
 
   }
-
-?>
