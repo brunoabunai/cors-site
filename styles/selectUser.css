@@ -12,7 +12,7 @@
 }
 
 .search {
-  position: absolute;
+ 
   left: 0rem;
   padding: 1rem;
   border-radius: 0rem 0.8rem 0.8rem 0rem;
@@ -118,32 +118,6 @@ table .options {
 }
 
 @media(min-width:900px){
-  .search {
-    left: 27.5%;
-   
-    border-radius: 0.8rem;
-    top: 4rem;
-
-  }
-
-  .search p {
-    margin-right: 2rem;
-    font-size: 1.2rem;
-  }
-
-  table {
-    margin-top: 10.5rem;
-  }
-}
-
-@media(min-width:1300px){
-  .search {
-    left: 28.5%;
-   
-    border-radius: 0.8rem;
-    top: 4rem;
-
-  }
 
   .search p {
     margin-right: 2rem;
