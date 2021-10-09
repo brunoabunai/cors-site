@@ -5,6 +5,7 @@ require_once('connection.php');
 
     private $conn;
     private $err;
+    private $help;
 
     private $user;
     private $title;
@@ -14,6 +15,7 @@ require_once('connection.php');
     public function __construct() {
       $this->err = array();
       $this->conn = connection::getConnection();
+      $this->help = new auxiliary();
     }
 
     /**
@@ -53,20 +55,11 @@ require_once('connection.php');
     }
 
     /**
-     * Remove double spaces from string
-     */
-    private function removeDoubleSpace($something) {
-      while(strpos($something, "  ") != 0){
-        return str_replace("  ", " ", $something);
-      }
-    }
-
-    /**
      * Set var to informations
      */
     public function setRecommendationsInformations($title, $description, $user = 1) {
-      (strpos($title, "  ") != 0) ? $title = $this->removeDoubleSpace($title) : $title = $title;
-      (strpos($description, "  ") != 0) ? $description = $this->removeDoubleSpace($description) : $description = $description;
+      (strpos($title, "  ") != 0) ? $title = $this->help->removeDoubleSpace($title) : $title = $title;
+      (strpos($description, "  ") != 0) ? $description = $this->help->removeDoubleSpace($description) : $description = $description;
 
       date_default_timezone_set('America/Sao_Paulo');
       $date = date("Y-m-d H:i:S");
@@ -104,6 +97,83 @@ require_once('connection.php');
         'previousPage' => 'home',
         'buttonText' => 'Home'
       );
+    }
+
+    /** ------------------------------------------------------ */
+
+    /**
+     * Lista as recomendações apartir de 1 pesquisa
+     */
+    public function getRecommendationSearch() {
+      /** Variaveis de controle */
+      $limit = 5;
+      $action = $_POST['action'];
+  
+      if($_POST['actualPage'] > 1){
+        $start = (($_POST['actualPage'] - 1) * $limit);
+        $pages = $_POST['actualPage'];
+      } else {
+        $start = 0;
+        $page = 1;
+      }
+  
+      /** Get (recommendations) from database */
+      $query = " SELECT rec_idPk, use_idFk, rec_title, rec_description 
+                 FROM recommendations ";
+  
+      //if (action) not null, then execute filter from search to find caracters
+      ($action != '') ? (
+        $query.= ' 
+          WHERE rec_title LIKE "%'.str_replace(' ', '%', $action).'%" 
+          OR rec_description LIKE "%'.str_replace(' ', '%', $action).'%" 
+        '
+      ) : null;
+      $query .= ' ORDER BY rec_title DESC ';
+  
+      //Limit pulls from database
+      $queryLimit = $query . 'LIMIT ' . $start . ', ' . $limit;
+  
+      $querys = $this->conn->query($query) or die ($this->conn->error); //all pull
+      $totalData = $querys->num_rows;
+  
+      $limitQueryPages = $this->conn->query($queryLimit) or die ($this->conn->error);
+      // $this->data = $limitQueryPages->fetch_assoc();
+  
+      if ($totalData > 0) {
+        foreach ($limitQueryPages as $row) {
+          $this->data[] = [
+            'id' => $row['rec_idPk'],
+            'user' => $this->help->getUserPerId($row['use_idFk']),
+            'title' => $row['rec_title'],
+            'description' => $row['rec_description']
+          ];
+        }
+  
+        return array('recommendations' => $this->data);
+      } else {
+        return ['recommendations' => 'No data Found'];
+      }
+    }
+
+    /** ------------------------------------------------------ */
+
+    /**
+     * Select Recommendation from id
+     */
+    public function recommendationFromId($id){
+      $data = array();
+      $cmd = $this->conn->query(' SELECT use_idFk, rec_title, rec_description
+                                  FROM recommendations 
+                                  Where rec_idPk = '.$id.'
+                                ') or die ($this->conn->error);
+      $data = $cmd->fetch_assoc();
+      // return $data;
+      return [
+        "user" => $this->help->getUserPerId($data['use_idFk']),
+        "title" => $data['rec_title'],
+        "description" => $data['rec_description'],
+        "content" => 'No duo no sed dolores stet, gubergren amet kasd sit sit lorem. Takimata ut et et sadipscing sea. No sit elitr accusam ipsum nonumy clita sanctus, diam sed ipsum voluptua ut rebum labore sed. Ipsum voluptua at aliquyam sed sanctus no sea no, diam sed et eirmod tempor tempor ea clita. Elitr ea ut kasd duo diam sanctus, no labore takimata sit at lorem. Sed tempor stet et ipsum sea. Gubergren diam ut sed lorem voluptua ea dolor labore, sed dolor accusam lorem at gubergren voluptua invidunt diam, nonumy invidunt sed amet erat et accusam takimata, et sit magna justo.'
+      ];
     }
 
   }

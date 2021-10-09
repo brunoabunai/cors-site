@@ -3,7 +3,15 @@
   Class recommendationsController extends Controller{
 
     public function index(){
-      $this->loadTemplate('recommendations');
+      $this->loadTemplate('recommendationsList');
+    }
+
+    public function infos(){
+      $this->loadTemplate('recommendationsInfos');
+    }
+
+    public function create(){
+      $this->loadTemplate('createRecommendations');
     }
 
     public function submit(){
@@ -17,6 +25,22 @@
         array_shift($data);
         $this->loadTemplate('errorLog', $data);
       }
+    }
+
+    /** Pull */
+    public function search(){
+      $s = new recommendations();
+      $data = $s -> getRecommendationSearch();
+
+      $this->loadTemplate('recommendationSearchView', $data);
+    }
+    
+    /** Select */
+    public function getRecommendation($id){
+      $s = new recommendations();
+      $data = $s -> recommendationFromId($id);
+
+      $this->loadTemplate('recommendations', $data);
     }
 
   }

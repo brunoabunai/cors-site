@@ -11,7 +11,7 @@
     </div>
 
     <div class="news">
-      <?php foreach ($recommendations as $row => $value) { ?>
+      <?php foreach ($posts as $row => $value) { ?>
 
         <?php if ($row == 0) { ?>
 

@@ -65,7 +65,7 @@ $option="admin";
     <span class="subtitle secondSubtitle">
       Basta um titulo legal e um textinho sobre o que quer quer falemos nas nossas matérias, é muito simples!
     </span> <br>
-    <a href="./createRecommendations">Mandar Uma Recomendação Agora!</a>
+    <a href="../recommendations/create">Mandar Uma Recomendação Agora!</a>
   </div>
 </body>
 

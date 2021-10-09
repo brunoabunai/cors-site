@@ -41,7 +41,7 @@ $option = "admin";
   <div class="bt-menu optionsHomeDesktop">
     <a class="opitonActive" href="#">Home</a>
     <a href="./covidInformations">Covid Informações</a>
-    <a href="./recommendationsInfos">Recomendações+</a>
+    <a href="./recommendations/infos">Recomendações+</a>
   </div>
   <div class="logo">
     <h4>CORS</h4>
@@ -65,7 +65,6 @@ $option = "admin";
       url: "home/recentViews",
       success: function(html) {
         $('.home-page').html(html);
-        console.log('potato');
       }
     })
   });

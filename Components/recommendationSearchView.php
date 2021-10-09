@@ -29,12 +29,12 @@
 
     <?php foreach ($recommendations as $key) {
     //  echo '<pre>';
-    //  print_r($key['user']['name']);
+    //  print_r($key);
     //  echo '</pre>';
     ?>
 
 
-      <a href="./recommendations">
+      <a href="./recommendations/getRecommendation/ <?= $key['id']; ?>">
         <div class="rec rec-one">
           <div class="rec-author">
             <img src="<?= $key['user']['avatar']; ?>" alt="avatar">

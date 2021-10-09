@@ -21,24 +21,24 @@
 
     <div class="rec">
       <div class="rec-author">
-        <img src="./public/img/cv2.png" alt="avatar">
-        <span>José clebino</span>
+        <img src="<?= $user['avatar']; ?>" alt="avatar">
+        <span><?= $user['name']; ?></span>
       </div>
 
       <div class="rec-infos">
 
         <h3 class="rec-title">
-          Sobre os ursos polares
+          <?= $title; ?>
         </h3>
         <span class="rec-desc">
-          Diam lorem takimata accusam stet et sed sanctus diam at aliquyam...
+        <?= mb_strimwidth(rtrim(($description)), 0, 83, "..."); ?>
         </span>
       </div>
     </div>
 
     <div class="rec-content">
       <p>
-        No duo no sed dolores stet, gubergren amet kasd sit sit lorem. Takimata ut et et sadipscing sea. No sit elitr accusam ipsum nonumy clita sanctus, diam sed ipsum voluptua ut rebum labore sed. Ipsum voluptua at aliquyam sed sanctus no sea no, diam sed et eirmod tempor tempor ea clita. Elitr ea ut kasd duo diam sanctus, no labore takimata sit at lorem. Sed tempor stet et ipsum sea. Gubergren diam ut sed lorem voluptua ea dolor labore, sed dolor accusam lorem at gubergren voluptua invidunt diam, nonumy invidunt sed amet erat et accusam takimata, et sit magna justo.
+        <?= $content ?>
       </p>
 
     </div>

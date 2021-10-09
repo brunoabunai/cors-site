@@ -62,7 +62,7 @@
     function loadDatas(page, query = '') {
       $.ajax({
         type: "POST",
-        url: 'recommendationsList/search/',
+        url: 'recommendations/search/',
         data: {
           actualPage: page,
           action: query
@@ -75,7 +75,7 @@
         }
       });
 
-    }
+    };
 
     $('.search').keyup(function() {
       let query = $('.search').val();

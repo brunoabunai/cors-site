@@ -35,7 +35,7 @@
 
       <div class="main">
 
-        <form name="form_recommendations" action="./recommendations/submit" method="post">
+        <form name="form_recommendations" action="../recommendations/submit" method="post">
           <input style="display:none;" type="text" class="rec_register" name="use_idFk" placeholder="Veremos..." disabled value="' . $_SESSION["logid"] . '" />
           
           <input type="text" class="rec_register" name="rec_title" placeholder="Título da recomendação" value="<?php echo isset($_SESSION['pos_title']) ? $_SESSION['pos_title'] : '' ?>" />

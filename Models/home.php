@@ -28,7 +28,7 @@ require_once('connection.php');
         ];
       }
 
-      return ['recommendations' => $this->data];
+      return ['posts' => $this->data];
     }
 
   }

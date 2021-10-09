@@ -36,23 +36,6 @@
 
       <div class="users">
 
-        <?php
-        // for($i = 0; $i < count($this->data[0]); $i++) {
-        ?>
-
-        <!-- <a href="<?php echo 'editUser/' . str_replace(" ", "-", $this->data[0][$i]['use_name']); ?>">
-          <div>
-            <h3><?php //echo $this->data[0][$i]['use_name']; 
-                ?></h3>
-            <img src="<?php //echo $this->data[0][$i]['use_avatar']; 
-                      ?>" />
-          </div>
-        </a> -->
-
-        <?php
-        // }
-        ?>
-
       </div>
     </div>
 
@@ -80,7 +63,6 @@
         // },
         success: function(html) {
           $('.users').html(html);
-          // console.log('success');
         },
         error: function(html) {
           console.log('error');

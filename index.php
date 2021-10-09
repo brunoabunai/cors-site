@@ -27,6 +27,8 @@
     <!-- <script defer src="../node_modules/jquery/dist/jquery.js"></script> -->
     
     <?php include_once("jsm.php") ?>
+    
+    <!-- <script defer src="../node_modules/jquery/dist/jquery.js"></script> -->
     <script defer src="./node_modules/jquery/dist/jquery.js"></script>
   </body>
 </html>
