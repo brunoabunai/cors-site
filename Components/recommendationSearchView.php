@@ -27,13 +27,18 @@
   </head>
   <body>
 
-    <?php foreach ($recommendations as $key) {
-    //  echo '<pre>';
-    //  print_r($key);
-    //  echo '</pre>';
+    <?php
+    // if(isset($recommendations) && count($recommendations) != 0){
+      foreach ($recommendations as $key) {
+      //  echo '<pre>';
+      //  print_r($key);
+      //  echo '</pre>';
+
+      if($recommendations[0] == 'No data Found'){
     ?>
-
-
+        <h1><?= $key; ?></h1>
+      <?php } ?>
+    
       <a href="./recommendations/getRecommendation/ <?= $key['id']; ?>">
         <div class="rec rec-one">
           <div class="rec-author">
@@ -60,7 +65,10 @@
         </div>
       </a>
 
-    <?php } ?>
+    <?php
+      }
+    // }
+    ?>
 
     <!-- <div class="rec-list"> -->
     <!-- </div> -->

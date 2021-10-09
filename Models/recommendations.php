@@ -151,7 +151,7 @@ require_once('connection.php');
   
         return array('recommendations' => $this->data);
       } else {
-        return ['recommendations' => 'No data Found'];
+        return ['recommendations' => ['No data Found']];
       }
     }
 
