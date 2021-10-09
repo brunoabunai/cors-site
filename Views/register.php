@@ -36,7 +36,7 @@
 
       <div class="main">
 
-        <form name="form_register" action="./register/submit" method="POST">
+        <form name="form_register" action="./submitAdmin" method="POST">
           <input type="text" name="reg_name" placeholder="Usuário" value="<?php echo isset($_SESSION['reg_name']) ? $_SESSION['reg_name'] : ''; ?>" />
           <input type="password" name="reg_password" placeholder="Senha" value="<?php echo isset($_SESSION['reg_password']) ? $_SESSION['reg_password'] : ''; ?>" />
           <input type="password" name="reg_confirmPassword" placeholder="Confirme sua senha" value="<?php echo isset($_SESSION['reg_confirmPassword']) ? $_SESSION['reg_confirmPassword'] : ''; ?>" />

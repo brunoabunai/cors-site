@@ -47,13 +47,13 @@
     </div>
 
     <div class="main">
-      <form name="form_login" action="./src/components/login.php" method="POST">
+      <form name="form_register" action="./submitMember" method="POST">
         <label>Digite um Nome de Usuário:</label>
-        <input name="log_name" type="text">
+        <input name="reg_name" type="text">
         <label>Digite uma Senha:</label>
-        <input name="log_password" type="password">
+        <input name="reg_password" type="password">
         <label>Confirme sua senha:</label>
-        <input name="log_password" type="password">
+        <input name="reg_confirmPassword" type="password">
         <input type="submit" id="btn" class="btn-begin opacty-button" value="Completar Cadastro">
       </form>
 

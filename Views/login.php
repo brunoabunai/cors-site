@@ -47,7 +47,7 @@
         <input type="submit" id="btn" class="btn-begin opacty-button" value="Entrar Na Sua Conta">
         <span class="toRegisterMember">
           Não tem uma conta&#63;
-          <a href="./registerMember">
+          <a href="./register/member">
             Clique aqui.
           </a>
         </span>

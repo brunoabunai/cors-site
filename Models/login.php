@@ -52,7 +52,6 @@ require_once('connection.php');
       
       if(empty($data)){
         $this->err[] = "User not Found";
-        $this->err[] = $cmd;
       }
 
       /** View if not existe err, if return = true (login), else (errorLog) */

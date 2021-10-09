@@ -8,6 +8,7 @@ require_once('connection.php');
      */
     private $conn;
     private $err;
+    private $help;
 
     /**
      * User informations vars
@@ -21,6 +22,7 @@ require_once('connection.php');
     public function __construct(){
       $this->err = array();
       $this->conn = connection::getConnection();
+      $this->help = new auxiliary();
     }
 
     /**
@@ -58,41 +60,16 @@ require_once('connection.php');
         $this->err[] = "Usuário já cadastrado";
       }
 
-      /**
-       * Visualiza se tem alguma falha nas informações do usuário
-       */
-      if(count($this->err) == 0){ //Vê se passou pela verificação...
-        // $this->setUserInformations($this->name, $this->password, $this->avatar);
-        return [true, $this->insertRegister()];
-      } else {
-        return [false, $this->err, 'previousPage' => 'register'];
-      }
-    }
-
-    /**
-     * Remove all double spaces from (something)
-     */
-    private function removeDoubleSpace($something){
-      while(strpos($something, "  ") != 0){
-        return str_replace("  ", " ", $something);
-      }
-    }
-
-    /**
-     * Remove all accents from (string)
-     */
-    private function removeAcentos($string){
-      return preg_replace(array("/(á|à|ã|â|ä)/","/(Á|À|Ã|Â|Ä)/","/(é|è|ê|ë)/","/(É|È|Ê|Ë)/","/(í|ì|î|ï)/","/(Í|Ì|Î|Ï)/","/(ó|ò|õ|ô|ö)/","/(Ó|Ò|Õ|Ô|Ö)/","/(ú|ù|û|ü)/","/(Ú|Ù|Û|Ü)/","/(ñ)/","/(Ñ)/","/(ç)/","/(Ç)/"),explode(" ","a A e E i I o O u U n N c C"),$string);
     }
 
     /**
      * Set users var from receipt of data
      */
-    public function setUserInformations($name, $password, $confirmPassword, $avatar = '', $type = 1){
+    private function setUserInformations($name, $password, $confirmPassword, $avatar = '', $type = 1){
       while((strpos($name, "  ") != 0)){ //Enquanto existir doble space
-        (strpos($name, "  ") != 0) ? $name = $this->removeDoubleSpace($name) : $name = $name;
+        (strpos($name, "  ") != 0) ? $name = $this->help->removeDoubleSpace($name) : $name = $name;
       }
-      $name = $this->removeAcentos($name);
+      $name = $this->help->removeAccents($name);
 
       $this->name = trim($name);
       $this->password = $password;
@@ -120,7 +97,7 @@ require_once('connection.php');
                                       use_name,
                                       use_password
                                     ) VALUES (
-                                      '".(2)."',
+                                      '".$this->type."',
                                       '".$this->name."',
                                       '".md5(md5($this->password))."'
                                     );
@@ -138,12 +115,66 @@ require_once('connection.php');
                                       '".$this->avatar."'
                                     );
                                   ")
+        );
+
+      return [
+        true,
+        array(
+          'text' => $this->name.' Registrado ',
+          'previousPage' => 'login',
+          'buttonText' => 'Logar'
+        )
+      ];
+    }
+
+    private function insertRegisterAdmin(){
+      (strlen($this->avatar) == 0) ? ( //User avatar is empty
+        $cmd = $this->conn->query(" INSERT INTO users(
+                                      typ_idFk,
+                                      use_name,
+                                      use_password
+                                    ) VALUES (
+                                      '".$this->type."',
+                                      '".$this->name."',
+                                      '".md5(md5($this->password))."'
+                                    );
+                                  ")
+      ) : ( //User avatar is not empty
+        $cmd = $this->conn->query(" INSERT INTO users(
+                                      typ_idFk,
+                                      use_name,
+                                      use_password,
+                                      use_avatar
+                                    ) VALUES (
+                                      '".$this->type."',
+                                      '".$this->name."',
+                                      '".md5(md5($this->password))."',
+                                      '".$this->avatar."'
+                                    );
+                                  ")
       );
 
-      return array(
-        'text' => $this->name.' Registrado ',
-        'previousPage' => 'login',
-        'buttonText' => 'Logar'
-      ); //Return (array) name registred
+      return [true, array('name' => $this->name)];
     }
+
+    public function submit($name, $password, $confirmPassword, $avatar = '', $type = 1, $isAdminSubmit = false){
+      $this->setUserInformations($name, $password, $confirmPassword, $avatar = '', $type = 1);
+
+      // return (
+        if($isAdminSubmit){
+          if(count($this->err) == 0){ //Vê se passou pela verificação...
+            return $this->insertRegisterAdmin();
+          } else {
+            return [false, $this->err, 'previousPage' => 'register/administradores'];
+          }
+        } else {
+          if(count($this->err) == 0){ //Vê se passou pela verificação...
+            return $this->insertRegister();
+          } else {
+            return [false, $this->err, 'previousPage' => 'register/member'];
+          }
+        }
+      // );
+    }
+
   }

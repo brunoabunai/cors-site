@@ -26,7 +26,7 @@
 
     <!-- <script defer src="../node_modules/jquery/dist/jquery.js"></script> -->
     
-    <?php include "jsm.php" ?>
+    <?php include_once("jsm.php") ?>
     <script defer src="./node_modules/jquery/dist/jquery.js"></script>
   </body>
 </html>
