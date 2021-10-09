@@ -17,6 +17,17 @@
       $this->loadTemplate('homePostViews', $data);
     }
 
+    public function getPostFromTitle($name){
+      $p = new home();
+      $data = $p -> getPostPerTitle($name);
+
+      // echo "<pre>";
+      // print_r($data);
+      // echo "</pre>";
+
+      $this->loadTemplate('notice', $data);
+    }
+
   }
 
 ?>

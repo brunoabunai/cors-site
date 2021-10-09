@@ -5,7 +5,7 @@ require_once ('connection.php');
     
     private $conn;
     private $err;
-    private $aux;
+    private $help;
     public $data;
 
     private $id, $name, $password;
@@ -14,7 +14,7 @@ require_once ('connection.php');
       $this->conn = connection::getConnection();
       $this->err = array();
       $this->data = array();
-      $this->aux = new auxiliary();
+      $this->help = new auxiliary();
     }
 
     /**
@@ -76,7 +76,7 @@ require_once ('connection.php');
             <td><img src="'.$row["use_avatar"].'"/></td>
             <td>'.$row["use_name"].'</td>
             
-            <td class="id">'.$this->getTypePerId($row["typ_IdFk"]).'</td>
+            <td class="id">'.$this->help->getTypePerId($row["typ_IdFk"]).'</td>
 
             <td class="options-user options">
               <button class="btn-delete-user">
@@ -241,19 +241,6 @@ require_once ('connection.php');
     
     /**
      * ------------------------------------------------------------
-     * Select user from view per id
-     * ------------------------------------------------------------
-     */
-    private function getTypePerId($id) {
-      $cmd = $this->conn->query(' SELECT typ_name 
-                                  FROM types
-                                  WHERE typ_idPk = "'.$id.'" ');
-      $ret = $cmd->fetch_assoc(); //retorno
-      return ($ret['typ_name']);
-    }
-    
-    /**
-     * ------------------------------------------------------------
      * Submit edit from database
      * ------------------------------------------------------------
      */
@@ -290,7 +277,7 @@ require_once ('connection.php');
       if(count($this->err) == 0) {
         return [true, $this->editUserSubmit()];
       } else {
-        return [false, $this->err, 'previousPage' => 'editUser/'.$this->aux->getUserPerId($this->id)['name']];
+        return [false, $this->err, 'previousPage' => 'editUser/'.$this->help->getUserPerId($this->id)['name']];
       }
 
     }

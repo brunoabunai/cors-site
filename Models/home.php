@@ -31,5 +31,24 @@ require_once('connection.php');
       return ['posts' => $this->data];
     }
 
+    /**
+     * Get Post from title
+     */
+    public function getPostPerTitle($title) {
+      $title = str_replace("-", " ", $title);
+      // $data = array();
+      $cmd = $this->conn->query(' SELECT use_idFk, pos_title, pos_description 
+                                  FROM posts
+                                  WHERE pos_title = "'.$title.'" 
+                                ') or die ($this->conn->error);
+      $this->data = $cmd->fetch_assoc();
+
+      return [
+        "user" => $this->help->getUserPerId($this->data['use_idFk']),
+        "title" => $this->data['pos_title'],
+        "description" => $this->data['pos_description']
+      ];
+    }
+
   }
 ?>

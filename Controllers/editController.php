@@ -17,6 +17,9 @@
     public function editUser($nameUser) {
       $u = new selectUser();
       $data = $u->getUserPerName($nameUser);
+
+      // $u = new auxiliary();
+      // $data = $u -> getUserPerName($nameUser);
       
       $this->loadTemplate('edit', $data);
     }

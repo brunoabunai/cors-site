@@ -15,7 +15,7 @@
 
         <?php if ($row == 0) { ?>
 
-        <a href="./notice">
+        <a href="./home/getPostFromTitle/<?= str_replace(" ", "-", $value['title']); ?>">
           <div class="noticie noticieOne">
             <img src="./public/img/banner_corona.jpg" alt="">
 
@@ -38,7 +38,7 @@
 
         <?php } else { ?>
           
-          <a href="#">
+          <a href="./home/getPostFromTitle/<?= str_replace(" ", "-", $value['title']); ?>">
             <div class="noticie">
               <div class="headline">
                 <span class="head-author"><?= $value['user']['name']; ?></span>

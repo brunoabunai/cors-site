@@ -40,6 +40,15 @@ require_once('connection.php');
       ]);
     }
 
+    /** Type */
+    public function getTypePerId($id) {
+      $cmd = $this->conn->query(' SELECT typ_name 
+                                  FROM types
+                                  WHERE typ_idPk = "'.$id.'" ');
+      $ret = $cmd->fetch_assoc(); //retorno
+      return ($ret['typ_name']);
+    }
+
     /** Gerais */
     public function removeDoubleSpace($something) {
       while(strpos($something, "  ") != 0) {
