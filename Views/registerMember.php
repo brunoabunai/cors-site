@@ -24,7 +24,7 @@
 </head>
 
 <body>
-  <a class="anc-back" href="./login">
+  <a class="anc-back" href="../login">
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M6 16V13L22 13V11L6 11L6 8L2 12L6 16Z" fill="#343434"></path>
     </svg>
@@ -49,11 +49,11 @@
     <div class="main">
       <form name="form_register" action="./submitMember" method="POST">
         <label>Digite um Nome de Usuário:</label>
-        <input name="reg_name" type="text">
+        <input name="reg_name" type="text" value="<?php echo isset($_SESSION['reg_name']) ? $_SESSION['reg_name'] : ''; ?>" />
         <label>Digite uma Senha:</label>
-        <input name="reg_password" type="password">
+        <input name="reg_password" type="password" value="<?php echo isset($_SESSION['reg_password']) ? $_SESSION['reg_password'] : ''; ?>" />
         <label>Confirme sua senha:</label>
-        <input name="reg_confirmPassword" type="password">
+        <input name="reg_confirmPassword" type="password" value="<?php echo isset($_SESSION['reg_confirmPassword']) ? $_SESSION['reg_confirmPassword'] : ''; ?>" />
         <input type="submit" id="btn" class="btn-begin opacty-button" value="Completar Cadastro">
       </form>
 
