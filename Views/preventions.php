@@ -25,7 +25,7 @@
   <style>
     <?php include_once('styles/preventions.css'); ?>
   </style>
-  <title>Precenções</title>
+  <title>Prevenções</title>
 </head>
 
 <body>

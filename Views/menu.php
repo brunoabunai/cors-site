@@ -20,7 +20,7 @@ unset(
   <style>
     <?php include_once('styles/menu.css'); ?>
   </style>
-  <title>Menu Do Admin</title>
+  <title>Menu-Page</title>
 </head>
 
 <body>

@@ -24,7 +24,7 @@ $userPassword = "AdminOne";
   <style>
     <?php include_once('styles/myaccount.css'); ?>
   </style>
-  <title>Home</title>
+  <title>Minah Conta</title>
 
 </head>
 

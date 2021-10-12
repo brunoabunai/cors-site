@@ -22,7 +22,7 @@ $option = "admin";
   <style>
     <?php include_once('styles/home.css'); ?>
   </style>
-  <title>Home</title>
+  <title>Home-Page</title>
   
 </head>
 
