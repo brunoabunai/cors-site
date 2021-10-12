@@ -26,9 +26,9 @@
     })
   }
 
-  function removeTagAOfOpennedScreen() {
+  function setRouteColor(route) {
     const nameId = getRoute();
-    document.getElementById(`${nameId}`).style.color = "#000";
+    return (nameId==route) ? `#000` : `#999`;
   }
 
   function getRoute() {
@@ -140,7 +140,7 @@
     createBox(op);
     changeStateBox(op);
     mapAllTagsA();
-    removeTagAOfOpennedScreen();
+    //removeTagAOfOpennedScreen();
   }
 
   function makeProcessToRemoveBox() {
@@ -185,6 +185,11 @@
 
   function conditionBox() {
     return (!globalStateBox[0] && !globalStateBox[1]);
+  }
+
+  function setRouteCLick(route){
+    const routeArr= route.split('/');
+    return (getRoute()==routeArr[routeArr.length-1]) ? `#` : route;
   }
 
   function constructorBox(op) {
@@ -268,15 +273,16 @@
         break;
       case 2:
         box.name = "Box of branches of home";
+        box.route= getRoute();
         box.content = /*html*/
           ` 
                 <div id='box' class="boxMenu">
                   <div>
                     <svg class="close" onclick="makeProcessToRemoveBox()" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="transform: ;msFilter:;"><path d="m16.192 6.344-4.243 4.242-4.242-4.242-1.414 1.414L10.535 12l-4.242 4.242 1.414 1.414 4.242-4.242 4.243 4.242 1.414-1.414L13.364 12l4.242-4.242z"></path></svg>
                   </div>
-                    <a id="home" href="./home">Home</a>
-                    <a id="covidInformations" href="./covidInformations">Covid Informações</a>
-                    <a id="recommendationsInfos" href="./recommendationsInfos">Recomendações</a>
+                    <a id="home" style="color:${setRouteColor(`home`)} !important;" href="${setRouteCLick(`/TCC/cors-site/home`)}">Home</a>
+                    <a id="covidInformations" style="color: ${setRouteColor(`covidInformations`)} !important" href="${setRouteCLick(`/TCC/cors-site/covidInformations`)}">Covid Informações</a>
+                    <a id="infos" style="color: ${setRouteColor(`infos`)} !important"  href="${setRouteCLick(`/TCC/cors-site/recommendations/infos`)}">Recomendações</a>
                 </div>
             `;
         break;
