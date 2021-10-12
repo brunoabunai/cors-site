@@ -19,7 +19,6 @@ require_once('connection.php');
       $this->password = $password;
 
       return $this->loginValidation();
-      // return md5(md5($password));
     }
 
     /**

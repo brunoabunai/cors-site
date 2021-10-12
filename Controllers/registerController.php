@@ -6,7 +6,10 @@
     // }
 
     public function administradores(){
-      $this->loadTemplate('register');
+      $g = new auxiliary();
+      $data = $g -> getType();
+
+      $this->loadTemplate('register', $data);
     }
 
     public function member(){
@@ -15,8 +18,7 @@
     
     public function submitAdmin(){
       $r = new register();
-      // $data = $r -> setUserInformations($_POST['reg_name'], $_POST['reg_password'], $_POST['reg_confirmPassword'], '', 2);
-      $data = $r -> submit($_POST['reg_name'], $_POST['reg_password'], $_POST['reg_confirmPassword'], '', 2, true);
+      $data = $r -> submit($_POST['reg_name'], $_POST['reg_password'], $_POST['reg_confirmPassword'], '', $_POST['typ_reg'], true);
 
       if (isset($data[0]) && $data[0]) { //true = validation true (pass)
         array_shift($data);
@@ -30,7 +32,6 @@
 
     public function submitMember(){
       $r = new register();
-      // $data = $r -> setUserInformations($_POST['reg_name'], $_POST['reg_password'], $_POST['reg_confirmPassword'], '', 2);
       $data = $r -> submit($_POST['reg_name'], $_POST['reg_password'], $_POST['reg_confirmPassword'], '', 1, false);
 
       if (isset($data[0]) && $data[0]) { //true = validation true (pass)

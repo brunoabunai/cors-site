@@ -37,7 +37,10 @@
       if($recommendations[0] == 'No data Found'){
     ?>
         <h1><?= $key; ?></h1>
-      <?php } ?>
+    <?php 
+        break; 
+      } 
+    ?>
     
       <a href="./recommendations/getRecommendation/ <?= $key['id']; ?>">
         <div class="rec rec-one">

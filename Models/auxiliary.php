@@ -28,10 +28,10 @@ require_once('connection.php');
     public function getUserPerName($name) {
       $name = str_replace("-", " ", $name);
       // $data = array();
-      $cmd = $this->conn->query(' SELECT use_name, use_avatar
+      $cmd = $this->conn->query(' SELECT use_idPk, use_name, use_avatar
                                   FROM users
                                   WHERE use_name = "'.$name.'" ');
-      $this->data = $cmd->fetch_assoc();
+      $this->ret = $cmd->fetch_assoc();
 
       return ([
         'id' => $this->ret['use_idPk'],
@@ -40,14 +40,32 @@ require_once('connection.php');
       ]);
     }
 
+
     /** Type */
+    public function getType() {
+      $cmd = $this->conn->query(' SELECT typ_idPk, typ_name 
+                                  FROM types
+                                ') or die ($this->conn->error);
+
+      foreach ($cmd as $row){
+        $this->ret[] = array(
+          "id" => $row['typ_idPk'],
+          "name" => $row['typ_name']
+        );
+      }
+
+      return array('types' => $this->ret);
+    }
+
     public function getTypePerId($id) {
       $cmd = $this->conn->query(' SELECT typ_name 
                                   FROM types
                                   WHERE typ_idPk = "'.$id.'" ');
-      $ret = $cmd->fetch_assoc(); //retorno
-      return ($ret['typ_name']);
+      $this->ret = $cmd->fetch_assoc(); //retorno
+
+      return ($this->ret['typ_name']);
     }
+
 
     /** Gerais */
     public function removeDoubleSpace($something) {

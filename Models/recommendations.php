@@ -137,7 +137,6 @@ require_once('connection.php');
       $totalData = $querys->num_rows;
   
       $limitQueryPages = $this->conn->query($queryLimit) or die ($this->conn->error);
-      // $this->data = $limitQueryPages->fetch_assoc();
   
       if ($totalData > 0) {
         foreach ($limitQueryPages as $row) {

@@ -8,24 +8,19 @@
     }
 
     public function search() {
-      $u = new selectUser();
+      $u = new edit();
       $data = $u -> getUsersSearch();
-
-      // $this->loadTemplate('viewSearch', array(), $data);
     }
 
     public function editUser($nameUser) {
-      $u = new selectUser();
-      $data = $u->getUserPerName($nameUser);
-
-      // $u = new auxiliary();
-      // $data = $u -> getUserPerName($nameUser);
+      $u = new auxiliary();
+      $data = $u -> getUserPerName($nameUser);
       
       $this->loadTemplate('edit', $data);
     }
 
     public function submitEditUser($userId) {
-      $u = new selectUser();
+      $u = new edit();
       $data = $u -> setEditValues($_POST['edi_id'], $_POST['edi_name'], $_POST['edi_password']);
       // print_r($data);
       if(isset($data[0]) && $data[0]){

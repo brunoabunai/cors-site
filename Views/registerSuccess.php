@@ -47,7 +47,7 @@
           Editar <?php echo $name; ?>
         </a>
 
-        <a href="../register" class="btn opacty-button">
+        <a href="../register/administradores" class="btn opacty-button">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M6 16V13L22 13V11L6 11L6 8L2 12L6 16Z" fill="#5F5F5F"></path>
           </svg>

@@ -160,21 +160,19 @@ require_once('connection.php');
     public function submit($name, $password, $confirmPassword, $avatar = '', $type = 1, $isAdminSubmit = false){
       $this->setUserInformations($name, $password, $confirmPassword, $avatar = '', $type);
 
-      // return (
-        if($isAdminSubmit){
-          if(count($this->err) == 0){ //Vê se passou pela verificação...
-            return $this->insertRegisterAdmin();
-          } else {
-            return [false, $this->err, 'previousPage' => 'register/administradores'];
-          }
+      if($isAdminSubmit){
+        if(count($this->err) == 0){ //Vê se passou pela verificação...
+          return $this->insertRegisterAdmin();
         } else {
-          if(count($this->err) == 0){ //Vê se passou pela verificação...
-            return $this->insertRegister();
-          } else {
-            return [false, $this->err, 'previousPage' => 'register/member'];
-          }
+          return [false, $this->err, 'previousPage' => 'register/administradores'];
         }
-      // );
+      } else {
+        if(count($this->err) == 0){ //Vê se passou pela verificação...
+          return $this->insertRegister();
+        } else {
+          return [false, $this->err, 'previousPage' => 'register/member'];
+        }
+      }
     }
 
   }

@@ -1,7 +1,7 @@
 <?php
 require_once ('connection.php');
 
-  Class selectUser {
+  Class edit {
     
     private $conn;
     private $err;
@@ -55,13 +55,11 @@ require_once ('connection.php');
       <!-- <label>Total de Registros - '.$totalData.'</label>-->
       <table class="search-users">
         <tr class="head-users">
-          
-          <th class="id">ID</th>
+
           <th>Avatar</th>
           <th>Usuário</th>
-          
+
           <th class="id">Tipo</th>
-          
 
           <th class="options">Opções</th>
         </tr>
@@ -71,8 +69,7 @@ require_once ('connection.php');
         foreach ($limitQueryPages as $row) {
           $output .= '
           <tr class="column-user">
-            
-            <td class="id">'.$row["typ_IdFk"].'</td>
+
             <td><img src="'.$row["use_avatar"].'"/></td>
             <td>'.$row["use_name"].'</td>
             
@@ -222,23 +219,6 @@ require_once ('connection.php');
 
       echo $output;
     }
-
-    /**
-     * ------------------------------------------------------------
-     * Select user from view
-     * ------------------------------------------------------------
-     */
-    public function getUserPerName($name) {
-      $name = str_replace("-", " ", $name);
-      // $data = array();
-      $cmd = $this->conn->query(' SELECT use_idPk, use_name, use_avatar 
-                                  FROM users
-                                  WHERE use_name = "'.$name.'" 
-                                ') or die ($this->conn->error);
-      $this->data = $cmd->fetch_assoc();
-
-      return ($this->data);
-    }
     
     /**
      * ------------------------------------------------------------
@@ -263,12 +243,12 @@ require_once ('connection.php');
       }
 
       /** Vê se o name está em uso */
-      // $cmd = $this->conn->query('
-      //                       SELECT use_name 
-      //                       FROM users 
-      //                       WHERE use_name = "'.$this->name.'"
-      //                     ') or die ($this->conn->error);
-      // $data = $cmd->fetch_assoc();
+      $cmd = $this->conn->query('
+                            SELECT use_name 
+                            FROM users 
+                            WHERE use_name = "'.$this->name.'"
+                          ') or die ($this->conn->error);
+      $data = $cmd->fetch_assoc();
 
       if(isset($data) && count($data) != 0) {
         $this->err[] = 'User name já em uso';
@@ -299,7 +279,6 @@ require_once ('connection.php');
         use_password = '".md5(md5($this->password))."'
         WHERE use_idPk = ".$this->id."
       ") or die ($this->conn->error);
-      // $data = $cmd->fetch_assoc();
 
       return array(
         'text' => $this->name.' alterado ',

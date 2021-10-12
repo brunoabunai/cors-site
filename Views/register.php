@@ -37,6 +37,22 @@
       <div class="main">
 
         <form name="form_register" action="./submitAdmin" method="POST">
+
+        <select name="typ_reg">
+          <option value="1" selected="selected">User</option>
+
+          <?php 
+          foreach ($types as $row) {
+            if ($row['id'] != 1) {
+          ?>
+            <option value="<?= $row['id']; ?>"><?= $row['name']; ?></option>
+          <?php 
+            }
+          } 
+          ?>
+          
+        </select>
+
           <input type="text" name="reg_name" placeholder="Usuário" value="<?php echo isset($_SESSION['reg_name']) ? $_SESSION['reg_name'] : ''; ?>" />
           <input type="password" name="reg_password" placeholder="Senha" value="<?php echo isset($_SESSION['reg_password']) ? $_SESSION['reg_password'] : ''; ?>" />
           <input type="password" name="reg_confirmPassword" placeholder="Confirme sua senha" value="<?php echo isset($_SESSION['reg_confirmPassword']) ? $_SESSION['reg_confirmPassword'] : ''; ?>" />

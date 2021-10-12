@@ -1,7 +1,7 @@
 <?php
 require_once('connection.php');
 
-  Class createPosts{
+  Class posts{
 
     private $conn;
     private $err;

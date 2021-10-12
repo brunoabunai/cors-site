@@ -20,11 +20,7 @@
     // Irá fazer o redirecionamento da page
     public function loadViewInTemplate($nameView, $data = array()) {
       extract($data);
-
-      // echo "<pre>";
-      // print_r($data);
-      // echo "</pre>";
-
+      
       if (file_exists('Views/'.$nameView.'.php')){
         require_once ('Views/'.$nameView.'.php');
       } elseif (file_exists('Components/'.$nameView.'.php')){

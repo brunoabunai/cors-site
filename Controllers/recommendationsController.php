@@ -32,8 +32,6 @@
       $s = new recommendations();
       $data = $s -> getRecommendationSearch();
 
-      // print_r($data);
-
       $this->loadTemplate('recommendationSearchView', $data);
     }
     

@@ -7,7 +7,7 @@
     }
 
     public function submit(){
-      $r = new createPosts();
+      $r = new posts();
       $data = $r -> setPostInformations($_POST['pos_title'], $_POST['pos_description']);
       
       if (isset($data[0]) && $data[0]) { //true = validation true (pass)
