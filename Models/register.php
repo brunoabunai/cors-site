@@ -158,7 +158,7 @@ require_once('connection.php');
     }
 
     public function submit($name, $password, $confirmPassword, $avatar = '', $type = 1, $isAdminSubmit = false){
-      $this->setUserInformations($name, $password, $confirmPassword, $avatar = '', $type = 1);
+      $this->setUserInformations($name, $password, $confirmPassword, $avatar = '', $type);
 
       // return (
         if($isAdminSubmit){

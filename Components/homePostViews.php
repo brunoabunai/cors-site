@@ -1,3 +1,7 @@
+<?php
+  $help = new auxiliary();
+?>
+
 <!DOCTYPE html>
 <html lang="pt">
   <head>
@@ -15,7 +19,7 @@
 
         <?php if ($row == 0) { ?>
 
-        <a href="./home/getPostFromTitle/<?= str_replace(" ", "-", $value['title']); ?>">
+        <a href="./home/getPostFromTitle/<?= str_replace(" ", "-", $help->removeAccents($value['title'])); ?>">
           <div class="noticie noticieOne">
             <img src="./public/img/banner_corona.jpg" alt="">
 
@@ -38,7 +42,7 @@
 
         <?php } else { ?>
           
-          <a href="./home/getPostFromTitle/<?= str_replace(" ", "-", $value['title']); ?>">
+          <a href="./home/getPostFromTitle/<?= str_replace(" ", "-", $help->removeAccents($value['title'])); ?>">
             <div class="noticie">
               <div class="headline">
                 <span class="head-author"><?= $value['user']['name']; ?></span>

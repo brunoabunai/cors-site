@@ -1,5 +1,4 @@
 <?php
-
   clearstatcache();
   
   if(!isset($_SESSION)){
@@ -19,7 +18,6 @@
     
     <?php include "cssm.php" ?>
     <link rel="shortcut icon" type="imagex/png" href="./public/img/covid.png">
-    
 
   </head>
   <body>

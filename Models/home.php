@@ -36,10 +36,9 @@ require_once('connection.php');
      */
     public function getPostPerTitle($title) {
       $title = str_replace("-", " ", $title);
-      // $data = array();
       $cmd = $this->conn->query(' SELECT use_idFk, pos_title, pos_description 
-                                  FROM posts
-                                  WHERE pos_title = "'.$title.'" 
+                                  FROM posts 
+                                  WHERE pos_title = "'.utf8_encode($title).'" 
                                 ') or die ($this->conn->error);
       $this->data = $cmd->fetch_assoc();
 
