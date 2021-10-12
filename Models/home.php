@@ -38,7 +38,7 @@ require_once('connection.php');
       $title = str_replace("-", " ", $title);
       $cmd = $this->conn->query(' SELECT use_idFk, pos_title, pos_description 
                                   FROM posts 
-                                  WHERE pos_title = "'.utf8_encode($title).'" 
+                                  WHERE pos_title = "'.$title.'" 
                                 ') or die ($this->conn->error);
       $this->data = $cmd->fetch_assoc();
 
