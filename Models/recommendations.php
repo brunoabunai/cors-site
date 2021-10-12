@@ -32,7 +32,7 @@ require_once('connection.php');
       if(strlen($this->description) == 0) {
         $this->err[] = "Preencha a descrição.";
       } else
-      if(strlen($this->description) <= 50) {
+      if(strlen($this->description) <= 25) {
         $this->err[] = "Descrição muito pequeno.";
       }
 
