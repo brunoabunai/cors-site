@@ -171,8 +171,7 @@ require_once('connection.php');
       return [
         "user" => $this->help->getUserPerId($data['use_idFk']),
         "title" => $data['rec_title'],
-        "description" => $data['rec_description'],
-        "content" => 'No duo no sed dolores stet, gubergren amet kasd sit sit lorem. Takimata ut et et sadipscing sea. No sit elitr accusam ipsum nonumy clita sanctus, diam sed ipsum voluptua ut rebum labore sed. Ipsum voluptua at aliquyam sed sanctus no sea no, diam sed et eirmod tempor tempor ea clita. Elitr ea ut kasd duo diam sanctus, no labore takimata sit at lorem. Sed tempor stet et ipsum sea. Gubergren diam ut sed lorem voluptua ea dolor labore, sed dolor accusam lorem at gubergren voluptua invidunt diam, nonumy invidunt sed amet erat et accusam takimata, et sit magna justo.'
+        "description" => $data['rec_description']
       ];
     }
 

@@ -38,7 +38,7 @@
 
     <div class="rec-content">
       <p>
-        <?= $content ?>
+        <?= $description ?>
       </p>
 
     </div>
