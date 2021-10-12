@@ -67,6 +67,7 @@ $option="admin";
     </span> <br>
     <a href="../recommendations/create">Mandar Uma Recomendação Agora!</a>
   </div>
+  <?php include 'redirects/box.php' ?>
 </body>
 
 </html>

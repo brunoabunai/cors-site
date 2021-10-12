@@ -54,6 +54,8 @@ $option = "admin";
       <h2>Ultimas Postagens Sobre o Corona Vírus</h2>
     </div>
   </div>
+  <?php include 'redirects/box.php' ?>
+
 </body>
 
 </html>

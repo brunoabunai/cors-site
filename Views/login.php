@@ -55,12 +55,13 @@
 
     </div>
   </div>
-  <script src="./utils/input.js" defer></script>
+  <?php include 'redirects/input_validation.php' ?>
+
   <!-- <script defer src="../node_modules/jquery/dist/jquery.js"></script> -->
 </body>
 
 </html>
-
+<!--
 <script defer type="module">
   // $('input[type="submit"]').on(
   //   'click',
@@ -85,3 +86,4 @@
   //     console.log('potato');
   // });
 </script>
+-->

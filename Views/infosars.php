@@ -68,7 +68,7 @@
 
 
   </div>
-
+  <?php include 'redirects/box.php' ?>
 </body>
 
 </html>

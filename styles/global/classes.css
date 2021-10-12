@@ -19,9 +19,9 @@
 }
 
 .errInputValidation{
-    box-shadow: 0.05rem 0.05rem 0.05rem var(--danger);
+    box-shadow: 0.05rem 0.05rem 0.05rem var(--danger-transparent);
 }
 
 .sucessInputValidation{
-    box-shadow: 0.05rem 0.05rem 0.05rem var(--secondary-green);
+    box-shadow: 0.05rem 0.05rem 0.05rem var(--secondary-green-transparent);
 }

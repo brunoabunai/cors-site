@@ -24,7 +24,7 @@ $userPassword = "AdminOne";
   <style>
     <?php include_once('styles/myaccount.css'); ?>
   </style>
-  <title>Minah Conta</title>
+  <title>Minha Conta</title>
 
 </head>
 
@@ -54,6 +54,7 @@ $userPassword = "AdminOne";
       Editar Dados
     </a>
   </div>
+  <script type="text/javascript" src="./utils/boxes.js"></script>
 </body>
 
 </html>

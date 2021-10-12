@@ -90,7 +90,7 @@ unset(
       </div>
     </div>
   </div>
-
+  <?php include 'redirects/box.php' ?>
 </body>
 
 </html>

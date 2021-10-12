@@ -1,188 +1,202 @@
-var numberOfBoxes = 4;
-var globalStateBox = new Array(numberOfBoxes).fill(false);
+<script type="text/javascript">
+  var numberOfBoxes = document.querySelectorAll('box-activer').length;
+  var globalStateBox = new Array(numberOfBoxes).fill(false);
 
-var prefix = 'box_'
+  var prefix = 'box_'
 
-var html = document.querySelector('html');
+  var html = document.querySelector('html');
 
-function mapAllTagsA() {
-  const AllTagsA = document.querySelectorAll('a');
+  function mapAllTagsA() {
+    const AllTagsA = document.querySelectorAll('a');
 
-  AllTagsA.forEach(tagA => {
-    if (tagA.onclick) {
-      const eventBeforeOnclick = tagA.onclick;
-      tagA.onclick = (event) => {
-        const divOfBoxClicked = (getValidationsToMouseClick(event))[2];
-        if (someBoxIsOpen() && haveSomeBoxActiver() && !divOfBoxClicked) {
-          processWhenIsOpen(event)
-        } else {
-          eventBeforeOnclick();
-        }
-      };
-    }
-
-
-  })
-}
-
-function removeTagAOfOpennedScreen(){
-  const nameId=getRoute();
-  document.getElementById(`${nameId}`).style.color="#000";
-}
-
-function getRoute(){
-  let route=window.location.toString();
-  route=route.split("/");
-  return route[route.length-1]
-}
-
-mapAllTagsA();
-
-function haveSomeBoxActiver() {
-  const boxActivers = document.querySelectorAll('.box-activer');
-  return (boxActivers.length > 0) ? true : false;
-}
-
-function someBoxIsOpen() {
-  return globalStateBox[globalStateBox.indexOf(true)] || false;
-};
-
-function getBoxOpen() {
-  return globalStateBox.indexOf(true);
-}
-
-function processWhenIsOpen(event) {
-  event.preventDefault();
-  makeProcessToRemoveBox(getBoxOpen());
-}
-
-try {
-
-  html.onmouseup = (evt) => {
-    const [[boxActiverClicked, witchBoxActiver], svgClicked, boxDivClicked, [aClicked, aDidCLicked]] = getValidationsToMouseClick(evt);
-    const haveBoxOpen = getBoxOpen() != -1 || false;
-    if ((haveBoxOpen && !boxActiverClicked) && (haveBoxOpen && !boxDivClicked)) {
-      makeProcessToRemoveBox(getBoxOpen());
-      return;
-    }
-    let boxes = document.querySelectorAll('.box');
-    if (boxes.length > 1) {
-      document.querySelector(`.${prefix + getBoxOpen()} > svg > path`).style.fill = 'var(--text-color)';
-      changeStateBox(getBoxOpen());
-      boxes.forEach(boxOfArray => {
-        boxOfArray.remove();
-      })
-      mapAllTagsA();
-      alert("Por favor não clique tão rápido")
-    }
-
-
-    let boxOp;
-    if (boxActiverClicked) {
-      const classesOfBoxActiver = (witchBoxActiver.classList.value).split(' ');
-      const classFiltered = classesOfBoxActiver.filter((theClass, indexClass) => {
-        const classSpelled = theClass.split('');
-        return (classSpelled[0] + classSpelled[1] + classSpelled[2] + classSpelled[3] == prefix)
-      });
-      boxOp = Number(classFiltered[0].replace(prefix, ''));
-    }
-
-    if (!haveBoxOpen && boxActiverClicked) {
-      makeProcessToCreateBox(boxOp);
-      return;
-    }
-
-    if (haveBoxOpen && boxActiverClicked) {
-      makeProcessToRemoveBox(getBoxOpen());
-      return;
-    }
-  }
-} catch (error) {
-  alert(error);
-  console.log(error);
-}
-
-
-
-function getValidationsToMouseClick(evt) {
-  function validationCLassActiver() {
-    let validation = false;
-    let boxActiver = false;
-    evt.path.forEach(itemCLicked => {
-      if (itemCLicked.classList) {
-        const classesOfItem = itemCLicked.classList.value.split(' ');
-        const haveClassActiver = classesOfItem.filter(TheClass => TheClass == 'box-activer');
-        if (haveClassActiver.length > 0) {
-          validation = true;
-          boxActiver = itemCLicked;
-          return
-        }
+    AllTagsA.forEach(tagA => {
+      if (tagA.onclick) {
+        const eventBeforeOnclick = tagA.onclick;
+        tagA.onclick = (event) => {
+          const divOfBoxClicked = (getValidationsToMouseClick(event))[2];
+          if (someBoxIsOpen() && haveSomeBoxActiver() && !divOfBoxClicked) {
+            processWhenIsOpen(event)
+          } else {
+            eventBeforeOnclick();
+          }
+        };
       }
+
+
     })
-    return [validation, boxActiver];
   }
-  return [
-    validationCLassActiver(),
-    evt.path.filter(itemCLicked => itemCLicked.nodeName == 'svg').length > 0,
-    evt.path.filter(itemCLicked => itemCLicked.id == 'box').length > 0,
-    [(evt.path.filter(itemCLicked => itemCLicked.nodeName == 'A'))[0], evt.path.filter(itemCLicked => itemCLicked.nodeName == 'A').length > 0],
-  ]
 
+  function removeTagAOfOpennedScreen() {
+    const nameId = getRoute();
+    document.getElementById(`${nameId}`).style.color = "#000";
+  }
 
-}
+  function getRoute() {
+    let route = window.location.toString();
+    route = route.split("/");
+    return route[route.length - 1]
+  }
 
-
-function makeProcessToCreateBox(op) {
-  document.querySelector(`.${prefix + op} > svg > path`).style.fill = '#c6c6c6';
-  createBox(op);
-  changeStateBox(op);
-  mapAllTagsA();
-  removeTagAOfOpennedScreen();
-}
-
-function makeProcessToRemoveBox() {
-  document.querySelector(`.${prefix + getBoxOpen()} > svg > path`).style.fill = 'var(--text-color)';
-  removeBox();
-  setTimeout(function () { changeStateBox(getBoxOpen()); }, 200);
   mapAllTagsA();
 
-
-}
-
-function createBox(op) {
-  const box = constructorBox(op);
-  addInPage(box);
-}
-function removeBox() {
-  let box = localizeID('box');
-  let endAnimationOfBox = box.animate([
-    // keyframes
-    { opacity: 1 },
-    { opacity: 0 }
-  ], {
-    // timing options
-    duration: 200,
-    iterations: 1
-  });
-  endAnimationOfBox.onfinish = () => {
-    box.remove();
+  function haveSomeBoxActiver() {
+    const boxActivers = document.querySelectorAll('.box-activer');
+    return (boxActivers.length > 0) ? true : false;
   }
-}
 
-function changeStateBox(op) {
-  globalStateBox[op] = !globalStateBox[op];
-}
-function conditionBox() {
-  return (!globalStateBox[0] && !globalStateBox[1]);
-}
+  function someBoxIsOpen() {
+    return globalStateBox[globalStateBox.indexOf(true)] || false;
+  };
 
-function constructorBox(op) {
-  var box = { name: "", content: "" };
-  switch (op) {
-    case 0:
-      box.name = "box of config";
-      box.content =/*html*/
-        `
+  function getBoxOpen() {
+    return globalStateBox.indexOf(true);
+  }
+
+  function processWhenIsOpen(event) {
+    event.preventDefault();
+    makeProcessToRemoveBox(getBoxOpen());
+  }
+
+  try {
+
+    html.onmouseup = (evt) => {
+      const [
+        [boxActiverClicked, witchBoxActiver], svgClicked, boxDivClicked, [aClicked, aDidCLicked]
+      ] = getValidationsToMouseClick(evt);
+      const haveBoxOpen = getBoxOpen() != -1 || false;
+      if ((haveBoxOpen && !boxActiverClicked) && (haveBoxOpen && !boxDivClicked)) {
+        makeProcessToRemoveBox(getBoxOpen());
+        return;
+      }
+      let boxes = document.querySelectorAll('.box');
+      if (boxes.length > 1) {
+        document.querySelector(`.${prefix + getBoxOpen()} > svg > path`).style.fill = 'var(--text-color)';
+        changeStateBox(getBoxOpen());
+        boxes.forEach(boxOfArray => {
+          boxOfArray.remove();
+        })
+        mapAllTagsA();
+        alert("Por favor não clique tão rápido")
+      }
+
+
+      let boxOp;
+      if (boxActiverClicked) {
+        const classesOfBoxActiver = (witchBoxActiver.classList.value).split(' ');
+        const classFiltered = classesOfBoxActiver.filter((theClass, indexClass) => {
+          const classSpelled = theClass.split('');
+          return (classSpelled[0] + classSpelled[1] + classSpelled[2] + classSpelled[3] == prefix)
+        });
+        boxOp = Number(classFiltered[0].replace(prefix, ''));
+      }
+
+      if (!haveBoxOpen && boxActiverClicked) {
+        makeProcessToCreateBox(boxOp);
+        return;
+      }
+
+      if (haveBoxOpen && boxActiverClicked) {
+        makeProcessToRemoveBox(getBoxOpen());
+        return;
+      }
+    }
+  } catch (error) {
+    alert(error);
+    console.log(error);
+  }
+
+
+
+  function getValidationsToMouseClick(evt) {
+    function validationCLassActiver() {
+      let validation = false;
+      let boxActiver = false;
+      evt.path.forEach(itemCLicked => {
+        if (itemCLicked.classList) {
+          const classesOfItem = itemCLicked.classList.value.split(' ');
+          const haveClassActiver = classesOfItem.filter(TheClass => TheClass == 'box-activer');
+          if (haveClassActiver.length > 0) {
+            validation = true;
+            boxActiver = itemCLicked;
+            return
+          }
+        }
+      })
+      return [validation, boxActiver];
+    }
+    return [
+      validationCLassActiver(),
+      evt.path.filter(itemCLicked => itemCLicked.nodeName == 'svg').length > 0,
+      evt.path.filter(itemCLicked => itemCLicked.id == 'box').length > 0,
+      [(evt.path.filter(itemCLicked => itemCLicked.nodeName == 'A'))[0], evt.path.filter(itemCLicked => itemCLicked.nodeName == 'A').length > 0],
+    ]
+
+
+  }
+
+
+  function makeProcessToCreateBox(op) {
+    document.querySelector(`.${prefix + op} > svg > path`).style.fill = '#c6c6c6';
+    createBox(op);
+    changeStateBox(op);
+    mapAllTagsA();
+    removeTagAOfOpennedScreen();
+  }
+
+  function makeProcessToRemoveBox() {
+    document.querySelector(`.${prefix + getBoxOpen()} > svg > path`).style.fill = 'var(--text-color)';
+    removeBox();
+    setTimeout(function() {
+      changeStateBox(getBoxOpen());
+    }, 200);
+    mapAllTagsA();
+
+
+  }
+
+  function createBox(op) {
+    const box = constructorBox(op);
+    addInPage(box);
+  }
+
+  function removeBox() {
+    let box = localizeID('box');
+    let endAnimationOfBox = box.animate([
+      // keyframes
+      {
+        opacity: 1
+      },
+      {
+        opacity: 0
+      }
+    ], {
+      // timing options
+      duration: 200,
+      iterations: 1
+    });
+    endAnimationOfBox.onfinish = () => {
+      box.remove();
+    }
+  }
+
+  function changeStateBox(op) {
+    globalStateBox[op] = !globalStateBox[op];
+  }
+
+  function conditionBox() {
+    return (!globalStateBox[0] && !globalStateBox[1]);
+  }
+
+  function constructorBox(op) {
+    var box = {
+      name: "",
+      content: ""
+    };
+    switch (op) {
+      case 0:
+        box.name = "box of config";
+        box.content = /*html*/
+          `
                 <div id="box" class="box boxGear">
                   <div class="options">
                     <span>Opções:</span>
@@ -213,11 +227,11 @@ function constructorBox(op) {
                     </a>
                 </div>
             `;
-      break;
-    case 1:
-      box.name = "box of config but when menu open";
-      box.content =/*html*/
-        `
+        break;
+      case 1:
+        box.name = "box of config but when menu open";
+        box.content = /*html*/
+          `
                   <div id="box" class="box boxGear">
                     <div class="options">
                       <span>Opções:</span>
@@ -251,11 +265,11 @@ function constructorBox(op) {
                       </a>
                   </div>
               `;
-      break;
-    case 2:
-      box.name = "Box of branches of home";
-      box.content =/*html*/
-        ` 
+        break;
+      case 2:
+        box.name = "Box of branches of home";
+        box.content = /*html*/
+          ` 
                 <div id='box' class="boxMenu">
                   <div>
                     <svg class="close" onclick="makeProcessToRemoveBox()" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="transform: ;msFilter:;"><path d="m16.192 6.344-4.243 4.242-4.242-4.242-1.414 1.414L10.535 12l-4.242 4.242 1.414 1.414 4.242-4.242 4.243 4.242 1.414-1.414L13.364 12l4.242-4.242z"></path></svg>
@@ -265,11 +279,11 @@ function constructorBox(op) {
                     <a id="recommendationsInfos" href="./recommendationsInfos">Recomendações</a>
                 </div>
             `;
-      break;
-    case 3:
-      box.name = "box of config but of commum members";
-      box.content =/*html*/
-        `
+        break;
+      case 3:
+        box.name = "box of config but of commum members";
+        box.content = /*html*/
+          `
                       <div id="box" class="boxGear">
                         <div class="options">
                           <span>Opções:</span>
@@ -293,11 +307,11 @@ function constructorBox(op) {
                           </a>
                       </div>
                   `;
-      break;
-    case 4:
-      box.name = "Box To Test";
-      box.content =/*html*/
-        `
+        break;
+      case 4:
+        box.name = "Box To Test";
+        box.content = /*html*/
+          `
         <div id="box" class="box boxGear">
         <div class="options">
           <span>Opções:</span>
@@ -332,10 +346,57 @@ function constructorBox(op) {
           </a>
       </div>
   `;
-      break;
-    default:
-      box.name = "null";
-      box.content = "";
+        break;
+      default:
+        box.name = "null";
+        box.content = "";
+    }
+    return box.content;
   }
-  return box.content;
-}
+
+
+
+  function localizeID(item) {
+    return document.getElementById(item);
+  }
+
+  function addInPage(content) {
+    document.querySelector('body').innerHTML += content;
+  }
+
+  function toArray(stringItem) {
+    return String(stringItem).split("");
+  }
+
+  function addClass(element, className) {
+    element.classList.add(className);
+  }
+
+  function removeClass(element, className) {
+    element.classList.remove(className);
+  }
+
+  function changeBackground(element, background) {
+    element.style.backgroundColor = background;
+  }
+
+  function changeValue(element, value) {
+    element.value = value;
+  }
+
+  function changeColor(element, color) {
+    element.style.Color = color;
+  }
+
+  function removeReadOnly(element) {
+    element.removeAttribute("readonly");
+  }
+
+  function addReadOnly(element) {
+    element.setAttribute("readonly", true);
+  }
+
+  function changeColorOfElementClicked(elementCLicked, color) {
+    elementCLicked.style.fill = color;
+  }
+</script>

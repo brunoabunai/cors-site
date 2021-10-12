@@ -1,11 +1,13 @@
 html {
   --primary-green: #157F1F;
   --secondary-green: #4CB963;
+  --secondary-green-transparent: #4cb9646c;
   --sucessyfull: #A0EADE;
   --null: #5C6784;
   --grayn:#c0c0c0;
   --alert: #FFE66D;
   --danger: #DD1C1A;
+  --danger-transparent: #dd1d1a6e;
   --info: #6B0F1A;
   --title-strong: #1D263B;
   --title-animed: #8D80AD;

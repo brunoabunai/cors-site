@@ -60,6 +60,7 @@
 
     </div>
   </div>
+  <?php include 'redirects/input_validation.php' ?>
 </body>
 
 </html>
