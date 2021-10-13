@@ -76,11 +76,15 @@ body {
   width: 100%;
 }
 
-.portable-page .main form input {
+.portable-page .main form input,.portable-page .main form select {
   border: 0;
 }
 
-.portable-page .main form input[type=text], .main form input[type=password] {
+.portable-page .main form input{
+  font-weight: 400;
+}
+
+.portable-page .main form select,.portable-page .main form input[type=text],.portable-page .main form input[type=email], .main form input[type=password] {
   border: 0.1rem solid #e4e4e4;
   margin-bottom: 0.2rem;
   width: 100%;
@@ -90,7 +94,16 @@ body {
   font-weight: 500;
 }
 
-.portable-page .main form input[type=text]:focus, .main form input[type=password]:focus {
+.portable-page .main form .firstPassword{
+  margin-top: 0.5rem;
+}
+
+.portable-page .main form select{
+  max-width: 8rem;
+  margin-top: 0.5rem;
+}
+
+.portable-page .main form input[type=text]:focus,.portable-page .main form input[type=email]:focus, .main form input[type=password]:focus {
   background-color: #fbfbfb;
 }
 
@@ -197,7 +210,7 @@ body {
     top: 4rem;
     left: 3rem;
   }
-  .portable-page .main form input[type=text], .main form input[type=password] {
+  .portable-page .main form input[type=text], .main form input[type=password], .main form input[type=email] {
     border: 0.1rem solid #e4e4e4;
   }
   .bt-ops {
