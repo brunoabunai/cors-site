@@ -44,27 +44,35 @@
   </div>
   <div class="infosars-page">
 
-    <a href="./covidInformations/preventions">
-      <div class="preventions-page">
-        <div class="prevention-box">
+
+    <div class="preventions-page">
+
+      <div class="prevention-box">
+        <a href="./covidInformations/preventions">
           <div class="box-firstLine">
             <img src="./public/img/cv2.png" alt="">
             <h2> Para evitar a propagação da COVID-19:</h2>
           </div>
-        </div>
+        </a>
       </div>
-    </a>
 
-    <a href="./covidInformations/symptoms">
-      <div class="symptoms-page">
-        <div class="symptoms-box">
+    </div>
+
+
+
+    <div class="symptoms-page">
+
+      <div class="symptoms-box">
+        <a href="./covidInformations/symptoms">
           <div class="box-firstLine">
             <img src="./public/img/cv3.png" alt="">
             <h2> Fique atento aos sintomas da COVID-19:</h2>
           </div>
-        </div>
+        </a>
       </div>
-    </a>
+
+    </div>
+
 
 
   </div>
