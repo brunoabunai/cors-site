@@ -38,7 +38,7 @@
 
     <div class="prevention-box">
       <div class="box-firstLine">
-        <img src="./public/img/cv2.png" alt="">
+        <img src="/TCC/cors-site/public/img/cv2.png" alt="">
         <h2> Para evitar a propagação da COVID-19:</h2>
       </div>
       <div class="content">

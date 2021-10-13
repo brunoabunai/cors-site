@@ -33,7 +33,7 @@
 
     <div class="symptoms-box">
       <div class="box-firstLine">
-        <img src="./public/img/cv3.png" alt="">
+        <img src="/TCC/cors-site/public/img/cv3.png" alt="">
         <h2> Fique atento aos sintomas da COVID-19:</h2>
       </div>
       <div class="content content-mobile">
