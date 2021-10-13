@@ -48,13 +48,23 @@
 
     <div class="main">
       <form name="form_register" action="./submitMember" method="POST">
-        <label>Digite um Nome de Usuário:</label>
-        <input name="reg_name" type="text" value="<?php echo isset($_SESSION['reg_name']) ? $_SESSION['reg_name'] : ''; ?>" />
-        <label>Digite uma Senha:</label>
-        <input name="reg_password" type="password" value="<?php echo isset($_SESSION['reg_password']) ? $_SESSION['reg_password'] : ''; ?>" />
-        <label>Confirme sua senha:</label>
-        <input name="reg_confirmPassword" type="password" value="<?php echo isset($_SESSION['reg_confirmPassword']) ? $_SESSION['reg_confirmPassword'] : ''; ?>" />
-        <input type="submit" id="btn" class="btn-begin opacty-button" value="Completar Cadastro">
+        <div class="group">
+          <label>Digite Seu Nome:</label>
+          <input name="reg_name" placeholder="digite o nome aqui" type="text" value="<?php echo isset($_SESSION['reg_name']) ? $_SESSION['reg_name'] : ''; ?>" />
+          <label>Digite seu Email:</label>
+          <input name="reg_name" placeholder="digite o email aqui" type="email" value="<?php echo isset($_SESSION['reg_name']) ? $_SESSION['reg_name'] : ''; ?>" />
+        </div>
+        <div class="group">
+          <label>Digite uma Senha:</label>
+          <input title="true" name="reg_password" placeholder="digite a senha aqui" type="password" value="<?php echo isset($_SESSION['reg_password']) ? $_SESSION['reg_password'] : ''; ?>" />
+          <label>Confirme sua senha:</label>
+          <input title="true" name="reg_confirmPassword" placeholder="digite a senha novamente aqui" type="password" value="<?php echo isset($_SESSION['reg_confirmPassword']) ? $_SESSION['reg_confirmPassword'] : ''; ?>" />
+
+        </div>
+        <div class="group">
+          <input type="submit" id="btn" class="btn-begin opacty-button" value="Completar Cadastro">
+        </div>
+
       </form>
 
 
