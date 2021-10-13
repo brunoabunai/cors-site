@@ -37,10 +37,23 @@ $userPassword = "AdminOne";
   </button>
 
   <div class="myaccount-page">
-    <h1>Carlos Calixto</h1>
+    <div class="person">
+      <h1>Carlos Calixto</h1>
+
+      <img id="img-player" src="/TCC/cors-site/public/img/cv3.png">
+<!--
+      <label style="cursor: pointer;" for="file-upload" class="custom-file-upload">
+        <img id="img-player" src="/TCC/cors-site/public/img/cv3.png">
+      </label>
+      <input style="display: none;" id="file-upload" type="file" onchange="previewFile()">
+-->
+    </div>
+
     <div class="infos-session">
       <label for="nameUser">Nome:</label>
       <input value="<?php echo $userName; ?>" readonly type="text" name="nmU" id="nameUser">
+      <label for="nameUser">Email:</label>
+      <input value="<?php echo $userName; ?>" readonly type="email" name="nmU" id="nameUser">
       <label for="passUser">Senha:</label>
       <input value="<?php echo $userPassword; ?>" readonly type="text" name="psU" id="passUser">
     </div>
@@ -54,7 +67,23 @@ $userPassword = "AdminOne";
       Editar Dados
     </a>
   </div>
-  <script type="text/javascript" src="./utils/boxes.js"></script>
+  <script>
+    function previewFile() {
+      var preview = document.querySelector('#img-player');
+      var file = document.querySelector('input[type=file]').files[0];
+      var reader = new FileReader();
+
+      reader.onloadend = function() {
+        preview.src = reader.result;
+      }
+
+      if (file) {
+        reader.readAsDataURL(file);
+      } else {
+        preview.src = "";
+      }
+    }
+  </script>
 </body>
 
 </html>
