@@ -36,7 +36,7 @@
     function UserDigitedIn(input, indexOfInput) {
       const exception = (input.title == "true"); // to use, have that a attribute called title in input with value false
       const inputArray = toArray(input.value);
-      const [haveDoubleSpace, areEmpty, haveSpaceInBegin, haveSpaceInEnd, havePoorCharacter] = getValidations();
+      const [haveDoubleSpace, areEmpty, haveSpaceInBegin, haveSpaceInEnd, havePoorCharacter, notHaveSign, notHavePoint] = getValidations();
       makeValidations();
 
       function getValidations() {
@@ -47,7 +47,9 @@
           (inputArray.length < 1), // if are empty
           (inputArray[0] == " "), // if space in begin
           (inputArray[inputArray.length - 1] == " "), //if space in end
-          (exception) ? (inputArray.length > 0 && inputArray.length < 3) : false //if have a few characters
+          (exception) ? (inputArray.length > 0 && inputArray.length < 8) : false, //if have a few characters
+          (inputArray.indexOf("@") == -1) ? true : false, //if not have @
+          (inputArray.indexOf(".") == -1) ? true : false, //if not have .
         ]
       };
 
@@ -70,8 +72,19 @@
         }
 
         if (input.type == "text") {
-          if (haveDoubleSpace || haveSpaceInBegin || haveSpaceInEnd || havePoorCharacter) {
+          if (haveDoubleSpace || haveSpaceInBegin || haveSpaceInEnd || havePoorCharacter ) {
             callErrorColor();
+            
+          } else {
+            callSucessColor();
+            
+          }
+        }
+
+        if (input.type == "email") {
+          if (haveDoubleSpace || haveSpaceInBegin || haveSpaceInEnd || havePoorCharacter || notHaveSign || notHavePoint) {
+            callErrorColor();
+            console.log(notHaveSign)
           } else {
             callSucessColor();
           }

@@ -66,7 +66,7 @@ left:1rem;
   border: 0;
 }
 
-.login-page .main form input[type=text],.main form input[type=password]{
+.login-page .main form input[type=email],.main form input[type=password]{
   border:0.1rem solid #e4e4e4;
   margin-bottom: 0.2rem;
   width: 100%;
@@ -76,7 +76,7 @@ left:1rem;
   font-weight: 500;
 }
 
-.login-page .main form input[type=text]:focus,
+.login-page .main form input[type=email]:focus,
 .main form input[type=password]:focus{
   background-color: #fbfbfb;
 }
@@ -127,7 +127,7 @@ left:1rem;
       left:3rem;
   }
 
-  .login-page .main form input[type=text],.main form input[type=password]{
+  .login-page .main form input[type=email],.main form input[type=password]{
       border:0.1rem solid #e4e4e4;
   }
 }
