@@ -1,5 +1,6 @@
 <?php
   $help = new auxiliary();
+  $date= '13/10/2021'
 ?>
 
 <!DOCTYPE html>
@@ -24,7 +25,7 @@
             <img src="./public/img/banner_corona.jpg" alt="">
 
             <div class="headline">
-              <span class="head-author"><?= $value['user']['name']; ?></span>
+              <span class="head-author"><?= $value['user']['name']; ?> - <small> <?php echo $date ?></small></span>
               <h3 class="head-title">
                 <?= $value['title']; ?>
               </h3>
@@ -45,7 +46,7 @@
           <a href="./home/getPostFromTitle/<?= str_replace(" ", "-", $help->removeAccents($value['title'])); ?>">
             <div class="noticie">
               <div class="headline">
-                <span class="head-author"><?= $value['user']['name']; ?></span>
+                <span class="head-author"><?= $value['user']['name']; ?> - <small> <?php echo $date ?></small></span>
                 <h3 class="head-title">
                   <?= $value['title']; ?>
                 </h3>

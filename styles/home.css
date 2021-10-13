@@ -24,7 +24,7 @@
   border-top: 0.001rem solid #999;
   border-radius: 0.1rem 0 0 0;
   padding: 2rem;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .home-page .news .noticieOne .headline {
@@ -72,6 +72,8 @@
   flex-direction: column;
   max-width: 90%;
   padding: 1rem;
+
+  align-items: flex-start;
 }
 
 .home-page .news .noticieOne img {
