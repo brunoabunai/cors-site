@@ -13,6 +13,7 @@ require_once('connection.php');
     /**
      * User informations vars
      */
+    private $email;
     private $name;
     private $password;
     private $confirmPassword;
@@ -45,6 +46,8 @@ require_once('connection.php');
       } else
       if(!($this->password === $this->confirmPassword)){ //Vê se a senha bate com a confirmação da senha
         $this->err[] = "Senhas não correspondem";
+        // print_r($this->password);
+        print_r($this->confirmPassword);
       }
       
       /**
@@ -65,12 +68,13 @@ require_once('connection.php');
     /**
      * Set users var from receipt of data
      */
-    private function setUserInformations($name, $password, $confirmPassword, $avatar = '', $type = 1){
+    private function setUserInformations($email, $name, $password, $confirmPassword, $avatar = '', $type = 1){
       while((strpos($name, "  ") != 0)){ //Enquanto existir doble space
         (strpos($name, "  ") != 0) ? $name = $this->help->removeDoubleSpace($name) : $name = $name;
       }
       $name = $this->help->removeAccents($name);
 
+      $this->email = $email;
       $this->name = trim($name);
       $this->password = $password;
       $this->confirmPassword = $confirmPassword;
@@ -80,9 +84,8 @@ require_once('connection.php');
       /**
        * Agora com as sessions é possível remover as variaveis de users
        */
+      $_SESSION['reg_email'] = $this->email;
       $_SESSION['reg_name'] = $this->name;
-      $_SESSION['reg_password'] = $this->password;
-      $_SESSION['reg_confirmPassword'] = $this->confirmPassword;
 
       return $this->validateInformations();
     }
@@ -94,10 +97,12 @@ require_once('connection.php');
       (strlen($this->avatar) == 0) ? ( //User avatar is empty
         $cmd = $this->conn->query(" INSERT INTO users(
                                       typ_idFk,
+                                      use_email,
                                       use_name,
                                       use_password
                                     ) VALUES (
                                       '".$this->type."',
+                                      '".$this->email."',
                                       '".$this->name."',
                                       '".md5(md5($this->password))."'
                                     );
@@ -142,11 +147,13 @@ require_once('connection.php');
       ) : ( //User avatar is not empty
         $cmd = $this->conn->query(" INSERT INTO users(
                                       typ_idFk,
+                                      use_email,
                                       use_name,
                                       use_password,
                                       use_avatar
                                     ) VALUES (
                                       '".$this->type."',
+                                      '".$this->email."',
                                       '".$this->name."',
                                       '".md5(md5($this->password))."',
                                       '".$this->avatar."'
@@ -157,8 +164,8 @@ require_once('connection.php');
       return [true, array('name' => $this->name)];
     }
 
-    public function submit($name, $password, $confirmPassword, $avatar = '', $type = 1, $isAdminSubmit = false){
-      $this->setUserInformations($name, $password, $confirmPassword, $avatar = '', $type);
+    public function submit($email, $name, $password, $confirmPassword, $avatar = '', $type = 1, $isAdminSubmit = false){
+      $this->setUserInformations($email, $name, $password, $confirmPassword, $avatar = '', $type);
 
       if($isAdminSubmit){
         if(count($this->err) == 0){ //Vê se passou pela verificação...

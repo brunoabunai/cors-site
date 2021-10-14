@@ -21,8 +21,8 @@ USE `coronaN`;
 CREATE TABLE IF NOT EXISTS `posts` (
   `pos_idPk` int(11) NOT NULL AUTO_INCREMENT,
   `use_idFk` int(11) NOT NULL,
-  `pos_title` varchar(150) NOT NULL,
-  `pos_description` varchar(9999) NOT NULL,
+  `pos_title` varchar(200) NOT NULL,
+  `pos_description` varchar(65.535) NOT NULL,
   `pos_date` datetime NOT NULL,
   `pos_dateEdit` datetime NOT NULL,
   PRIMARY KEY (`pos_idPk`),
@@ -38,8 +38,8 @@ CREATE TABLE IF NOT EXISTS `posts` (
 CREATE TABLE IF NOT EXISTS `recommendations` (
   `rec_idPk` int(11) NOT NULL AUTO_INCREMENT,
   `use_idFk` int(11) NOT NULL,
-  `rec_title` varchar(150) NOT NULL,
-  `rec_description` varchar(9999) NOT NULL,
+  `rec_title` varchar(200) NOT NULL,
+  `rec_description` varchar(65.535) NOT NULL,
   `rec_date` datetime NOT NULL,
   `rec_response` bit(1) DEFAULT 0 NOT NULL,
   PRIMARY KEY (`rec_idPk`),
@@ -55,6 +55,7 @@ CREATE TABLE IF NOT EXISTS `recommendations` (
 CREATE TABLE IF NOT EXISTS `users` (
   `use_idPk` int(11) NOT NULL AUTO_INCREMENT,
   `typ_idFk` int(11) NOT NULL DEFAULT 1,
+  `use_email` varchar(150) NOT NULL,
   `use_name` varchar(150) NOT NULL,
   `use_password` varchar(32) NOT NULL,
   `use_avatar` varchar(150) NOT NULL DEFAULT ('https://img-16.ccm2.net/_SqzzXVDSG50FWb_UBrCl3XwV78=/440x/1685e17045e747a899925aa16189c7c6/ccm-encyclopedia/99776312_s.jpg'),
@@ -88,8 +89,8 @@ INSERT INTO `types` (`typ_name`) VALUES
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`typ_idFk`, `use_name`, `use_password`) VALUES
-((SELECT typ_idPk from types WHERE typ_name='admin'), 'admin', 'c3284d0f94606de1fd2af172aba15bf3');
+INSERT INTO `users` (`typ_idFk`, `use_email`, `use_name`, `use_password`) VALUES
+((SELECT typ_idPk from types WHERE typ_name='admin'), 'admin@gmail.com', 'admin', 'c3284d0f94606de1fd2af172aba15bf3');
 
 --
 -- Dumping data for table `posts`

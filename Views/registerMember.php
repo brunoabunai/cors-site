@@ -52,13 +52,13 @@
           <label>Digite Seu Nome:</label>
           <input name="reg_name" placeholder="digite o nome aqui" type="text" value="<?php echo isset($_SESSION['reg_name']) ? $_SESSION['reg_name'] : ''; ?>" />
           <label>Digite seu Email:</label>
-          <input name="reg_name" placeholder="digite o email aqui" type="email" value="<?php echo isset($_SESSION['reg_name']) ? $_SESSION['reg_name'] : ''; ?>" />
+          <input name="reg_email" placeholder="digite o email aqui" type="email" value="<?php echo isset($_SESSION['reg_email']) ? $_SESSION['reg_email'] : ''; ?>" />
         </div>
         <div class="group">
           <label>Digite uma Senha:</label>
-          <input title="true" name="reg_password" placeholder="digite a senha aqui" type="password" value="<?php echo isset($_SESSION['reg_password']) ? $_SESSION['reg_password'] : ''; ?>" />
+          <input title="true" name="reg_password" placeholder="digite a senha aqui" type="password" />
           <label>Confirme sua senha:</label>
-          <input title="true" name="reg_confirmPassword" placeholder="digite a senha novamente aqui" type="password" value="<?php echo isset($_SESSION['reg_confirmPassword']) ? $_SESSION['reg_confirmPassword'] : ''; ?>" />
+          <input title="true" name="reg_confirmPassword" placeholder="digite a senha novamente aqui" type="password" />
 
         </div>
         <div class="group">
