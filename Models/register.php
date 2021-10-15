@@ -110,11 +110,13 @@ require_once('connection.php');
         ) : ( //User avatar is not empty
         $cmd = $this->conn->query(" INSERT INTO users(
                                       typ_idFk,
+                                      use_email,
                                       use_name,
                                       use_password,
                                       use_avatar
                                     ) VALUES (
                                       '".$this->type."',
+                                      '".$this->email."',
                                       '".$this->name."',
                                       '".md5(md5($this->password))."',
                                       '".$this->avatar."'
@@ -136,10 +138,12 @@ require_once('connection.php');
       (strlen($this->avatar) == 0) ? ( //User avatar is empty
         $cmd = $this->conn->query(" INSERT INTO users(
                                       typ_idFk,
+                                      use_email,
                                       use_name,
                                       use_password
                                     ) VALUES (
                                       '".$this->type."',
+                                      '".$this->email."',
                                       '".$this->name."',
                                       '".md5(md5($this->password))."'
                                     );

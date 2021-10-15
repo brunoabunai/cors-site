@@ -6,7 +6,7 @@ require_once('connection.php');
     private $conn;
     private $err;
 
-    private $name;
+    private $email;
     private $password;
 
     public function __construct() {
@@ -14,8 +14,8 @@ require_once('connection.php');
       $this->err = array();
     }
 
-    public function setLoginValues($name, $password) {
-      $this->name = $name;
+    public function setLoginValues($email, $password) {
+      $this->email = $email;
       $this->password = $password;
 
       return $this->loginValidation();
@@ -25,9 +25,9 @@ require_once('connection.php');
      * Function to validation values
      */
     private function loginValidation() {
-      if (strlen($this->name) == 0) {
-        $this->err[] = 'preencha o nome.';
-      }
+      // if (strlen($this->email) == 0) {
+      //   $this->err[] = 'preencha o nome.';
+      // }
       if (strlen($this->password) == 0) {
         $this->err[] = 'preencha a senha.';
       }
@@ -43,7 +43,7 @@ require_once('connection.php');
       $cmd = "
         SELECT use_idPk 
         FROM users 
-        WHERE use_name = '".$this->name."' 
+        WHERE use_email = '".$this->email."' 
         AND use_password = '".md5(md5($this->password))."'
       ";
       $query = $this->conn->query($cmd) or die ($this->conn->error);
