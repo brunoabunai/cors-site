@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-      <?php include_once('./styles/404.css'); ?>
+      <?php include_once('/TCC/cors-site/styles/404.css'); ?>
     </style>
     <title>Ops... um erro</title>
   </head>
@@ -22,7 +22,7 @@
       </div>
 
       <span class="subtitle"><b>Page404</b> Ocorreu um erro inesperado</span>
-      <a class="opacty-button btn-back404" href="../../../../TCC/cors-site/landing">
+      <a class="opacty-button btn-back404" href="/TCC/cors-site/landing">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M6 16V13L22 13V11L6 11L6 8L2 12L6 16Z" fill="var(--grayn)"></path>
         </svg>
