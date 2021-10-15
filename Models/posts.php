@@ -9,6 +9,7 @@ require_once('connection.php');
     private $user;
     private $title;
     private $description;
+    // private $image;
     private $date;
 
     public function __construct(){
@@ -66,6 +67,9 @@ require_once('connection.php');
       $this->user = $user;
       $this->title = $title;
       $this->description = trim($description);
+
+      //// $this->image = file_get_contents($image); // Transformando foto em dados (binário)
+
       $this->date = $date;
 
       /**

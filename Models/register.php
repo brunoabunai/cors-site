@@ -72,7 +72,7 @@ require_once('connection.php');
     /**
      * Set users var from receipt of data
      */
-    private function setUserInformations($email, $name, $password, $confirmPassword, $avatar = '', $type = 1){
+    private function setUserInformations($email, $name, $password, $confirmPassword, $avatar = null, $type = 1){
       while((strpos($name, "  ") != 0)){ //Enquanto existir doble space
         (strpos($name, "  ") != 0) ? $name = $this->help->removeDoubleSpace($name) : $name = $name;
       }
@@ -112,20 +112,20 @@ require_once('connection.php');
                                     );
                                   ")
         ) : ( //User avatar is not empty
-        $cmd = $this->conn->query(" INSERT INTO users(
-                                      typ_idFk,
-                                      use_email,
-                                      use_name,
-                                      use_password,
-                                      use_avatar
-                                    ) VALUES (
-                                      '".$this->type."',
-                                      '".$this->email."',
-                                      '".$this->name."',
-                                      '".md5(md5($this->password))."',
-                                      '".$this->avatar."'
-                                    );
-                                  ")
+      $cmd = $this->conn->query(" INSERT INTO users(
+                                    typ_idFk,
+                                    use_name,
+                                    use_email,
+                                    use_password,
+                                    use_avatar
+                                  ) VALUES (
+                                    '".$this->type."',
+                                    '".$this->name."',
+                                    '".$this->email."',
+                                    '".md5(md5($this->password))."',
+                                    '".$this->avatar."'
+                                  );
+                                ") or die ($this->conn->error)
         );
 
       return [
@@ -155,18 +155,18 @@ require_once('connection.php');
       ) : ( //User avatar is not empty
         $cmd = $this->conn->query(" INSERT INTO users(
                                       typ_idFk,
-                                      use_email,
                                       use_name,
+                                      use_email,
                                       use_password,
                                       use_avatar
                                     ) VALUES (
                                       '".$this->type."',
-                                      '".$this->email."',
                                       '".$this->name."',
+                                      '".$this->email."',
                                       '".md5(md5($this->password))."',
                                       '".$this->avatar."'
                                     );
-                                  ")
+                                  ") or die ($this->conn->error)
       );
 
       return [true, array('name' => $this->name)];

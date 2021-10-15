@@ -40,7 +40,10 @@
           
           
           <input type="text" class="pos_register" name="pos_title" placeholder="Título do post" value="<?php echo isset($_SESSION['pos_title']) ? $_SESSION['pos_title'] : '' ?>" />
-    
+          
+
+          <!-- <input type="file" class="pos_image" name="pos_image" /> -->
+
           
           <textarea placeholder="Escreva Seu Post..." class="pos_register" name="pos_description" cols="50" rows="10"><?php echo isset($_SESSION['pos_register']) ? $_SESSION['pos_register'] : '' ?></textarea>
 
@@ -56,7 +59,7 @@
             Clique Para Carregar Imagem
             <img id="img-player" src="/TCC/cors-site/public/img/black_screen.jpg">
           </label>
-          <input style="display:none;" id="file-upload" type="file" onchange="previewFile()">
+          <input style="display:none;" id="file-upload" type="file" name="pos_image" onchange="previewFile()">
           <!-- <input id="file-upload" type="file" onchange="previewFile()"> -->
           <!-- <img id="img-player" src=""> -->
           <input type="submit" class="btn-register opacty-button" value="Enviar Postagem" />
