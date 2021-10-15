@@ -42,7 +42,7 @@
 
     <div class="main">
       <form name="form_login" action="./login/submit" method="POST">
-        <input name="log_name" type="email" placeholder="Email">
+        <input name="log_email" type="email" placeholder="Email">
         <input title="true" name="log_password" type="password" placeholder="Senha">
         <input type="submit" id="btn" class="btn-begin opacty-button" value="Entrar Na Sua Conta">
         <span class="toRegisterMember">

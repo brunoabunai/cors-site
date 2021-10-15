@@ -8,7 +8,7 @@
     
     public function submit() {
       $l = new login();
-      $data = $l -> setLoginValues($_POST['log_name'], $_POST['log_password']); //trocar o nome de "log_name"
+      $data = $l -> setLoginValues($_POST['log_email'], $_POST['log_password']);
 
       if(isset($data[0]) && $data[0]) {
         array_shift($data);
