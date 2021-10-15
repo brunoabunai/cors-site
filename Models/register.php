@@ -37,6 +37,10 @@ require_once('connection.php');
       if(strlen($this->name) <= 4){ //Vê se o campo "Name" tem menos de 5 caracteres
         $this->err[] = "Nome muito pequeno.";
       }
+      
+      if (strlen($this->email) == 0) {
+        $this->err[] = 'preencha o e-mail.';
+      }
 
       if(strlen($this->password) == 0){ //Vê se o campo "Password" está vazio
         $this->err[] = "Preencha a senha.";

@@ -25,9 +25,9 @@ require_once('connection.php');
      * Function to validation values
      */
     private function loginValidation() {
-      // if (strlen($this->email) == 0) {
-      //   $this->err[] = 'preencha o nome.';
-      // }
+      if (strlen($this->email) == 0) {
+        $this->err[] = 'preencha o e-mail.';
+      }
       if (strlen($this->password) == 0) {
         $this->err[] = 'preencha a senha.';
       }
