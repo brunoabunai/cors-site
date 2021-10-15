@@ -79,7 +79,7 @@ require_once('connection.php');
       $name = $this->help->removeAccents($name);
 
       $this->email = $email;
-      $this->name = trim($name);
+      $this->name = $name;
       $this->password = $password;
       $this->confirmPassword = $confirmPassword;
       $this->avatar = $avatar;

@@ -65,7 +65,7 @@ require_once('connection.php');
       $date = date("Y-m-d H:i:S");
 
       $this->user = $user;
-      $this->title = trim($title);
+      $this->title = $title;
       $this->description = trim($description);
       $this->date = $date;
 
