@@ -11,7 +11,7 @@
       $data = $r -> setPostInformations($_POST['pos_title'], $_POST['pos_description'], $_FILES['pos_image']);
 
       // print_r($data);
-      
+
       if (isset($data[0]) && $data[0]) { //true = validation true (pass)
         array_shift($data);
         $this->loadTemplate('success', $data[0]);
@@ -19,7 +19,7 @@
         array_shift($data);
         $this->loadTemplate('errorLog', $data);
       }
-      
+
     }
   }
 

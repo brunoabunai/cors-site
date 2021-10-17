@@ -3,3 +3,5 @@
 /.vscode
 connection.php
 roteiro.md
+/database/postsImages/*
+/database/userImages/*
