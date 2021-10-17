@@ -23,7 +23,7 @@ CREATE TABLE IF NOT EXISTS `posts` (
   `use_idFk` int(11) NOT NULL,
   `pos_title` varchar(200) NOT NULL,
   `pos_description` varchar(65.535) NOT NULL,
-  `pos_image` mediumblob NOT NULL,
+  `pos_image` varchar(150) NOT NULL DEFAULT ('https://img-16.ccm2.net/_SqzzXVDSG50FWb_UBrCl3XwV78=/440x/1685e17045e747a899925aa16189c7c6/ccm-encyclopedia/99776312_s.jpg'),
   `pos_date` datetime NOT NULL,
   `pos_dateEdit` datetime NOT NULL,
   PRIMARY KEY (`pos_idPk`),
@@ -84,6 +84,7 @@ CREATE TABLE IF NOT EXISTS `types` (
 
 INSERT INTO `types` (`typ_name`) VALUES
 ('user'),
+('writer'),
 ('admin');
 
 --

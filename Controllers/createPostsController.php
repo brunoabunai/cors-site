@@ -8,7 +8,9 @@
 
     public function submit(){
       $r = new posts();
-      $data = $r -> setPostInformations($_POST['pos_title'], $_POST['pos_description']);
+      $data = $r -> setPostInformations($_POST['pos_title'], $_POST['pos_description'], $_FILES['pos_image']);
+
+      // print_r($data);
       
       if (isset($data[0]) && $data[0]) { //true = validation true (pass)
         array_shift($data);

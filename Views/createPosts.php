@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    <?php include_once('/TCC/cors-site/styles/createPosts.css'); ?>
+    <?php include_once('../../TCC/cors-site/styles/createPosts.css'); ?>
   </style>
   <title>Criar Postagem</title>
 </head>
@@ -35,7 +35,7 @@
 
     <div class="main">
 
-      <form name="form_createPosts" action="./createPosts/submit" method="post">
+      <form enctype="multipart/form-data" name="form_createPosts" action="./createPosts/submit" method="post">
         <input style="display:none;" type="text" class="pos_register" name="use_idFk" placeholder="Veremos..." disabled value="' . $_SESSION[" logid"] . '" />
           
           

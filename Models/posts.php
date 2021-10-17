@@ -9,7 +9,7 @@ require_once('connection.php');
     private $user;
     private $title;
     private $description;
-    // private $image;
+    private $image;
     private $date;
 
     public function __construct(){
@@ -18,20 +18,49 @@ require_once('connection.php');
     }
 
     private function validarInformations(){
-      if(strlen($this->title) == 0){ //Vê se o campo "Title" está vazio
+      if(strlen($this->title) == 0) { //Vê se o campo "Title" está vazio
         $this->err[] = "Preencha o título.";
       } else
-      if(strlen($this->title) <= 5){ //Vê se o campo "Title"  tem menos de 6 caracteres
+      if(strlen($this->title) <= 5) { //Vê se o campo "Title"  tem menos de 6 caracteres
         $this->err[] = "Title muito pequeno.";
       }
 
-      if(strlen($this->description) == 0){ //Vê se o campo "Description" está vazio
+      if(strlen($this->description) == 0) { //Vê se o campo "Description" está vazio
         $this->err[] = "Preencha a descrição.";
       } else
-      if(strlen($this->description) <= 100){ //Vê se o campo "Description"  tem menos de 101 caracteres
+      if(strlen($this->description) <= 100) { //Vê se o campo "Description"  tem menos de 101 caracteres
         $this->err[] = "Descrição muito pequeno.";
       }
+
+      if(!isset($this->image)) {
+        $this->err[] = "Imagem não selecionada";
+      } else
+      if($this->image['error']) {
+        $this->err[] = "Falha ao enviar a imagem";
+      } else
+      if($this->image['size'] > 2097152) { //2MB
+        $this->err[] = "Imagem muito grande! Max: 2MB";
+      } else {
+        $directory = './database/postsImages/';
+        $fileName = $this->image['name'];
+        $newNameFile = uniqid();
+
+        $extensions = array('png', 'jpg', 'jpeg');
+        $extension = strtolower(pathinfo($fileName, PATHINFO_EXTENSION));
+
+        if(in_array($extension, $extensions) === false) {
+          $this->err[] = "Extensão invalida! (png, jpg, jpeg)";
+        }
+        
+        $right = move_uploaded_file($this->image['tmp_name'], $directory . $newNameFile . '.' . $extension);
+        if(!$right) {
+          $this->err[] = "Não foi possível fazer o salvamento";
+        }
+
+        $this->image = $directory . $newNameFile . '.' . $extension;
+      }
       
+
       $cmd = $this->conn->query(' SELECT pos_description 
                                   FROM posts 
                                   WHERE pos_description = "'.$this->description.'"
@@ -57,7 +86,7 @@ require_once('connection.php');
       }
     }
 
-    public function setPostInformations($title, $description, $user = 1){
+    public function setPostInformations($title, $description, $image, $user = 1){
       (strpos($title, "  ") != 0) ? $title = $this->removeDoubleSpace($title) : $title = $title;
       (strpos($description, "  ") != 0) ? $description = $this->removeDoubleSpace($description) : $description = $description;
 
@@ -67,6 +96,7 @@ require_once('connection.php');
       $this->user = $user;
       $this->title = $title;
       $this->description = trim($description);
+      $this->image = $image;
 
       //// $this->image = file_get_contents($image); // Transformando foto em dados (binário)
 
@@ -86,12 +116,14 @@ require_once('connection.php');
                                     use_idFk,
                                     pos_title,
                                     pos_description,
+                                    pos_image,
                                     pos_date,
                                     pos_dateEdit
                                   ) VALUES (
                                     '".$this->user."',
                                     '".$this->title."',
                                     '".$this->description."',
+                                    '".$this->image."',
                                     '".$this->date."',
                                     '".$this->date."'
                                   );
