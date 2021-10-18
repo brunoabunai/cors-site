@@ -20,7 +20,7 @@ $option = "admin";
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    <?php include_once('styles/home.css'); ?>
+    <?php include_once('./styles/home.css'); ?>
   </style>
   <title>Home-Page</title>
   
@@ -40,8 +40,8 @@ $option = "admin";
   </button>
   <div class="bt-menu optionsHomeDesktop">
     <a class="opitonActive" href="#">Home</a>
-    <a href="./covidInformations">Covid Informações</a>
-    <a href="./recommendations/infos">Recomendações+</a>
+    <a href="/TCC/cors-site/covidInformations">Covid Informações</a>
+    <a href="/TCC/cors-site/recommendations/infos">Recomendações+</a>
   </div>
   <div class="logo">
     <h4>CORS</h4>

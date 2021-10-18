@@ -18,7 +18,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    <?php include_once('styles/infosars.css'); ?>
+    <?php include_once('./styles/infosars.css'); ?>
   </style>
   <title>Informações Sobre COVID2019</title>
 </head>
@@ -38,9 +38,9 @@
     <h4>CORS</h4>
   </div>
   <div class="bt-menu optionsHomeDesktop">
-    <a href="./home">Home</a>
+    <a href="/TCC/cors-site/home">Home</a>
     <a class="opitonActive" href="#">Covid Informações</a>
-    <a href="./recommendations/infos">Recomendações+</a>
+    <a href="/TCC/cors-site/recommendations/infos">Recomendações+</a>
   </div>
   <div class="infosars-page">
 
@@ -48,7 +48,7 @@
     <div class="preventions-page">
 
       <div class="prevention-box">
-        <a href="./covidInformations/preventions">
+        <a href="/TCC/cors-site/covidInformations/preventions">
           <div class="box-firstLine">
             <img src="./public/img/cv2.png" alt="">
             <h2> Para evitar a propagação da COVID-19:</h2>
@@ -63,7 +63,7 @@
     <div class="symptoms-page">
 
       <div class="symptoms-box">
-        <a href="./covidInformations/symptoms">
+        <a href="/TCC/cors-site/covidInformations/symptoms">
           <div class="box-firstLine">
             <img src="./public/img/cv3.png" alt="">
             <h2> Fique atento aos sintomas da COVID-19:</h2>

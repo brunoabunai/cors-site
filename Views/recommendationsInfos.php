@@ -20,7 +20,7 @@ $option="admin";
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    <?php include_once('styles/recommendationsInfos.css'); ?>
+    <?php include_once('./styles/recommendationsInfos.css'); ?>
   </style>
   <title>Recomendações</title>
 </head>
@@ -38,9 +38,9 @@ $option="admin";
     </svg>
   </button>
   <div class="bt-menu optionsHomeDesktop">
-    <a  href="../home">Home</a>
-    <a href="../covidInformations">Covid Informações</a>
-    <a class="opitonActive" href="./recommendationsInfos">Recomendações+</a>
+    <a  href="/TCC/cors-site/home">Home</a>
+    <a href="/TCC/cors-site/covidInformations">Covid Informações</a>
+    <a class="opitonActive" href="#">Recomendações+</a>
   </div>
   <div class="logo">
     <h4>CORS</h4>
@@ -65,7 +65,7 @@ $option="admin";
     <span class="subtitle secondSubtitle">
       Basta um titulo legal e um textinho sobre o que quer quer falemos nas nossas matérias, é muito simples!
     </span> <br>
-    <a href="../recommendations/create">Mandar Uma Recomendação Agora!</a>
+    <a href="/TCC/cors-site/recommendations/create">Mandar Uma Recomendação Agora!</a>
   </div>
   <?php include 'redirects/box.php' ?>
 </body>

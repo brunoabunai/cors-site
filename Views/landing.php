@@ -32,7 +32,7 @@
     </div>
 
     <div class="main">
-      <a class="btn-begin opacty-button" href="./login">Começar Agora</a>
+      <a class="btn-begin opacty-button" href="/TCC/cors-site/login">Começar Agora</a>
     </div>
 
   </body>

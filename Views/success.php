@@ -20,7 +20,7 @@ $outputPrefixOfSucessProcess = " Com Sucesso!";
 $outputSucess = $text;
 $lastRoute = $previousPage;
 $textButton = $buttonText;
-$position = isset($pos) ? $pos : '../';
+$position = '/TCC/cors-site/';
 ?>
 
 <!DOCTYPE html>
@@ -31,7 +31,7 @@ $position = isset($pos) ? $pos : '../';
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    <?php include_once('styles/success.css'); ?>
+    <?php include_once('./styles/success.css'); ?>
   </style>
   <title>Sucesso</title>
 </head>
