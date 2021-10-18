@@ -41,7 +41,7 @@ require_once('connection.php');
       if($this->image['size'] > 2097152) { //2MB
         $this->err[] = "Imagem muito grande! Max: 2MB";
       } else {
-        $directory = './database/postsImages/';
+        $directory = 'database/postsImages/';
         $fileName = $this->image['name'];
         $newNameFile = uniqid();
 

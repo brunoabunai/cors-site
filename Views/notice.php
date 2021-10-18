@@ -4,10 +4,12 @@ unset(
   $_SESSION['reg_name'],
   $_SESSION['reg_password'],
   $_SESSION['reg_confirmPassword'],
+  $_SESSION['reg_email'],
   //Post
   $_SESSION['pos_title'],
   $_SESSION['pos_register']
 );
+
 $nameOfNotice = $title;
 ?>
 
@@ -62,7 +64,7 @@ $nameOfNotice = $title;
         <?= $title; ?>
       </h3>
       <span class="head-author">- <?= $user['name']; ?></span>
-      <img src="../../public/img/banner_corona.jpg" alt="">
+      <img src="<?= "../../".$image; ?>" alt="">
       <span class="head-desc">
         <?= $description; ?>
       </span>

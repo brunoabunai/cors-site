@@ -22,7 +22,7 @@
 
         <a href="./home/getPostFromTitle/<?= str_replace(" ", "-", $help->removeAccents($value['title'])); ?>">
           <div class="noticie noticieOne">
-            <img src="./public/img/banner_corona.jpg" alt="">
+            <img src="<?= $value['image']; ?>" alt="">
 
             <div class="headline">
               <span class="head-author"><?= $value['user']['name']; ?> - <small> <?php echo $date ?></small></span>
@@ -55,7 +55,7 @@
                 </span>
               </div>
 
-              <img src="./public/img/banner_corona.jpg" alt="">
+              <img src="<?= $value['image']; ?>" alt="">
             </div>
           </a>
           

@@ -91,7 +91,7 @@ INSERT INTO `types` (`typ_name`) VALUES
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`typ_idFk`, `use_email`, `use_name`, `use_password`) VALUES
+INSERT INTO `users` (`typ_idFk`, `use_name`, `use_email`, `use_password`) VALUES
 ((SELECT typ_idPk from types WHERE typ_name='admin'), 'admin', 'admin@gmail.com', 'c3284d0f94606de1fd2af172aba15bf3');
 
 --

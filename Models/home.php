@@ -14,17 +14,17 @@ require_once('connection.php');
     }
 
     public function recentPosts() {
-      $cmd = $this->conn->query("
-        SELECT use_idFk, pos_title, pos_description
-        FROM posts
-        ORDER BY pos_idPk DESC
-      ") or die ($this->conn->error);
+      $cmd = $this->conn->query(" SELECT use_idFk, pos_title, pos_description, pos_image
+                                  FROM posts
+                                  ORDER BY pos_idPk DESC
+                                ") or die ($this->conn->error);
         
       foreach ($cmd as $row) {
         $this->data[] = [
           'user' => $this->help->getUserPerId($row['use_idFk']),
           'title' => $row['pos_title'],
-          'description' => $row['pos_description']
+          'description' => $row['pos_description'],
+          "image" => $row['pos_image']
         ];
       }
 
@@ -35,8 +35,8 @@ require_once('connection.php');
      * Get Post from title
      */
     public function getPostPerTitle($title) {
-      $title = str_replace("-", " ", $title);
-      $cmd = $this->conn->query(' SELECT use_idFk, pos_title, pos_description 
+      $title = str_replace("-", " ", $title)."?";
+      $cmd = $this->conn->query(' SELECT use_idFk, pos_title, pos_description, pos_image 
                                   FROM posts 
                                   WHERE pos_title = "'.$title.'" 
                                 ') or die ($this->conn->error);
@@ -45,7 +45,8 @@ require_once('connection.php');
       return [
         "user" => $this->help->getUserPerId($this->data['use_idFk']),
         "title" => $this->data['pos_title'],
-        "description" => $this->data['pos_description']
+        "description" => $this->data['pos_description'],
+        "image" => $this->data['pos_image']
       ];
     }
 
