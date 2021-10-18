@@ -41,7 +41,7 @@ $option = "admin";
   <div class="bt-menu optionsHomeDesktop">
     <a class="opitonActive" href="#">Home</a>
     <a href="/TCC/cors-site/covidInformations">Covid Informações</a>
-    <a href="/TCC/cors-site/recommendations/infos">Recomendações+</a>
+    <a href="/TCC/cors-site/recommendations/infos">Sugestão +</a>
   </div>
   <div class="logo">
     <h4>CORS</h4>

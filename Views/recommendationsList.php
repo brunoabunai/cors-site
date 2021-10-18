@@ -19,7 +19,7 @@
         </svg>
       </a>
 
-      <input placeholder="pesquise uma recomendação" class="search" type="text">
+      <input placeholder="pesquise uma sugestão" class="search" type="text">
 
 
       <div class="rec-list">

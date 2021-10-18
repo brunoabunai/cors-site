@@ -8,7 +8,7 @@
   <style>
     <?php include_once('./styles/recommendations.css'); ?>
   </style>
-  <title>Lista de Recomendações</title>
+  <title>Lista de Sugestões</title>
 </head>
 
 <body>

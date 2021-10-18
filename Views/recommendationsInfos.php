@@ -22,7 +22,7 @@ $option="admin";
   <style>
     <?php include_once('./styles/recommendationsInfos.css'); ?>
   </style>
-  <title>Recomendações</title>
+  <title>Sugestão</title>
 </head>
 
 <body>
@@ -40,7 +40,7 @@ $option="admin";
   <div class="bt-menu optionsHomeDesktop">
     <a  href="/TCC/cors-site/home">Home</a>
     <a href="/TCC/cors-site/covidInformations">Covid Informações</a>
-    <a class="opitonActive" href="#">Recomendações+</a>
+    <a class="opitonActive" href="#">Sugestão +</a>
   </div>
   <div class="logo">
     <h4>CORS</h4>
@@ -50,7 +50,7 @@ $option="admin";
 
   <div class="recommendationsInfos-page">
     <h2>No Cors, ouvimos você.</h2>
-    <h3 class="title firstTitle">Nos diga sua recomendação de postagem:</h3>
+    <h3 class="title firstTitle">Nos diga sua sugestão de postagem:</h3>
     <span class="subtitle firstSubtitle">
       É muito simples, basta nos dizer sobre o que você quer que nós escrevamos
       <ul>
@@ -61,11 +61,11 @@ $option="admin";
       Não importa o que seja, nós pesquisaremos e faremos a melhor matéria sobre o assunto, permitindo que você descubra a verdade e que o mundo se livre das fake news sobre o vírus SARS-COVID 2019 
     </span>
 
-    <h3 class="title secondTitle">Para nos mandar sua recomendação:</h3>
+    <h3 class="title secondTitle">Para nos mandar sua sugestão:</h3>
     <span class="subtitle secondSubtitle">
       Basta um titulo legal e um textinho sobre o que quer quer falemos nas nossas matérias, é muito simples!
     </span> <br>
-    <a href="/TCC/cors-site/recommendations/create">Mandar Uma Recomendação Agora!</a>
+    <a href="/TCC/cors-site/recommendations/create">Mandar Uma Sugestão de Postagem Agora!</a>
   </div>
   <?php include 'redirects/box.php' ?>
 </body>

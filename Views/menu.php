@@ -66,7 +66,7 @@ unset(
           </svg>
 
 
-          Recomendações
+          Sugestões
         </a>
 
         <a class="btn btn-new opacty-button bgT-button" href="/TCC/cors-site/register/administradores">

@@ -40,7 +40,7 @@
   <div class="bt-menu optionsHomeDesktop">
     <a href="/TCC/cors-site/home">Home</a>
     <a class="opitonActive" href="#">Covid Informações</a>
-    <a href="/TCC/cors-site/recommendations/infos">Recomendações+</a>
+    <a href="/TCC/cors-site/recommendations/infos">Sugestão +</a>
   </div>
   <div class="infosars-page">
 
