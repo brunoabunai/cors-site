@@ -96,9 +96,30 @@
       textarea.onkeypress = function(evt) {
         var str = keyPressed(evt);
 
-        if (evt.shiftKey && (str == '\r')) {
+        if ((str == '\r')) {
           textarea.value += '\r';
         }
+
+        if(evt.ctrlKey && (str == '\n') ){
+          let form= document.querySelector('form');
+          let inputsOfForm = document.querySelectorAll('form > input');
+          let haveInputEmpty=false;
+
+          inputsOfForm.forEach((input, indexInput) => {
+            if(input.value==""){
+              haveInputEmpty=true;
+            };
+          });
+
+          if(!haveInputEmpty){
+            form.submit();
+          }else{
+            alert('por favor, preencha todos os campos!');
+          };
+          
+        };
+
+        
       };
       // const createPost = () => {
       //   const query = document.querySelectorAll(".pos_register");
