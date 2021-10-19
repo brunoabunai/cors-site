@@ -1,11 +1,13 @@
 body{
   height: 100vh;
-  width: 100vw;
+  width: 100%;
+  margin: 0;
+  overflow-y: hidden;
 }
 
 .page-404{
   height: 100%;
-  width: 100vw;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -34,7 +36,7 @@ body{
 }
 
 .page-404 .subtitle{
-  color: var(--null);
+  color: rgb(216, 65, 65);
   font-size: 4rem;
   margin-bottom: 2rem;
   margin-top: 2rem;
@@ -59,7 +61,6 @@ body{
   }
 
   .page-404 .subtitle{
-      color: var(--null);
       font-size: 5rem;
       margin-bottom: 2rem;
       margin-top: 2rem;
