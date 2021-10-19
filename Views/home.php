@@ -54,7 +54,12 @@ $option = "admin";
       <h2>Ultimas Postagens Sobre o Corona Vírus</h2>
     </div>
   </div>
+
+  <div class="analysis-space">
+    AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+  </div>
   <?php include 'redirects/box.php' ?>
+  <?php include 'redirects/analysis_space.php' ?>
 
 </body>
 
