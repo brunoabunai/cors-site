@@ -25,17 +25,6 @@ function mapAllTagsA() {
   })
 }
 
-function setRouteColor(route) {
-  const nameId = getRoute();
-  return (nameId == route) ? `#000` : `#999`;
-}
-
-function getRoute() {
-  let route = window.location.toString();
-  route = route.split("/");
-  return route[route.length - 1]
-}
-
 mapAllTagsA();
 
 function haveSomeBoxActiver() {
@@ -185,6 +174,18 @@ function changeStateBox(op) {
 function conditionBox() {
   return (!globalStateBox[0] && !globalStateBox[1]);
 }
+
+function setRouteColor(route) {
+  const nameId = getRoute();
+  return (nameId == route) ? `#000` : `#999`;
+}
+
+function getRoute() {
+  let route = window.location.toString();
+  route = route.split("/");
+  return route[route.length - 1]
+}
+
 
 function setRouteCLick(route) {
   const routeArr = route.split('/');
