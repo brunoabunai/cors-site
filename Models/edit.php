@@ -8,7 +8,7 @@ require_once ('connection.php');
     private $help;
     public $data;
 
-    private $id, $name, $password;
+    private $id, $name, $email, $password, $image;
 
     public function __construct() {
       $this->conn = connection::getConnection();
@@ -234,6 +234,10 @@ require_once ('connection.php');
         $this->err[] = 'Nome muito pequeno';
       }
 
+      if (strlen($this->email) == 0) {
+        $this->err[] = 'preencha o e-mail.';
+      }
+
       /** Validar password */
       if(strlen($this->password) == 0) {
         $this->err[] = 'Preencha a senha';
@@ -241,6 +245,35 @@ require_once ('connection.php');
       if(strlen($this->password) <= 4) {
         $this->err[] = 'Senha muito pequena';
       }
+      
+      /** Validar image */
+      // if(!isset($this->image)) {
+      //   $this->err[] = "Imagem não selecionada";
+      // } else
+      // if($this->image['error']) {
+      //   $this->err[] = "Falha ao enviar a imagem";
+      // } else
+      // if($this->image['size'] > 2097152) { //2MB
+      //   $this->err[] = "Imagem muito grande! Max: 2MB";
+      // } else {
+      //   $directory = 'database/userImages/';
+      //   $fileName = $this->image['name'];
+      //   $newNameFile = uniqid();
+
+      //   $extensions = array('png', 'jpg', 'jpeg');
+      //   $extension = strtolower(pathinfo($fileName, PATHINFO_EXTENSION));
+
+      //   if(in_array($extension, $extensions) === false) {
+      //     $this->err[] = "Extensão invalida! (png, jpg, jpeg)";
+      //   }
+        
+      //   $right = move_uploaded_file($this->image['tmp_name'], $directory . $newNameFile . '.' . $extension);
+      //   if(!$right) {
+      //     $this->err[] = "Não foi possível fazer o salvamento";
+      //   }
+
+      //   $this->image = $directory . $newNameFile . '.' . $extension;
+      // }
 
       /** Vê se o name está em uso */
       $cmd = $this->conn->query('
@@ -263,10 +296,12 @@ require_once ('connection.php');
 
     }
 
-    public function setEditValues($id, $name, $password) {
+    public function setEditValues($id, $name, $email, $password, $image = 'image') {
       $this->id = $id;
       $this->name = $name;
+      $this->email = $email;
       $this->password = $password;
+      $this->image = $image;
 
       return $this->editValidation();
     }
@@ -276,7 +311,9 @@ require_once ('connection.php');
       $cmd = $this->conn->query("
         UPDATE users
         SET use_name = '".$this->name."',
-        use_password = '".md5(md5($this->password))."'
+        use_email = '".$this->email."',
+        use_password = '".md5(md5($this->password))."',
+        use_image = '".$this->image."'
         WHERE use_idPk = ".$this->id."
       ") or die ($this->conn->error);
 

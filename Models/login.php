@@ -55,6 +55,8 @@ require_once('connection.php');
 
       /** View if not existe err, if return = true (login), else (errorLog) */
       if(count($this->err) == 0){
+        $_SESSION['loginId'] = $data['use_idPk'];
+
         return [
           true,
           array(

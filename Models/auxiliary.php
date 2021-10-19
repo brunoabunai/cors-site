@@ -13,7 +13,7 @@ require_once('connection.php');
     /** Users */
     public function getUserPerId($id){
       $cmd = $this->conn->query('
-        SELECT use_name, use_avatar
+        SELECT use_name, use_email, use_avatar
         FROM users
         WHERE use_idPk = "'.$id.'"
       ');
@@ -21,6 +21,7 @@ require_once('connection.php');
 
       return ([
         'name' => $this->ret['use_name'],
+        'email' => $this->ret['use_email'],
         'avatar' => $this->ret['use_avatar']
       ]);
     }

@@ -36,7 +36,7 @@
     <div class="main">
 
       <form enctype="multipart/form-data" name="form_createPosts" action="./createPosts/submit" method="post">
-        <input style="display:none;" type="text" class="pos_register" name="use_idFk" placeholder="Veremos..." disabled value="' . $_SESSION[" logid"] . '" />
+        <input style="display:none;" type="text" class="pos_register" name="use_idFk" placeholder="Veremos..." disabled value="' . $_SESSION["logid"] . '" />
           
           
           <input type="text" class="pos_register" name="pos_title" placeholder="Título do post" value="<?php echo isset($_SESSION['pos_title']) ? $_SESSION['pos_title'] : '' ?>" />

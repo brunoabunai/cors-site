@@ -76,7 +76,7 @@ require_once('connection.php');
         // $this->setUserInformations($this->name, $this->password, $this->avatar);
         return [true, $this->insertRegister()];
       } else {
-        return [false, $this->err, 'previousPage' => 'createPosts'];
+        return [false, $this->err, 'previousPage' => 'posts'];
       }
     }
 

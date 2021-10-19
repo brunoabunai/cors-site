@@ -35,7 +35,7 @@ require_once('connection.php');
      * Get Post from title
      */
     public function getPostPerTitle($title) {
-      $title = str_replace("-", " ", $title)."?";
+      $title = str_replace("-", " ", $title);
       $cmd = $this->conn->query(' SELECT use_idFk, pos_title, pos_description, pos_image 
                                   FROM posts 
                                   WHERE pos_title = "'.$title.'" 

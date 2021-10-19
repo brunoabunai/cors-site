@@ -21,7 +21,7 @@
 
     public function submitEditUser($userId) {
       $u = new edit();
-      $data = $u -> setEditValues($_POST['edi_id'], $_POST['edi_name'], $_POST['edi_password']);
+      $data = $u -> setEditValues($_POST['edi_id'], $_POST['edi_name'], $_POST['edi_email'], $_POST['edi_password']);
       // print_r($data);
       if(isset($data[0]) && $data[0]){
         array_shift($data);

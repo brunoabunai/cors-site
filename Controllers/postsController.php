@@ -1,6 +1,6 @@
 <?php
 
-  Class createPostsController extends Controller{
+  Class postsController extends Controller{
 
     public function index(){
       $this->loadTemplate('createPosts');
