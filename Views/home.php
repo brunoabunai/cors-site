@@ -55,9 +55,9 @@ $option = "admin";
     </div>
   </div>
 
-  <div class="analysis-space">
+  <!-- <div class="analysis-space">
     AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-  </div>
+  </div> -->
   <?php include 'redirects/box.php' ?>
   <?php include 'redirects/analysis_space.php' ?>
 
