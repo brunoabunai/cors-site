@@ -51,7 +51,7 @@ require_once('connection.php');
         if(in_array($extension, $extensions) === false) {
           $this->err[] = "Extensão invalida! (png, jpg, jpeg)";
         }
-        
+
         $right = move_uploaded_file($this->image['tmp_name'], $directory . $newNameFile . '.' . $extension);
         if(!$right) {
           $this->err[] = "Não foi possível fazer o salvamento";
