@@ -39,10 +39,10 @@
 
         
 
-        <input type="text" name="reg_name" placeholder="Nome:" value="<?php echo isset($_SESSION['reg_name']) ? $_SESSION['reg_name'] : ''; ?>" />
+        <input title="name" type="text" name="reg_name" placeholder="Nome:" value="<?php echo isset($_SESSION['reg_name']) ? $_SESSION['reg_name'] : ''; ?>" />
         <input type="email" name="reg_email" placeholder="Email:" value="<?php echo isset($_SESSION['reg_email']) ? $_SESSION['reg_email'] : ''; ?>" />
-        <input title="true" class="firstPassword" type="password" name="reg_password" placeholder="Senha:" />
-        <input title="true" type="password" name="reg_confirmPassword" placeholder="Confirme sua senha:" />
+        <input class="firstPassword" type="password" name="reg_password" placeholder="Senha:" />
+        <input type="password" name="reg_confirmPassword" placeholder="Confirme sua senha:" />
 
         <select name="typ_reg">
           <option value="1" selected="selected">User</option>

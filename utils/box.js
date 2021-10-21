@@ -307,6 +307,51 @@ function constructorBox(op) {
               </div>
           `;
       break;
+    case 3:
+        box.name = "box of config to writer";
+        box.content = /*html*/
+          `
+                <div id="box" class="box boxGear">
+                  <div class="options">
+                    <span>Opções:</span>
+                    
+                    <svg class="close" onclick="makeProcessToRemoveBox()" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="transform: ;msFilter:;"><path d="m16.192 6.344-4.243 4.242-4.242-4.242-1.414 1.414L10.535 12l-4.242 4.242 1.414 1.414 4.242-4.242 4.243 4.242 1.414-1.414L13.364 12l4.242-4.242z"></path></svg>
+  
+                  </div>
+                    <a id="myaccount" class="btn-account opacty-button" href="${setRouteCLickGear(`/TCC/cors-site/myaccount/user`)}"> 
+                      ${setContentByRoute(
+            `
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M20 20H4C2.93052 20.032 2.03642 19.1933 2 18.124V5.875C2.03641 4.80581 2.93068 3.96743 4 4H20C21.0693 3.96743 21.9636 4.80581 22 5.875V18.125C21.963 19.1939 21.0691 20.032 20 20ZM4 6V17.989L20 18V6.011L4 6ZM13.43 16H6C6.07353 15.1721 6.46534 14.4049 7.093 13.86C7.79183 13.1667 8.73081 12.7692 9.715 12.75C10.6992 12.7692 11.6382 13.1667 12.337 13.86C12.9645 14.4051 13.3563 15.1721 13.43 16ZM18 15H15V13H18V15ZM9.715 12C9.17907 12.0186 8.65947 11.8139 8.28029 11.4347C7.9011 11.0555 7.69638 10.5359 7.715 10C7.69668 9.46416 7.9015 8.94474 8.28062 8.56562C8.65974 8.1865 9.17916 7.98168 9.715 8C10.2508 7.98168 10.7703 8.1865 11.1494 8.56562C11.5285 8.94474 11.7333 9.46416 11.715 10C11.7336 10.5359 11.5289 11.0555 11.1497 11.4347C10.7705 11.8139 10.2509 12.0186 9.715 12ZM18 11H14V9H18V11Z" fill="var(--text-color)"></path>
+                        </svg>
+                      
+                        Minha Conta
+                        `, `/TCC/cors-site/myaccount/user`
+          )}
+                    </a>
+  
+                    <a class="btn-portal opacty-button" href="${setRouteCLickGear(`/TCC/cors-site/menu`)}">
+                        
+                        ${setContentByRoute(
+            `
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M20 20H4C2.89543 20 2 19.1046 2 18V6C2 4.89543 2.89543 4 4 4H20C21.1046 4 22 4.89543 22 6V18C22 19.1046 21.1046 20 20 20ZM4 12V18H20V12H4ZM4 6V8H20V6H4ZM13 16H6V14H13V16Z" fill="var(--text-color)"></path>
+                          </svg>
+                        
+                          Portal do Writer
+                          `, `/TCC/cors-site/menu`
+          )}
+                    </a>
+                    <a class="btn-leave opacty-button" onclick="logOff()" href="#">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19 21H5C3.89543 21 3 20.1046 3 19V15H5V19H19V5H5V9H3V5C3 3.89543 3.89543 3 5 3H19C20.1046 3 21 3.89543 21 5V19C21 20.1046 20.1046 21 19 21ZM11 16V13H3V11H11V8L16 12L11 16Z" fill="var(--danger)"></path>
+                      </svg>
+  
+                     Sair 
+                    </a>
+                </div>
+            `;
+        break;
     default:
       box.name = "null";
       box.content = "";

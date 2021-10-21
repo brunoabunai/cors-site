@@ -50,7 +50,7 @@
       <form name="form_register" action="./submitMember" method="POST">
         <div class="group">
           <label>Digite Seu Nome:</label>
-          <input name="reg_name" placeholder="digite o nome aqui" type="text" value="<?php echo isset($_SESSION['reg_name']) ? $_SESSION['reg_name'] : ''; ?>" />
+          <input title="name" name="reg_name" placeholder="digite o nome aqui" type="text" value="<?php echo isset($_SESSION['reg_name']) ? $_SESSION['reg_name'] : ''; ?>" />
           <label>Digite seu Email:</label>
           <input name="reg_email" placeholder="digite o email aqui" type="email" value="<?php echo isset($_SESSION['reg_email']) ? $_SESSION['reg_email'] : ''; ?>" />
         </div>
