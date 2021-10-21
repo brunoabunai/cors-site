@@ -29,7 +29,7 @@
               <h3 class="head-title">
                 <?= $value['title']; ?>
               </h3>
-              <span class="head-desc">
+              <span class="analysis-space head-desc">
                 <?= mb_strimwidth(rtrim(($value['description'])), 0, 60, "..."); ?>
               </span>
 
@@ -50,7 +50,7 @@
                 <h3 class="head-title">
                   <?= $value['title']; ?>
                 </h3>
-                <span class="head-desc">
+                <span class="analysis-space head-desc">
                   <?= mb_strimwidth(rtrim(($value['description'])), 0, 60, "..."); ?>
                 </span>
               </div>
@@ -63,7 +63,7 @@
         
       <?php } ?>
     </div>
-
+    <?php include './analysis_space.php'; ?>
   </body>
 
 </html>

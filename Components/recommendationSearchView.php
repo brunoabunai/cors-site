@@ -53,7 +53,7 @@
             <h3 class="rec-title">
               <?= $key['title']; ?>
             </h3>
-            <span class="rec-desc">
+            <span class="analysis-space rec-desc">
               <!-- Diam lorem takimata accusam stet et sed sanctus diam at aliquyam... -->
               <?= mb_strimwidth(rtrim(($key['description'])), 0, 83, "..."); ?>
             </span>
@@ -75,6 +75,6 @@
 
     <!-- <div class="rec-list"> -->
     <!-- </div> -->
-
+    <?php include './analysis_space.php'; ?>
   </body>
 </html>
