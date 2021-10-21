@@ -14,7 +14,7 @@ body {
   border: 0;
 }
 
-.portable-page {
+.edit-page {
   height: 100%;
   width: 100vw;
   display: flex;
@@ -34,12 +34,12 @@ body {
   left: 3.2rem;
 }
 
-.portable-page .landing {
+.edit-page .landing {
   max-width: 32rem;
   text-align: center;
 }
 
-.portable-page .landing .title {
+.edit-page .landing .title {
   font-size: 2rem;
   font-weight: 700;
   color: var(--title-strong);
@@ -49,11 +49,11 @@ body {
   justify-content: center;
 }
 
-.portable-page .landing .title svg {
+.edit-page .landing .title svg {
   margin-right: 0.4rem;
 }
 
-.portable-page .landing .subtitle {
+.edit-page .landing .subtitle {
   margin-top: 0.3rem;
   font-size: 1.2rem;
   font-weight: 300;
@@ -63,20 +63,20 @@ body {
   flex-direction: column;
 }
 
-.portable-page .landing .subtitle img {
+.edit-page .landing .subtitle img {
   width: 6rem;
   height: 6rem;
   border-radius: 50%;
   border: 4px solid var(--text-color);
 }
 
-.portable-page .landing .subtitle label {
+.edit-page .landing .subtitle label {
   position: static;
   margin-bottom: 0.3rem;
   
 }
 
-.portable-page .landing .subtitle svg {
+.edit-page .landing .subtitle svg {
   position: relative;
   left: -3rem;
   bottom: -0.3rem;
@@ -85,42 +85,42 @@ body {
   opacity: 0.8;
 }
 
-.portable-page .landing .subtitle h2{
+.edit-page .landing .subtitle h2{
   margin-left: -1.5rem;
 }
 
-.portable-page .landing, .main {
+.edit-page .landing, .main {
   margin: 0.8rem;
 }
 
-.portable-page .main {
+.edit-page .main {
   width: 80%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
 
-.portable-page .main .div-search {
+.edit-page .main .div-search {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.portable-page .main .div-search #WicthUserBox span {
+.edit-page .main .div-search #WicthUserBox span {
   display: flex;
   color: var(--title-animed);
   font-weight: 300;
   font-family: 'roboto', sans-serif;
 }
 
-.portable-page .main .div-search #WicthUserBox #WicthUser {
+.edit-page .main .div-search #WicthUserBox #WicthUser {
   display: flex;
   color: var(--title-animed);
   font-weight: 300;
 }
 
-.portable-page .main .div-search .search {
+.edit-page .main .div-search .search {
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -128,22 +128,22 @@ body {
   margin-bottom: 0.3rem;
 }
 
-.portable-page .main .div-search .search span {
+.edit-page .main .div-search .search span {
   font-weight: 500;
   color: var(--title-animed);
 }
 
-.portable-page .main form {
+.edit-page .main form {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
 
-.portable-page .main form input {
+.edit-page .main form input {
   border: 0;
 }
 
-.portable-page .main form input[type=text], .main form input[type=password], .main form input[type=email] {
+.edit-page .main form input[type=text], .main form input[type=password], .main form input[type=email] {
   border: 0.1rem solid #e4e4e4;
   margin-bottom: 0.2rem;
   width: 100%;
@@ -154,11 +154,11 @@ body {
   background-color: #fbfbfb;
 }
 
-.portable-page .main form input[type=text]:focus, .main form input[type=password]:focus, .main form input[type=email]:focus {
+.edit-page .main form input[type=text]:focus, .main form input[type=password]:focus, .main form input[type=email]:focus {
   background-color: #fbfbfb;
 }
 
-.portable-page .main .btn-register {
+.edit-page .main .btn-register {
   margin-top: 1.1rem;
   background-color: var(--secondary-green);
   color: #fff;
@@ -168,7 +168,7 @@ body {
   font-weight: 500;
 }
 
-.portable-page .main .btn-reset {
+.edit-page .main .btn-reset {
   cursor: pointer;
   background-color: var(--danger);
   color: #fff;
@@ -178,20 +178,20 @@ body {
   font-weight: 500;
 }
 
-.portable-page .main {
+.edit-page .main {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
 }
 
-.portable-page .main .ops {
+.edit-page .main .ops {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.portable-page .main .ops .btn {
+.edit-page .main .ops .btn {
   margin-top: 1.1rem;
   background-color: transparent;
   padding: 1.2rem;
@@ -204,40 +204,40 @@ body {
   align-items: center;
 }
 
-.portable-page .main .ops .btn svg {
+.edit-page .main .ops .btn svg {
   margin-right: 0.5rem;
 }
 
-.portable-page .main .ops .btn-post {
+.edit-page .main .ops .btn-post {
   border: 0.1rem solid var(--background-purple);
   color: var(--background-purple);
 }
 
-.portable-page .main .ops .btn-new {
+.edit-page .main .ops .btn-new {
   border: 0.1rem solid var(--primary-green);
   color: var(--primary-green);
 }
 
-.portable-page .main .ops .btn-goSite {
+.edit-page .main .ops .btn-goSite {
   border: 0.1rem solid var(--background-purple);
   color: var(--background-purple);
 }
 
 @media (min-width: 820px) {
-  .portable-page .main {
+  .edit-page .main {
     width: 50%;
   }
 }
 
 @media (min-width: 1080px) {
-  .portable-page {
+  .edit-page {
     background-size: 10%;
   }
-  .portable-page .landing, .main {
+  .edit-page .landing, .main {
     margin: 0.7rem;
     margin-left: 3.5rem;
   }
-  .portable-page .main {
+  .edit-page .main {
     width: 35%;
   }
   .anc-back {
@@ -245,7 +245,7 @@ body {
     top: 4rem;
     left: 3rem;
   }
-  .portable-page .main form input[type=text], .main form input[type=password], .main form input[type=email] {
+  .edit-page .main form input[type=text], .main form input[type=password], .main form input[type=email] {
     border: 0.1rem solid #e4e4e4;
   }
   .bt-ops {

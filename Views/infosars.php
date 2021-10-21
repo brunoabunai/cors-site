@@ -45,7 +45,7 @@
   <div class="infosars-page">
 
 
-    <div class="preventions-page">
+    
 
       <div class="prevention-box">
         <a href="/TCC/cors-site/covidInformations/preventions">
@@ -56,11 +56,11 @@
         </a>
       </div>
 
-    </div>
+  
 
 
 
-    <div class="symptoms-page">
+    
 
       <div class="symptoms-box">
         <a href="/TCC/cors-site/covidInformations/symptoms">
@@ -71,7 +71,6 @@
         </a>
       </div>
 
-    </div>
 
 
 

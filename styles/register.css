@@ -14,7 +14,7 @@ body {
   border: 0;
 }
 
-.portable-page {
+.register-page {
   height: 100%;
   width: 100vw;
   display: flex;
@@ -34,12 +34,12 @@ body {
   left: 3.2rem;
 }
 
-.portable-page .landing {
+.register-page .landing {
   max-width: 32rem;
   text-align: center;
 }
 
-.portable-page .landing .title {
+.register-page .landing .title {
   font-size: 2rem;
   font-weight: 700;
   color: var(--title-strong);
@@ -49,42 +49,42 @@ body {
   justify-content: center;
 }
 
-.portable-page .landing .title svg{
+.register-page .landing .title svg{
   margin-right: 0.4rem;
 }
 
-.portable-page .landing .subtitle {
+.register-page .landing .subtitle {
   margin-top: 0.3rem;
   font-size: 1.2rem;
   font-weight: 300;
 }
 
-.portable-page .landing, .main {
+.register-page .landing, .main {
   margin: 0.8rem;
 }
 
-.portable-page .main {
+.register-page .main {
   width: 80%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
 
-.portable-page .main form {
+.register-page .main form {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
 
-.portable-page .main form input,.portable-page .main form select {
+.register-page .main form input,.register-page .main form select {
   border: 0;
 }
 
-.portable-page .main form input{
+.register-page .main form input{
   font-weight: 400;
 }
 
-.portable-page .main form select,.portable-page .main form input[type=text],.portable-page .main form input[type=email], .main form input[type=password] {
+.register-page .main form select,.register-page .main form input[type=text],.register-page .main form input[type=email], .main form input[type=password] {
   border: 0.1rem solid #e4e4e4;
   margin-bottom: 0.2rem;
   width: 100%;
@@ -94,20 +94,20 @@ body {
   font-weight: 500;
 }
 
-.portable-page .main form .firstPassword{
+.register-page .main form .firstPassword{
   margin-top: 0.5rem;
 }
 
-.portable-page .main form select{
+.register-page .main form select{
   max-width: 8rem;
   margin-top: 0.5rem;
 }
 
-.portable-page .main form input[type=text]:focus,.portable-page .main form input[type=email]:focus, .main form input[type=password]:focus {
+.register-page .main form input[type=text]:focus,.register-page .main form input[type=email]:focus, .main form input[type=password]:focus {
   background-color: #fbfbfb;
 }
 
-.portable-page .main .btn-register {
+.register-page .main .btn-register {
   margin-top: 1.1rem;
   background-color: var(--secondary-green);
   color: #fff;
@@ -117,20 +117,20 @@ body {
   font-weight: 500;
 }
 
-.portable-page .main {
+.register-page .main {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
 }
 
-.portable-page .main .ops {
+.register-page .main .ops {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.portable-page .main .ops .btn {
+.register-page .main .ops .btn {
   margin-top: 1.1rem;
   background-color: transparent;
   padding: 1.2rem;
@@ -143,21 +143,21 @@ body {
   align-items: center;
 }
 
-.portable-page .main .ops .btn svg {
+.register-page .main .ops .btn svg {
   margin-right: 0.5rem;
 }
 
-.portable-page .main .ops .btn-post {
+.register-page .main .ops .btn-post {
   border: 0.1rem solid var(--background-purple);
   color: var(--background-purple);
 }
 
-.portable-page .main .ops .btn-new {
+.register-page .main .ops .btn-new {
   border: 0.1rem solid var(--primary-green);
   color: var(--primary-green);
 }
 
-.portable-page .main .ops .btn-goSite {
+.register-page .main .ops .btn-goSite {
   border: 0.1rem solid var(--background-purple);
   color: var(--background-purple);
 }
@@ -190,19 +190,19 @@ body {
 }
 
 @media (min-width: 820px) {
-  .portable-page .main {
+  .register-page .main {
     width: 50%;
   }
 }
 @media (min-width: 1080px) {
-  .portable-page {
+  .register-page {
     background-size: 10%;
   }
-  .portable-page .landing, .main {
+  .register-page .landing, .main {
     margin: 0.7rem;
     margin-left: 3.5rem;
   }
-  .portable-page .main {
+  .register-page .main {
     width: 35%;
   }
   .anc-back {
@@ -210,7 +210,7 @@ body {
     top: 4rem;
     left: 3rem;
   }
-  .portable-page .main form input[type=text], .main form input[type=password], .main form input[type=email] {
+  .register-page .main form input[type=text], .main form input[type=password], .main form input[type=email] {
     border: 0.1rem solid #e4e4e4;
   }
   .bt-ops {

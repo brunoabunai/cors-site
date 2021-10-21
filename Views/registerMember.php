@@ -30,7 +30,7 @@
     </svg>
 
   </a>
-  <div class="login-page">
+  <div class="registerMember-page">
     <div class="landing">
 
       <h2 class="title">

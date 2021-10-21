@@ -14,7 +14,7 @@ body {
   border: 0;
 }
 
-.portable-page {
+.registerSucess-page {
   height: 100%;
   width: 100vw;
   display: flex;
@@ -34,12 +34,12 @@ body {
   left: 3.2rem;
 }
 
-.portable-page .landing {
+.registerSucess-page .landing {
   max-width: 32rem;
   text-align: center;
 }
 
-.portable-page .landing .title {
+.registerSucess-page .landing .title {
   font-size: 2.5rem;
   font-weight: 700;
   color: rgb(95, 95, 95);
@@ -49,28 +49,28 @@ body {
   justify-content: center;
 }
 
-.portable-page .landing .title svg{
+.registerSucess-page .landing .title svg{
   margin-right: 0.4rem;
 }
 
-.portable-page .landing .subtitle {
+.registerSucess-page .landing .subtitle {
   margin-top: 0.3rem;
   font-size: 1.2rem;
   font-weight: 300;
 }
 
-.portable-page .landing, .main {
+.registerSucess-page .landing, .main {
   margin: 0.8rem;
 }
 
-.portable-page .main {
+.registerSucess-page .main {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.portable-page .main .btn {
+.registerSucess-page .main .btn {
   margin-top: 1.1rem;
   background-color: transparent;
   
@@ -94,36 +94,36 @@ body {
   padding-bottom:0.6rem;
 }
 
-.portable-page .main .btn:last-child {
+.registerSucess-page .main .btn:last-child {
   background-color:transparent;
 
   color: rgb(95, 95, 95);
   margin-top: 2rem;
 }
 
-.portable-page .main .btn svg {
+.registerSucess-page .main .btn svg {
   margin-right: 1rem;
 }
 
 @media (min-width: 820px) {
-  .portable-page .main {
+  .registerSucess-page .main {
     width: 50%;
   }
 }
 @media (min-width: 1080px) {
-  .portable-page {
+  .registerSucess-page {
     background-size: 10%;
   }
-  .portable-page .landing, .main {
+  .registerSucess-page .landing, .main {
     margin: 0.7rem;
     margin-left: 3.5rem;
   }
 
-  .portable-page .landing {
+  .registerSucess-page .landing {
     max-width: 52rem;
   }
 
-  .portable-page .main .btn {
+  .registerSucess-page .main .btn {
     padding: 10rem;
     padding-top: 0.8rem;
     padding-bottom: 0.8rem;

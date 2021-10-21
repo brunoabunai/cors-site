@@ -22,7 +22,7 @@ body {
   border: 0;
 }
 
-.portable-page {
+.menu-page {
   height: 100%;
   width: 100vw;
   display: flex;
@@ -36,42 +36,42 @@ body {
   background-position-y: bottom;
 }
 
-.portable-page .landing {
+.menu-page .landing {
   max-width: 32rem;
   text-align: center;
 }
 
-.portable-page .landing .title {
+.menu-page .landing .title {
   font-size: 2rem;
   font-weight: 700;
   color: var(--title-strong);
   margin-bottom: 1.2rem;
 }
 
-.portable-page .landing .subtitle {
+.menu-page .landing .subtitle {
   margin-top: 0.3rem;
   font-size: 1.2rem;
   font-weight: 300;
 }
 
-.portable-page .landing, .main {
+.menu-page .landing, .main {
   margin: 0.8rem;
 }
 
-.portable-page .main {
+.menu-page .main {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
 }
 
-.portable-page .main .ops {
+.menu-page .main .ops {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.portable-page .main .ops .btn {
+.menu-page .main .ops .btn {
   margin-top: 1.1rem;
   background-color: transparent;
   padding: 1.2rem;
@@ -84,21 +84,21 @@ body {
   align-items: center;
 }
 
-.portable-page .main .ops .btn svg {
+.menu-page .main .ops .btn svg {
   margin-right: 0.5rem;
 }
 
-.portable-page .main .ops .btn-post {
+.menu-page .main .ops .btn-post {
   border: 0.1rem solid var(--text-color);
   color: var(--text-color);
 }
 
-.portable-page .main .ops .btn-new {
+.menu-page .main .ops .btn-new {
   border: 0.1rem solid var(--text-color);
   color: var(--text-color);
 }
 
-.portable-page .main .ops .btn-goSite {
+.menu-page .main .ops .btn-goSite {
   border: 0.1rem solid var(--text-color);
   color: var(--text-color);
 }
@@ -125,10 +125,10 @@ body {
 }
 
 @media (min-width: 1080px) {
-  .portable-page {
+  .menu-page {
     background-size: 10%;
   }
-  .portable-page .landing, .main {
+  .menu-page .landing, .main {
     margin: 0.7rem;
     margin-left: 3.5rem;
   }

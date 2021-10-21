@@ -10,27 +10,27 @@ body{
   background-position-x: right;
   background-position-y: bottom;
 }
-.landing{
+.landing-page{
   max-width: 32rem;
 }
 
-.landing .title{
+.landing-page .title{
   font-size: 2rem;
   font-weight: 700;
   color: var(--title-strong);
 }
 
-.landing .title .brand{
+.landing-page .title .brand{
   font-weight: 900;
 }
 
-.landing .subtitle{
+.landing-page .subtitle{
   margin-top: 0.3rem;
   font-size: 1.4rem;
   font-weight: 400;  
 }
 
-.landing, .main{ 
+.landing-page, .main{ 
   margin: 0.8rem;
 }
 
@@ -61,7 +61,7 @@ body{
       background-size: 10%;
   }
 
-  .landing, .main{ 
+  .landing-page, .main{ 
       margin: 0.7rem;
       margin-left: 3.5rem;
   }

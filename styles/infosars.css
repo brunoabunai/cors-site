@@ -40,18 +40,14 @@
   display: none;
 }
 
-.preventions-page {
-  margin-left: 2rem;
-  
-}
-
 .anc-back {
   position: absolute;
   top: 4.5rem;
   left: 2.5rem;
 }
 
-.preventions-page .prevention-box {
+.prevention-box {
+  margin-left: 2rem;
   margin-top: 7.3rem;
   width: 90%;
   padding: 1rem;
@@ -60,37 +56,24 @@
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.13);
 }
 
-.preventions-page .prevention-box .box-firstLine {
+ .prevention-box .box-firstLine {
   width: 100%;
   display: flex;
   align-items: center;
   margin-bottom: 0.5rem;
 }
 
-.preventions-page .prevention-box .box-firstLine h2 {
+ .prevention-box .box-firstLine h2 {
   font-size: 1.5rem;
   margin-left: 0.5rem;
   width: 100%;
 }
 
-.preventions-page .prevention-box img {
+ .prevention-box img {
   width: 5rem;
 }
 
-@media (min-width: 800px) {
-  .preventions-page {
-    margin-left: 5rem;
-  }
-  .preventions-page .prevention-box {
-    max-width: 70%;
-  }
-}
-
-.symptoms-page {
-  margin-left: 2rem;
-}
-
-.symptoms-page ul {
+ ul {
   margin-left: 1rem;
 }
 
@@ -100,7 +83,8 @@
   left: 2.5rem;
 }
 
-.symptoms-page .symptoms-box {
+ .symptoms-box {
+  margin-left: 2rem;
   margin-top: 2.5rem;
   width: 90%;
   padding: 1rem;
@@ -109,20 +93,20 @@
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.13);
 }
 
-.symptoms-page .symptoms-box .box-firstLine {
+ .symptoms-box .box-firstLine {
   width: 100%;
   display: flex;
   align-items: center;
   margin-bottom: 0.5rem;
 }
 
-.symptoms-page .symptoms-box .box-firstLine h2 {
+ .symptoms-box .box-firstLine h2 {
   font-size: 1.5rem;
   margin-left: 0.5rem;
   width: 100%;
 }
 
-.symptoms-page .symptoms-box img {
+ .symptoms-box img {
   width: 5rem;
 }
 
@@ -134,10 +118,12 @@
 }
 
 @media (min-width: 900px) {
-  .symptoms-page{
+  .symptoms-box {
     margin-left: 5rem;
+    max-width: 70%;
   }
-  .symptoms-page .symptoms-box {
+  .prevention-box {
+    margin-left: 5rem;
     max-width: 70%;
   }
   .bt-ops {
@@ -171,10 +157,10 @@
    
   }
 
-  .preventions-page .prevention-box {
+   .prevention-box {
     max-width: 50%;
   }
-  .symptoms-page .symptoms-box {
+   .symptoms-box {
     max-width: 50%;
   }
   .logo{

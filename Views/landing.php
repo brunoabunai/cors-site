@@ -12,7 +12,7 @@
   </head>
 
   <body>
-    <div class="landing">
+    <div class="landing-page">
       <h2 class="title">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M16 2C17.1046 2 18 2.89543 18 4L4 4L4 15.1765C2.89543 15.1765 2 14.281 2 13.1765V4C2 2.89543 2.89543 2 4 2H16Z" fill="#5438DC"></path>

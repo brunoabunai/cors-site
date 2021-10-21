@@ -20,7 +20,7 @@
 
   <body>
 
-    <div class="portable-page">
+    <div class="registerSucess-page">
 
       <div class="landing">
         <h2 class="title">

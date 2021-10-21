@@ -36,7 +36,7 @@ unset(
     </svg>
   </button>
 
-  <div class="portable-page">
+  <div class="menu-page">
 
     <div class="landing">
       <h2 class="title">

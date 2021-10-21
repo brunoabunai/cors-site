@@ -12,7 +12,7 @@ top: 4rem;
 left:1rem;
 }
 
-.login-page{
+.registerMember-page{
   height: 100%;
   width: 100vw;
   display: flex;
@@ -25,11 +25,11 @@ left:1rem;
   background-position-y: bottom;
 }
 
-.login-page .landing{
+.registerMember-page .landing{
   max-width: 32rem;
 }
 
-.login-page .landing .title{
+.registerMember-page .landing .title{
   margin-top: 5.3rem;
   font-size: 2rem;
   font-weight: 700;
@@ -37,58 +37,58 @@ left:1rem;
   
 }
 
-.login-page .landing .title .brand{
+.registerMember-page .landing .title .brand{
   font-weight: 900;
 }
 
-.login-page .landing .subtitle{
+.registerMember-page .landing .subtitle{
   margin-top: 0.3rem;
   font-size: 1.2rem;
   font-weight: 300;  
 }
 
-.login-page .landing, .main{ 
+.registerMember-page .landing, .main{ 
   margin: 0.8rem;
 }
 
-.login-page .main{
+.registerMember-page .main{
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
 
-.login-page .main .group{
+.registerMember-page .main .group{
   display: flex;
   flex-direction: column;
 }
 
-.login-page .main .group input[type=password]{
+.registerMember-page .main .group input[type=password]{
   max-width: 20rem;
 }
 
-.login-page .main .group input[type=text]{
+.registerMember-page .main .group input[type=text]{
   max-width: 30rem;
 }
 
-.login-page .main form{
+.registerMember-page .main form{
   display: flex;
   flex-direction: column;
   width: 100%;
 }
 
-.login-page .main form label{
+.registerMember-page .main form label{
   margin-top: 1rem;
   font-size: 1rem;
   font-weight: 400; 
   color: #000; 
 }
 
-.login-page .main form input{
+.registerMember-page .main form input{
   border: 0;
 }
 
-.login-page .main form input[type=text],
-.login-page .main form input[type=email],.main form input[type=password]{
+.registerMember-page .main form input[type=text],
+.registerMember-page .main form input[type=email],.main form input[type=password]{
   border:0.1rem solid #e4e4e4;
   margin-bottom: 0.2rem;
   width: 100%;
@@ -97,15 +97,16 @@ left:1rem;
   color: var(--text-color);
   font-weight: 400;
   font-size: 1rem;
+  max-width: 30rem;
 }
 
-.login-page .main form input[type=text]:focus,
-.login-page .main form input[type=email]:focus,
+.registerMember-page .main form input[type=text]:focus,
+.registerMember-page .main form input[type=email]:focus,
 .main form input[type=password]:focus{
   background-color: #fbfbfb;
 }
 
-.login-page .main .btn-begin{
+.registerMember-page .main .btn-begin{
   margin-top: 1.1rem;
   background-color: var(--secondary-green);
   color: #fff;
@@ -116,7 +117,7 @@ left:1rem;
   width: 14rem;
 }
 
-.login-page .main .anc-admin{
+.registerMember-page .main .anc-admin{
   font-size: 0.9rem;
   color: var(--title-animed);
   font-weight: 300;
@@ -132,17 +133,17 @@ left:1rem;
   color: var(--primary-green);
 }
 
-@media (min-width: 1080px) {
-  .login-page {
+@media (min-width: 1340px) {
+  .registerMember-page {
       background-size: 10%;
   }
 
-  .login-page .landing, .main{ 
+  .registerMember-page .landing, .main{ 
       margin: 0.7rem;
       margin-left: 3.5rem;
   }
   
-  .login-page .main form{
+  .registerMember-page .main form{
       max-width: 32rem;
   }
 
@@ -152,47 +153,48 @@ left:1rem;
       left:3rem;
   }
 
-  .login-page .main form input[type=text],.main form input[type=password],.main form input[type=email]{
+  .registerMember-page .main form input[type=text],.main form input[type=password],.main form input[type=email]{
       border:0.1rem solid #e4e4e4;
   }
 
-  .login-page .landing .title{
+  .registerMember-page .landing .title{
     margin-top: 0;
     
     
   }
 
-  .login-page .main{
+  .registerMember-page .main{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
   }
 
-  .login-page .main form{
+  .registerMember-page .main form{
     display: flex;
     flex-direction: row;
     align-items: center;
+    padding: 0;
   }
   
-  .login-page .main .group{
+  .registerMember-page .main .group{
     display: flex;
     flex-direction: column;
     margin-right: 10rem;
   }
 
-  .login-page .main .group:last-child{
+  .registerMember-page .main .group:last-child{
     margin-right: 0;
   }
-  .login-page .main .group:first-child{
+  .registerMember-page .main .group:first-child{
     margin-right: 5rem;
   }
   
-  .login-page .main .group input[type=password]{
+  .registerMember-page .main .group input[type=password]{
     max-width: 20rem;
     min-width: 20rem;
   }
   
-  .login-page .main .group input[type=text]{
+  .registerMember-page .main .group input[type=text]{
     max-width: 30rem;
     min-width: 30rem;
   }
