@@ -9,7 +9,7 @@
 //   $_SESSION['pos_register']
 // );
 $view = "admin";
-include_once 'feature/boxConfigure.php';
+include_once 'features/boxConfigure.php';
 ?>
 
 <!DOCTYPE html>

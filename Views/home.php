@@ -9,16 +9,8 @@
 //   $_SESSION['pos_register']
 // );
 
-$option = "admin";
-$numberBox;
-
-if($option=="admin"){
-  $numberBox=0;
-}else if ($option=="writer"){
-  $numberBox=3;
-}else{
-  $numberBox=1;
-}
+$view = "admin";
+include_once 'features/boxConfigure.php';
 ?>
 
 <!DOCTYPE html>
@@ -68,7 +60,6 @@ if($option=="admin"){
     AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
   </div> -->
   <?php include 'redirects/box.php' ?>
-  <?php include 'redirects/analysis_space.php' ?>
 
 </body>
 

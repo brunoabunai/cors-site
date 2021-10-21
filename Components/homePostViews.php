@@ -63,7 +63,7 @@
         
       <?php } ?>
     </div>
-    <?php include './analysis_space.php'; ?>
+    <script src="/TCC/cors-site/utils/analysis_space.js"></script>
   </body>
 
 </html>
