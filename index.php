@@ -32,3 +32,18 @@
   require_once ('autoload.php');
   $c = new Core();
 ?>
+
+
+
+
+
+
+<?php
+  // $directory = 'database/userImages/';
+
+  // $help = new auxiliary();
+  // $a = ($help->getUserPerId(1)['avatar'] != $directory.'404.jpg') ? 
+  //       explode('.', explode($directory, $help->getUserPerId(1)['avatar'])[1])[0] : 
+  //       uniqid();
+  // print_r($a);
+?>

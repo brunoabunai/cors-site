@@ -23,7 +23,7 @@ CREATE TABLE IF NOT EXISTS `posts` (
   `use_idFk` int(11) NOT NULL,
   `pos_title` varchar(200) NOT NULL,
   `pos_description` varchar(65.535) NOT NULL,
-  `pos_image` varchar(150) NOT NULL DEFAULT ('https://img-16.ccm2.net/_SqzzXVDSG50FWb_UBrCl3XwV78=/440x/1685e17045e747a899925aa16189c7c6/ccm-encyclopedia/99776312_s.jpg'),
+  `pos_image` varchar(150) NOT NULL DEFAULT ('/database/postsImages/404.jpg'),
   `pos_date` datetime NOT NULL,
   `pos_dateEdit` datetime NOT NULL,
   PRIMARY KEY (`pos_idPk`),
@@ -59,7 +59,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `use_name` varchar(150) NOT NULL,
   `use_email` varchar(150) NOT NULL,
   `use_password` varchar(32) NOT NULL,
-  `use_avatar` varchar(150) NOT NULL DEFAULT ('https://img-16.ccm2.net/_SqzzXVDSG50FWb_UBrCl3XwV78=/440x/1685e17045e747a899925aa16189c7c6/ccm-encyclopedia/99776312_s.jpg'),
+  `use_avatar` varchar(150) NOT NULL DEFAULT ('/database/postsImages/404.jpg'),
   PRIMARY KEY (`use_idPk`),
   KEY `typ_idFk` (`typ_idFk`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;

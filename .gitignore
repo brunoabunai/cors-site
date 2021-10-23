@@ -4,4 +4,6 @@
 connection.php
 roteiro.md
 /database/postsImages/*
+!/database/postsImages/404.jpg
 /database/userImages/*
+!/database/userImages/404.jpg

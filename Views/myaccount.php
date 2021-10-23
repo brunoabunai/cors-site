@@ -44,7 +44,7 @@ include_once 'features/boxConfigure.php';
     <div class="person">
       <h1><?= $userName ?></h1>
 
-      <img id="img-player" src="/TCC/cors-site/public/img/cv3.png">
+      <img id="img-player" src="../<?= $avatar; ?>">
 <!--
       <label style="cursor: pointer;" for="file-upload" class="custom-file-upload">
         <img id="img-player" src="/TCC/cors-site/public/img/cv3.png">

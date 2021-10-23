@@ -232,7 +232,7 @@ require_once ('connection.php');
       if(strlen($this->name) == 0) {
         $this->err[] = 'Preencha o nome';
       } else
-      if(strlen($this->name) <= 4) {
+      if(strlen($this->name) <= 5) {
         $this->err[] = 'Nome muito pequeno';
       }
 
@@ -244,7 +244,7 @@ require_once ('connection.php');
       if(strlen($this->password) == 0) {
         $this->err[] = 'Preencha a senha';
       } else
-      if(strlen($this->password) <= 4) {
+      if(strlen($this->password) <= 7) {
         $this->err[] = 'Senha muito pequena';
       }
       
@@ -260,7 +260,9 @@ require_once ('connection.php');
       } else {
         $directory = 'database/userImages/';
         $fileName = $this->image['name'];
-        $newNameFile = uniqid();
+        $newNameFile = ($this->help->getUserPerId($this->id)['avatar'] != $directory.'404.jpg') ? 
+                        explode('.', explode($directory, $this->help->getUserPerId($this->id)['avatar'])[0])[0] : 
+                        uniqid();
 
         $extensions = array('png', 'jpg', 'jpeg');
         $extension = strtolower(pathinfo($fileName, PATHINFO_EXTENSION));
@@ -316,7 +318,7 @@ require_once ('connection.php');
         SET use_name = '".$this->name."',
         use_email = '".$this->email."',
         use_password = '".md5(md5($this->password))."',
-        use_image = '".$this->image."'
+        use_avatar = '".$this->image."'
         WHERE use_idPk = ".$this->id."
       ") or die ($this->conn->error);
 
