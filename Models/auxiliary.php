@@ -29,7 +29,7 @@ require_once('connection.php');
     public function getUserPerName($name) {
       $name = str_replace("-", " ", $name);
       // $data = array();
-      $cmd = $this->conn->query(' SELECT use_idPk, use_name, use_avatar
+      $cmd = $this->conn->query(' SELECT use_idPk, use_name, use_email, use_avatar
                                   FROM users
                                   WHERE use_name = "'.$name.'" ');
       $this->ret = $cmd->fetch_assoc();
@@ -37,6 +37,7 @@ require_once('connection.php');
       return ([
         'id' => $this->ret['use_idPk'],
         'name' => $this->ret['use_name'],
+        'email' => $this->ret['use_email'],
         'avatar' => $this->ret['use_avatar']
       ]);
     }

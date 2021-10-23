@@ -34,7 +34,7 @@ require_once('connection.php');
       if(strlen($this->name) == 0){ //Vê se o campo "Name" está vazio
         $this->err[] = "Preencha o nome.";
       } else
-      if(strlen($this->name) <= 4){ //Vê se o campo "Name" tem menos de 5 caracteres
+      if(strlen($this->name) <= 5){ //Vê se o campo "Name" tem menos de 5 caracteres
         $this->err[] = "Nome muito pequeno.";
       }
       
@@ -45,7 +45,7 @@ require_once('connection.php');
       if(strlen($this->password) == 0){ //Vê se o campo "Password" está vazio
         $this->err[] = "Preencha a senha.";
       } else
-      if(strlen($this->password) <= 4){ //Vê se o campo "Password" tem menos de 6 caracteres
+      if(strlen($this->password) <= 8){ //Vê se o campo "Password" tem menos de 6 caracteres
         $this->err[] = "Senha muito pequena.";
       } else
       if(!($this->password === $this->confirmPassword)){ //Vê se a senha bate com a confirmação da senha

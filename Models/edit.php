@@ -249,33 +249,27 @@ require_once ('connection.php');
       }
       
       /** Validar image */
-      // if(!isset($this->image)) {
-      //   $this->err[] = "Imagem não selecionada";
-      // } else
-      // if($this->image['error']) {
-      //   $this->err[] = "Falha ao enviar a imagem";
-      // } else
-      // if($this->image['size'] > 2097152) { //2MB
-      //   $this->err[] = "Imagem muito grande! Max: 2MB";
-      // } else {
-      //   $directory = 'database/userImages/';
-      //   $fileName = $this->image['name'];
-      //   $newNameFile = uniqid();
+      if(!isset($this->image)) {
+        $this->err[] = "Imagem não selecionada";
+      } else
+      if($this->image['error']) {
+        $this->err[] = "Falha ao enviar a imagem";
+      } else
+      if($this->image['size'] > 2097152) { //2MB
+        $this->err[] = "Imagem muito grande! Max: 2MB";
+      } else {
+        $directory = 'database/userImages/';
+        $fileName = $this->image['name'];
+        $newNameFile = uniqid();
 
-      //   $extensions = array('png', 'jpg', 'jpeg');
-      //   $extension = strtolower(pathinfo($fileName, PATHINFO_EXTENSION));
+        $extensions = array('png', 'jpg', 'jpeg');
+        $extension = strtolower(pathinfo($fileName, PATHINFO_EXTENSION));
 
-      //   if(in_array($extension, $extensions) === false) {
-      //     $this->err[] = "Extensão invalida! (png, jpg, jpeg)";
-      //   }
-        
-      //   $right = move_uploaded_file($this->image['tmp_name'], $directory . $newNameFile . '.' . $extension);
-      //   if(!$right) {
-      //     $this->err[] = "Não foi possível fazer o salvamento";
-      //   }
+        if(in_array($extension, $extensions) === false) {
+          $this->err[] = "Extensão invalida! (png, jpg, jpeg)";
+        }
 
-      //   $this->image = $directory . $newNameFile . '.' . $extension;
-      // }
+      }
 
       /** Vê se o name está em uso */
       $cmd = $this->conn->query('
@@ -291,14 +285,21 @@ require_once ('connection.php');
 
       /** Visualiza se existe alguma falha e qual será o redirecionamento */
       if(count($this->err) == 0) {
+        /** Image settings */
+        $right = move_uploaded_file($this->image['tmp_name'], $directory . $newNameFile . '.' . $extension);
+        if(!$right) {
+          $this->err[] = "Não foi possível fazer o salvamento";
+        }
+        $this->image = $directory . $newNameFile . '.' . $extension;
+
         return [true, $this->editUserSubmit()];
       } else {
-        return [false, $this->err, 'previousPage' => 'editUser/'.$this->help->getUserPerId($this->id)['name']];
+        return [false, $this->err, 'previousPage' => 'edit/editUser/'.$this->help->getUserPerId($this->id)['name']];
       }
 
     }
 
-    public function setEditValues($id, $name, $email, $password, $image = 'image') {
+    public function setEditValues($id, $name, $email, $password, $image) {
       $this->id = $id;
       $this->name = $name;
       $this->email = $email;

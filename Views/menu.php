@@ -9,7 +9,8 @@ unset(
   $_SESSION['pos_register']
 );
 
-$view = "writer";
+// $view = "writer";
+$view = "admin";
 include_once 'features/boxConfigure.php';
 ?>
 

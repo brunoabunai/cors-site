@@ -11,8 +11,8 @@
       $data = $l -> setLoginValues($_POST['log_email'], $_POST['log_password']);
 
       if(isset($data[0]) && $data[0]) {
-        array_shift($data);
-        $this->loadTemplate('success', $data[0]);
+        // array_shift($data);
+        $this->loadTemplate('home');
       } else {
         array_shift($data);
         $this->loadTemplate('errorLog', $data);

@@ -59,11 +59,11 @@ require_once('connection.php');
 
         return [
           true,
-          array(
-            'text' => 'Logado ',
-            'previousPage' => 'home',
-            'buttonText' => 'Home'
-          )
+          // array(
+          //   'text' => 'Logado ',
+          //   'previousPage' => 'home',
+          //   'buttonText' => 'Home'
+          // )
         ];
       } else {
         return [false, $this->err, 'previousPage' => 'login'];
