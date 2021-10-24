@@ -261,7 +261,7 @@ require_once ('connection.php');
         $directory = 'database/userImages/';
         $fileName = $this->image['name'];
         $newNameFile = ($this->help->getUserPerId($this->id)['avatar'] != $directory.'404.jpg') ? 
-                        explode('.', explode($directory, $this->help->getUserPerId($this->id)['avatar'])[0])[0] : 
+                        explode('.', explode($directory, $this->help->getUserPerId($this->id)['avatar'])[1])[0] : 
                         uniqid();
 
         $extensions = array('png', 'jpg', 'jpeg');
@@ -270,7 +270,13 @@ require_once ('connection.php');
         if(in_array($extension, $extensions) === false) {
           $this->err[] = "Extensão invalida! (png, jpg, jpeg)";
         }
-
+        
+        /** Image settings */
+        $right = move_uploaded_file($this->image['tmp_name'], $directory . $newNameFile . '.' . $extension);
+        if(!$right) {
+          $this->err[] = "Não foi possível fazer o salvamento";
+        }
+        $this->image = $directory . $newNameFile . '.' . $extension;
       }
 
       /** Vê se o name está em uso */
@@ -287,12 +293,6 @@ require_once ('connection.php');
 
       /** Visualiza se existe alguma falha e qual será o redirecionamento */
       if(count($this->err) == 0) {
-        /** Image settings */
-        $right = move_uploaded_file($this->image['tmp_name'], $directory . $newNameFile . '.' . $extension);
-        if(!$right) {
-          $this->err[] = "Não foi possível fazer o salvamento";
-        }
-        $this->image = $directory . $newNameFile . '.' . $extension;
 
         return [true, $this->editUserSubmit()];
       } else {
