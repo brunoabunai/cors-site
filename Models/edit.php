@@ -229,9 +229,9 @@ require_once ('connection.php');
      */
     private function editValidation() {
       /** Validar name */
-      if(strlen($this->name) == 0) {
-        $this->err[] = 'Preencha o nome';
-      } else
+      // if(strlen($this->name) == 0) {
+      //   $this->err[] = 'Preencha o nome';
+      // } else
       if(strlen($this->name) <= 5) {
         $this->err[] = 'Nome muito pequeno';
       }
@@ -247,36 +247,38 @@ require_once ('connection.php');
       if(strlen($this->password) <= 7) {
         $this->err[] = 'Senha muito pequena';
       }
-      
+
       /** Validar image */
-      if(!isset($this->image)) {
-        $this->err[] = "Imagem não selecionada";
-      } else
-      if($this->image['error']) {
-        $this->err[] = "Falha ao enviar a imagem";
-      } else
-      if($this->image['size'] > 2097152) { //2MB
-        $this->err[] = "Imagem muito grande! Max: 2MB";
-      } else {
-        $directory = 'database/userImages/';
-        $fileName = $this->image['name'];
-        $newNameFile = ($this->help->getUserPerId($this->id)['avatar'] != $directory.'404.jpg') ? 
-                        explode('.', explode($directory, $this->help->getUserPerId($this->id)['avatar'])[1])[0] : 
-                        uniqid();
+      // if(!isset($this->image)) {
+      //   $this->err[] = "Imagem não selecionada";
+      // } else
+      if(isset($this->image)) {
+        if($this->image['error']) {
+          $this->err[] = "Falha ao enviar a imagem";
+        } else
+        if($this->image['size'] > 2097152) { //2MB
+          $this->err[] = "Imagem muito grande! Max: 2MB";
+        } else {
+          $directory = 'database/userImages/';
+          $fileName = $this->image['name'];
+          $newNameFile = ($this->help->getUserPerId($this->id)['avatar'] != $directory.'404.jpg') ? 
+                          explode('.', explode($directory, $this->help->getUserPerId($this->id)['avatar'])[1])[0] : 
+                          uniqid();
 
-        $extensions = array('png', 'jpg', 'jpeg');
-        $extension = strtolower(pathinfo($fileName, PATHINFO_EXTENSION));
-
-        if(in_array($extension, $extensions) === false) {
-          $this->err[] = "Extensão invalida! (png, jpg, jpeg)";
+          $extensions = array('png', 'jpg', 'jpeg');
+          $extension = strtolower(pathinfo($fileName, PATHINFO_EXTENSION));
+  
+          if(in_array($extension, $extensions) === false) {
+            $this->err[] = "Extensão invalida! (png, jpg, jpeg)";
+          }
+          
+          /** Image settings */
+          $right = move_uploaded_file($this->image['tmp_name'], $directory . $newNameFile . '.' . $extension);
+          if(!$right) {
+            $this->err[] = "Não foi possível fazer o salvamento";
+          }
+          $this->image = $directory . $newNameFile . '.' . $extension;
         }
-        
-        /** Image settings */
-        $right = move_uploaded_file($this->image['tmp_name'], $directory . $newNameFile . '.' . $extension);
-        if(!$right) {
-          $this->err[] = "Não foi possível fazer o salvamento";
-        }
-        $this->image = $directory . $newNameFile . '.' . $extension;
       }
 
       /** Vê se o name está em uso */
@@ -284,11 +286,12 @@ require_once ('connection.php');
                             SELECT use_name 
                             FROM users 
                             WHERE use_name = "'.$this->name.'"
+                            AND use_idPk <> "'.$this->id.'"
                           ') or die ($this->conn->error);
       $data = $cmd->fetch_assoc();
 
       if(isset($data) && count($data) != 0) {
-        $this->err[] = 'User name já em uso';
+        $this->err[] = 'User já em uso';
       }
 
       /** Visualiza se existe alguma falha e qual será o redirecionamento */
