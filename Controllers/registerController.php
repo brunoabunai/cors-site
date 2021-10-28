@@ -22,6 +22,9 @@
 
       if (isset($data[0]) && $data[0]) { //true = validation true (pass)
         array_shift($data);
+        $h = new auxiliary();
+        $h->resetSessionsRegister();
+
         $this->loadTemplate('registerSuccess', $data[0]);
       } else {
         array_shift($data);
@@ -35,7 +38,10 @@
       $data = $r -> submit($_POST['reg_email'], $_POST['reg_name'], $_POST['reg_password'], $_POST['reg_confirmPassword'], '', 1, false);
 
       if (isset($data[0]) && $data[0]) { //true = validation true (pass)
-        array_shift($data);
+        array_shift($data);$h = 
+        new auxiliary();
+        $h->resetSessionsRegister();
+
         $this->loadTemplate('success', $data[0]);
       } else {
         array_shift($data);

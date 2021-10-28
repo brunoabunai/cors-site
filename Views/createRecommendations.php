@@ -38,9 +38,9 @@
         <form name="form_recommendations" action="../recommendations/submit" method="post">
           <input style="display:none;" type="text" class="rec_register" name="use_idFk" placeholder="Veremos..." disabled value="' . $_SESSION["logid"] . '" />
           
-          <input type="text" class="rec_register" name="rec_title" placeholder="Título da recomendação" value="<?php echo isset($_SESSION['pos_title']) ? $_SESSION['pos_title'] : '' ?>" />
+          <input type="text" class="rec_register" name="rec_title" placeholder="Título da recomendação" value="<?php echo isset($_SESSION['rec_title']) ? $_SESSION['rec_title'] : '' ?>" />
 
-          <textarea placeholder="Escreva Sua recomendação..." class="rec_register" name="rec_description" cols="50" rows="10"><?php echo isset($_SESSION['pos_register']) ? $_SESSION['pos_register'] : '' ?></textarea>
+          <textarea placeholder="Escreva Sua recomendação..." class="rec_register" name="rec_description" cols="50" rows="10"><?php echo isset($_SESSION['rec_register']) ? $_SESSION['rec_register'] : '' ?></textarea>
 
           <input type="submit" class="btn-register opacty-button" value="Concluir" />
         </form>

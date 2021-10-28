@@ -14,6 +14,9 @@
 
       if (isset($data[0]) && $data[0]) { //true = validation true (pass)
         array_shift($data);
+        $h = new auxiliary();
+        $h->resetSessionsRegister();
+
         $this->loadTemplate('success', $data[0]);
       } else {
         array_shift($data);

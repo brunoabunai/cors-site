@@ -50,8 +50,6 @@ require_once('connection.php');
       } else
       if(!($this->password === $this->confirmPassword)){ //Vê se a senha bate com a confirmação da senha
         $this->err[] = "Senhas não correspondem";
-        // print_r($this->password);
-        print_r($this->confirmPassword);
       }
       
       /**
@@ -93,7 +91,7 @@ require_once('connection.php');
 
       return $this->validateInformations();
     }
-    
+
     /**
      * Submit from database
      */
