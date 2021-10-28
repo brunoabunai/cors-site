@@ -59,7 +59,7 @@ require_once('connection.php');
        */
       $cmd = $this->conn->query(' SELECT use_name 
                                   FROM users 
-                                  WHERE use_name = "'.$this->name.'" 
+                                  WHERE use_email = "'.$this->email.'" 
                                 ') or die ($this->conn->error);
       $data = $cmd->fetch_assoc();
                                 
