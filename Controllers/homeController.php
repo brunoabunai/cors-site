@@ -2,27 +2,31 @@
 
   Class homeController extends Controller{
 
+    private $help;
+    public $data = array();
+
     public function __construct() {
-      $h = new auxiliary();
-      $h->resetSessionsRegister();
+      $this->help = new auxiliary();
+      $this->help->resetSessionsRegister();
     }
 
     public function index(){
-      $this->loadTemplate('home');
+      $this->help->pagesLoginView('home');
     }
-    
+
     public function recentViews(){
       $h = new home();
-      $data = $h->recentPosts();
+      $this->data = $h->recentPosts();
       
-      $this->loadTemplate('homePostViews', $data);
+      $this->help->pagesLoginView('homePostViews', $this->data);
     }
 
-    public function getPostFromTitle($title){
-      $p = new home();
-      $data = $p -> getPostPerTitle($title);
-
-      $this->loadTemplate('notice', $data);
+    public function getPostFromTitle($title = null){
+      if($title != null){
+        $p = new home();
+        $this->data = (empty($p->getPostPerTitle($title))) ? array() : $p->getPostPerTitle($title);
+      }
+      $this->help->pagesLoginView('notice', $this->data);
     }
 
   }

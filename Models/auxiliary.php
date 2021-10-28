@@ -1,7 +1,7 @@
 <?php
 require_once('connection.php');
 
-  Class auxiliary{
+  Class auxiliary extends Controller{
 
     private $conn;
     public $ret;
@@ -93,7 +93,15 @@ require_once('connection.php');
         $_SESSION['rec_register']
       );
     }
-    
+
+    public function pagesLoginView($pageName, $dataModel = array(), $data = array()) {
+      if (isset($_SESSION['loginId'])){
+        $this->loadTemplate($pageName);
+      } else {
+        $this->loadTemplate('unplugged');
+      }
+    }
+
   }
 
 ?>

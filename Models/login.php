@@ -41,7 +41,7 @@ require_once('connection.php');
     private function login() {
       /** pull from database */
       $cmd = "
-        SELECT use_idPk 
+        SELECT use_idPk, use_type 
         FROM users 
         WHERE use_email = '".$this->email."' 
         AND use_password = '".md5(md5($this->password))."'
@@ -56,6 +56,7 @@ require_once('connection.php');
       /** View if not existe err, if return = true (login), else (errorLog) */
       if(count($this->err) == 0){
         $_SESSION['loginId'] = $data['use_idPk'];
+        $_SESSION['loginType'] = $data['use_type'];
 
         return [
           true,
