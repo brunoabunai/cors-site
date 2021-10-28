@@ -24,7 +24,7 @@
     public function getPostFromTitle($title = null){
       if($title != null){
         $p = new home();
-        $this->data = (empty($p->getPostPerTitle($title))) ? array() : $p->getPostPerTitle($title);
+        $this->data = (!empty($p->getPostPerTitle($title)['user'])) ? $p->getPostPerTitle($title) : array('');
       }
       $this->help->pagesLoginView('notice', $this->data);
     }

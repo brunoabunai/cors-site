@@ -41,6 +41,10 @@ require_once('connection.php');
                                   WHERE pos_title = "'.$title.'" 
                                 ') or die ($this->conn->error);
       $this->data = $cmd->fetch_assoc();
+      
+      if(empty($this->data)){
+        return '';
+      }
 
       return [
         "user" => $this->help->getUserPerId($this->data['use_idFk']),
