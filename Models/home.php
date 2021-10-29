@@ -28,7 +28,10 @@ require_once('connection.php');
         ];
       }
 
+      // print_r($cmd);
+
       return ['posts' => $this->data];
+      // return $this->data;
     }
 
     /**

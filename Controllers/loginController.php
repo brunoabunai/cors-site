@@ -2,20 +2,26 @@
 
   Class loginController extends Controller{
 
+    private $help;
+    public $data = array();
+
+    public function __construct() {
+      $this->help = new auxiliary();
+    }
+
     public function index(){
-      $this->loadTemplate('login');
+      $this->help->pagesLoginView('home', 'login');
     }
     
     public function submit() {
       $l = new login();
-      $data = $l -> setLoginValues($_POST['log_email'], $_POST['log_password']);
+      $this->data = $l -> setLoginValues($_POST['log_email'], $_POST['log_password']);
 
-      if(isset($data[0]) && $data[0]) {
-        // array_shift($data);
-        $this->loadTemplate('home');
+      if(isset($this->data[0]) && $this->data[0]) {
+        $this->help->pagesLoginView('home');
       } else {
-        array_shift($data);
-        $this->loadTemplate('errorLog', $data);
+        array_shift($this->data);
+        $this->loadTemplate('errorLog', $this->data);
       }
     }
 

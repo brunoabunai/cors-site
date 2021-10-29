@@ -94,11 +94,11 @@ require_once('connection.php');
       );
     }
 
-    public function pagesLoginView($pageName, $dataModel = array(), $data = array()) {
-      if (isset($_SESSION['loginId'])){
-        $this->loadTemplate($pageName);
+    public function pagesLoginView($pageName, $noLoged = 'unplugged', $dataModel = array(''), $data = array()) {
+      if (isset($_SESSION['loginId']) && !empty($dataModel)){
+        $this->loadTemplate($pageName, $dataModel, $data);
       } else {
-        $this->loadTemplate('unplugged');
+        $this->loadTemplate($noLoged);
       }
     }
 

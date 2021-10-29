@@ -2,13 +2,15 @@
 
   Class menuController extends Controller{
 
+    private $help;
+
     public function __construct() {
-      $h = new auxiliary();
-      $h->resetSessionsRegister();
+      $this->help = new auxiliary();
+      $this->help->resetSessionsRegister();
     }
 
     public function index(){
-      $this->loadTemplate('menu');
+      $this->help->pagesLoginView('menu');
     }
 
   }
