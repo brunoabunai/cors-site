@@ -2,9 +2,14 @@
 
   Class editController extends Controller{
 
+    private $help;
+
+    public function __construct() {
+      $this->help = new auxiliary();
+    }
+
     public function index(){
-      $this->loadTemplate('selectUser');
-      // $this->loadTemplate('edit');
+      $this->help->pagesLoginViewTyp(['admin', 'user'], 'selectUser');
     }
 
     public function search() {
@@ -12,11 +17,9 @@
       $data = $u -> getUsersSearch();
     }
 
-    public function editUser($nameUser) {
-      $u = new auxiliary();
-      $data = $u -> getUserPerName($nameUser);
-      
-      $this->loadTemplate('edit', $data);
+    public function editUser($nameUser = null) {
+      $data = (!empty($this->help->getUserPerName($nameUser))) ? $this->help->getUserPerName($nameUser) : array();
+      $this->help->pagesLoginViewTyp(['admin', 'user2'], 'edit', 'unplugged', $data);
     }
 
     public function submitEditUser($userId) {

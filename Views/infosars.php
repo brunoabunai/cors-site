@@ -8,7 +8,7 @@
 //   $_SESSION['pos_title'],
 //   $_SESSION['pos_register']
 // );
-$view = "admin";
+$view = $_SESSION['loginType'];
 include_once 'features/boxConfigure.php';
 ?>
 

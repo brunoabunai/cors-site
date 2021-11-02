@@ -13,7 +13,7 @@
 $userName = $name;
 $userEmail = $email;
 $userPassword = "**************";
-$view = "admin";
+$view = $_SESSION['loginType'];
 include_once 'features/boxConfigure.php';
 
 ?>

@@ -25,10 +25,10 @@
       // if($title != null){
         $p = new home();
         $this->data = (!empty($p->getPostPerTitle($title))) ? $p->getPostPerTitle($title) : array();
-      // }
-      $this->help->pagesLoginView('notice', '', $this->data);
+        // }
+        $this->help->pagesLoginView('notice', '', $this->data);
+      }
+      
     }
 
-  }
-
-?>
+    ?>

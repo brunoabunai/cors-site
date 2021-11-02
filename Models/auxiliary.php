@@ -101,6 +101,21 @@ require_once('connection.php');
         $this->loadTemplate($noLoged);
       }
     }
+    
+    public function pagesLoginViewTyp($permission = array(), $pageName, $noLoged = 'unplugged', $dataModel = array(''), $data = array()) {
+      if (isset($_SESSION['loginId']) && !empty($dataModel)){
+        foreach ($permission as $key => $value) {
+          if($value === $this->getTypePerId($_SESSION['loginType'])) {
+            $this->loadTemplate($pageName, $dataModel, $data);
+            exit;
+          }
+        }
+        
+        $this->loadTemplate($noLoged);
+      } else {
+        $this->loadTemplate($noLoged);
+      }
+    }
 
   }
 
