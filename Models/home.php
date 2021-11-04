@@ -14,7 +14,7 @@ require_once('connection.php');
     }
 
     public function recentPosts() {
-      $cmd = $this->conn->query(" SELECT use_idFk, pos_title, pos_description, pos_image
+      $cmd = $this->conn->query(" SELECT use_idFk, pos_title, pos_description, pos_image, pos_date, pos_dateEdit
                                   FROM posts
                                   ORDER BY pos_idPk DESC
                                 ") or die ($this->conn->error);
@@ -24,7 +24,9 @@ require_once('connection.php');
           'user' => $this->help->getUserPerId($row['use_idFk']),
           'title' => $row['pos_title'],
           'description' => $row['pos_description'],
-          "image" => $row['pos_image']
+          "image" => $row['pos_image'],
+          'date' => $row['pos_date'],
+          'dateEdit' => $row['pos_dateEdit']
         ];
       }
 

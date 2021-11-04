@@ -5,12 +5,14 @@ require_once('connection.php');
 
     private $conn;
     private $err;
+    private $help;
 
     private $email;
     private $password;
 
     public function __construct() {
       $this->conn = connection::getConnection();
+      $this->help = new auxiliary();
       $this->err = array();
     }
 
@@ -56,7 +58,7 @@ require_once('connection.php');
       /** View if not existe err, if return = true (login), else (errorLog) */
       if(count($this->err) == 0){
         $_SESSION['loginId'] = $data['use_idPk'];
-        $_SESSION['loginType'] = $data['typ_idFk'];
+        $_SESSION['loginType'] = $this->help->getTypePerId($data['typ_idFk']);
 
         return [
           true,

@@ -1,6 +1,5 @@
 <?php
   $help = new auxiliary();
-  $date= '13/10/2021'
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +24,7 @@
             <img src="<?= $value['image']; ?>" alt="">
 
             <div class="headline">
-              <span class="head-author"><?= $value['user']['name']; ?> - <small> <?php echo $date ?></small></span>
+              <span class="head-author"><?= $value['user']['name']; ?> - <small> <?php echo $value['date']; ?></small></span>
               <h3 class="head-title">
                 <?= $value['title']; ?>
               </h3>
@@ -42,11 +41,11 @@
         </a>
 
         <?php } else { ?>
-          
+
           <a href="./home/getPostFromTitle/<?= str_replace(" ", "-", $help->removeAccents($value['title'])); ?>">
             <div class="noticie">
               <div class="headline">
-                <span class="head-author"><?= $value['user']['name']; ?> - <small> <?php echo $date ?></small></span>
+                <span class="head-author"><?= $value['user']['name']; ?> - <small> <?php echo $value['date']; ?></small></span>
                 <h3 class="head-title">
                   <?= $value['title']; ?>
                 </h3>
