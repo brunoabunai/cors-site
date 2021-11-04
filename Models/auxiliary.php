@@ -28,11 +28,14 @@ require_once('connection.php');
 
     public function getUserPerName($name) {
       $name = str_replace("-", " ", $name);
-      // $data = array();
       $cmd = $this->conn->query(' SELECT use_idPk, use_name, use_email, use_avatar
                                   FROM users
                                   WHERE use_name = "'.$name.'" ');
       $this->ret = $cmd->fetch_assoc();
+
+      if (!$this->ret) {
+        $this->loadTemplate('unplugged');
+      }
 
       return ([
         'id' => $this->ret['use_idPk'],
@@ -105,7 +108,7 @@ require_once('connection.php');
     public function pagesLoginViewTyp($permission = array(), $pageName, $noLoged = 'unplugged', $dataModel = array(''), $data = array()) {
       if (isset($_SESSION['loginId']) && !empty($dataModel)){
         foreach ($permission as $key => $value) {
-          if($value === $this->getTypePerId($_SESSION['loginType'])) {
+          if($value === $_SESSION['loginType']) {
             $this->loadTemplate($pageName, $dataModel, $data);
             exit;
           }

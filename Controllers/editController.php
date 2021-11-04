@@ -9,7 +9,7 @@
     }
 
     public function index(){
-      $this->help->pagesLoginViewTyp(['admin', 'user'], 'selectUser');
+      $this->help->pagesLoginViewTyp(['admin'], 'selectUser');
     }
 
     public function search() {
@@ -19,7 +19,7 @@
 
     public function editUser($nameUser = null) {
       $data = (!empty($this->help->getUserPerName($nameUser))) ? $this->help->getUserPerName($nameUser) : array();
-      $this->help->pagesLoginViewTyp(['admin', 'user2'], 'edit', 'unplugged', $data);
+      $this->help->pagesLoginViewTyp(['admin'], 'edit', 'unplugged', $data);
     }
 
     public function submitEditUser($userId) {
