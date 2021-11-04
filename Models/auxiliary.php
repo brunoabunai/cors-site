@@ -113,7 +113,7 @@ require_once('connection.php');
             exit;
           }
         }
-        
+
         $this->loadTemplate($noLoged);
       } else {
         $this->loadTemplate($noLoged);

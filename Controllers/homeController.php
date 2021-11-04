@@ -17,7 +17,7 @@
     public function recentViews(){
       $h = new home();
       $this->data = $h->recentPosts();
-      
+
       $this->help->pagesLoginView('homePostViews', '', $this->data);
     }
 

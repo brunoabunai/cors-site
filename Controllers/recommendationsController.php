@@ -2,8 +2,14 @@
 
   Class recommendationsController extends Controller{
 
+    private $help;
+
+    public function __construct() {
+      $this->help = new auxiliary();
+    }
+
     public function index(){
-      $this->loadTemplate('recommendationsList');
+      $this->help->pagesLoginViewTyp(['admin', 'writer'], 'recommendationsList');
     }
 
     public function infos(){
@@ -35,15 +41,19 @@
       $s = new recommendations();
       $data = $s -> getRecommendationSearch();
 
-      $this->loadTemplate('recommendationSearchView', $data);
+      // $this->loadTemplate('recommendationSearchView', $data);
+      $this->help->pagesLoginViewTyp(['admin', 'writer'], 'recommendationSearchView', '', $data);
     }
     
     /** Select */
-    public function getRecommendation($id){
+    public function getRecommendation($id = null){
       $s = new recommendations();
-      $data = $s -> recommendationFromId($id);
+      // $data = (!empty($s->recommendationFromId($id))) ? $s->recommendationFromId($id) : array();
+      $data = $s->recommendationFromId($id);
+      // $data = $s -> recommendationFromId($id);
 
-      $this->loadTemplate('recommendations', $data);
+      // $this->loadTemplate('recommendations', $data);
+      $this->help->pagesLoginViewTyp(['admin', 'writer'], 'recommendations', 'unplugged', $data);
     }
 
   }
