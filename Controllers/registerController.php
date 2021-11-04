@@ -2,6 +2,12 @@
 
   Class registerController extends Controller{
 
+    private $help;
+
+    public function __construct() {
+      $this->help = new auxiliary();
+    }
+
     // public function index(){
     // }
 
@@ -9,7 +15,8 @@
       $g = new auxiliary();
       $data = $g -> getType();
 
-      $this->loadTemplate('register', $data);
+      // $this->loadTemplate('register', $data);
+      $this->help->pagesLoginViewTyp(['admin'], 'register', 'unplugged', $data);
     }
 
     public function member(){

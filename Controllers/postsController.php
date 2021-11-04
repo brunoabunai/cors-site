@@ -2,8 +2,15 @@
 
   Class postsController extends Controller{
 
+    private $help;
+
+    public function __construct() {
+      $this->help = new auxiliary();
+    }
+
     public function index(){
-      $this->loadTemplate('createPosts');
+      // $this->loadTemplate('createPosts');
+      $this->help->pagesLoginViewTyp(['admin', 'writer'], 'createPosts');
     }
 
     public function submit(){
