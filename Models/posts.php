@@ -86,7 +86,7 @@ require_once('connection.php');
       }
     }
 
-    public function setPostInformations($title, $description, $image, $user = 1){
+    public function setPostInformations($title, $description, $image, $user){
       (strpos($title, "  ") != 0) ? $title = $this->removeDoubleSpace($title) : $title = $title;
       (strpos($description, "  ") != 0) ? $description = $this->removeDoubleSpace($description) : $description = $description;
 

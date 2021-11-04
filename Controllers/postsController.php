@@ -8,7 +8,7 @@
 
     public function submit(){
       $r = new posts();
-      $data = $r -> setPostInformations($_POST['pos_title'], $_POST['pos_description'], $_FILES['pos_image']);
+      $data = $r -> setPostInformations($_POST['pos_title'], $_POST['pos_description'], $_FILES['pos_image'], $_SESSION['loginId']);
 
       // print_r($data);
 

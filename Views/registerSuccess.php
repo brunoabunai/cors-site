@@ -2,7 +2,7 @@
   // print_r($data);
   // echo $name;
   // echo $pos_idPk;
-  session_destroy();
+  // session_destroy();
 ?>
 
 <!DOCTYPE html>
