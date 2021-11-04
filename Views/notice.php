@@ -1,14 +1,14 @@
 <?php
 //Users
-unset(
-  $_SESSION['reg_name'],
-  $_SESSION['reg_password'],
-  $_SESSION['reg_confirmPassword'],
-  $_SESSION['reg_email'],
-  //Post
-  $_SESSION['pos_title'],
-  $_SESSION['pos_register']
-);
+// unset(
+//   $_SESSION['reg_name'],
+//   $_SESSION['reg_password'],
+//   $_SESSION['reg_confirmPassword'],
+//   $_SESSION['reg_email'],
+//   //Post
+//   $_SESSION['pos_title'],
+//   $_SESSION['pos_register']
+// );
 
 $nameOfNotice = $title;
 ?>
@@ -23,7 +23,7 @@ $nameOfNotice = $title;
   <style>
     <?php include_once('./styles/notice.css'); ?>
   </style>
-  <title><?php echo $nameOfNotice; ?></title>
+  <title><?= $nameOfNotice; ?></title>
 </head>
 
 <body>
