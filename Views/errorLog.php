@@ -25,14 +25,6 @@
     <span class="subtitle "><b>Erro:</b> <?php  print_r($data[0][0]);?></span>
 
     <div class="errors">
-      <?php
-
-
-      // foreach ($data as $value) {
-
-      
-      // }
-      ?>
 
     </div>
 

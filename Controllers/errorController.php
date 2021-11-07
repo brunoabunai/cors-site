@@ -5,7 +5,7 @@
     public function index() {
       $this->loadTemplate('404');
     }
-    
+
   }
 
 ?>

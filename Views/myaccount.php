@@ -1,15 +1,4 @@
 <?php
-//Users
-// unset(
-//   $_SESSION['reg_name'],
-//   $_SESSION['reg_password'],
-//   $_SESSION['reg_confirmPassword'],
-//   //Post
-//   $_SESSION['pos_title'],
-//   $_SESSION['pos_register']
-// );
-
-
 $userName = $name;
 $userEmail = $email;
 $userPassword = "**************";
@@ -45,12 +34,6 @@ include_once 'features/boxConfigure.php';
       <h1><?= $userName ?></h1>
 
       <img id="img-player" src="../<?= $avatar; ?>">
-<!--
-      <label style="cursor: pointer;" for="file-upload" class="custom-file-upload">
-        <img id="img-player" src="/TCC/cors-site/public/img/cv3.png">
-      </label>
-      <input style="display: none;" id="file-upload" type="file" onchange="previewFile()">
--->
     </div>
 
     <div class="infos-session">

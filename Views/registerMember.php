@@ -1,15 +1,3 @@
-<?php
-//Users
-// unset(
-//   $_SESSION['reg_name'],
-//   $_SESSION['reg_password'],
-//   $_SESSION['reg_confirmPassword'],
-//   //Post
-//   $_SESSION['pos_title'],
-//   $_SESSION['pos_register']
-// );
-?>
-
 <!DOCTYPE html>
 <html lang="pt">
 
@@ -41,8 +29,6 @@
 
         Cadastrar-se
       </h2>
-
-
 
     </div>
 

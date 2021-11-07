@@ -1,20 +1,3 @@
-<?php
-//Users
-// unset(
-//   $_SESSION['reg_name'],
-//   $_SESSION['reg_password'],
-//   $_SESSION['reg_confirmPassword'],
-//   //Post
-//   $_SESSION['pos_title'],
-//   $_SESSION['pos_register']
-// );
-
-
-
-
-
-?>
-
 <!DOCTYPE html>
 <html lang="pt">
 
@@ -59,7 +42,3 @@
 </body>
 
 </html>
-
-<!-- <li> Fique em casa se você sentir indisposição.</li>
-      <li>Procure atendimento médico se tiver febre, tosse e dificuldade para respirar. Ligue com antecedência para o órgão prestador de cuidados de saúde e peça direcionamento à unidade mais adequada. Isso protege você e evita a propagação de vírus e outras infecções.</li>
-      <li> Máscaras bem ajustadas ao rosto podem prevenir a propagação do vírus para outras pessoas. Isoladamente, elas não são uma proteção contra a COVID-19, e o uso deve ser combinado com o distanciamento físico e a limpeza das mãos. Siga as orientações da autoridade local de saúde.</li> -->

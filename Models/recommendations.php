@@ -160,16 +160,17 @@ require_once('connection.php');
      * Select Recommendation from id
      */
     public function recommendationFromId($id){
-      if($id === null) {
-        $this->help->loadTemplate('unplugged');
-      }
-      
       $data = array();
       $cmd = $this->conn->query(' SELECT use_idFk, rec_title, rec_description
                                   FROM recommendations 
                                   Where rec_idPk = '.$id.'
-                                ') or die ($this->conn->error);
+                                  LIMIT 1
+                                ') or die ($this->help->loadTemplate('unplugged'));
       $data = $cmd->fetch_assoc();
+
+      if(empty($data)){
+        return '';
+      }
 
       // return $data;
       return [

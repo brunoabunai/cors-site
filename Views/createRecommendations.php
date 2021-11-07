@@ -67,20 +67,4 @@
       textarea.value+='\r';
     }
   };
-  // const createPost = () => {
-  //   const query = document.querySelectorAll(".pos_register");
-
-
-  //   $.ajax({
-  //     type: "POST",
-  //     url: './src/components/createPost.php',
-  //     data: {action:outPut},
-  //     success:(html)=> {
-  //       $('#result').html(html);
-  //     },
-  // error:function(html) {
-  //   location.href='../../404.php';
-  // }
-  //   })
-  // }
 </script>

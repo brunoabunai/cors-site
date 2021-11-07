@@ -37,8 +37,6 @@
 
       <form name="form_register" action="./submitAdmin" method="POST">
 
-        
-
         <input title="name" type="text" name="reg_name" placeholder="Nome:" value="<?php echo isset($_SESSION['reg_name']) ? $_SESSION['reg_name'] : ''; ?>" />
         <input type="email" name="reg_email" placeholder="Email:" value="<?php echo isset($_SESSION['reg_email']) ? $_SESSION['reg_email'] : ''; ?>" />
         <input class="firstPassword" type="password" name="reg_password" placeholder="Senha:" />
@@ -69,29 +67,3 @@
 </body>
 
 </html>
-
-<!-- <script defer>
-  // const form = document.querySelector('form');
-
-  // if (condition) {
-  //   document.querySelector("form").addEventListener(
-  //     "click", 
-  //     (event) => {
-  //       event.preventDefault();
-  //     });
-  // }
-
-  const logOff = () => {
-    $.ajax({
-      type: "POST",
-      url: './src/components/geralCommands.php',
-      data: {action:'callLogOff'},
-      success:function(html) {
-        location.href='./index.php?p=landing';
-      },
-      error:function(html) {
-        location.href='../../404.php';
-      }
-    })
-  }
-</script> -->

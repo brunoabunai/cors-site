@@ -1,7 +1,3 @@
-<?php
-// @session_start();
-?>
-
 <!DOCTYPE html>
 <html lang="pt">
 
@@ -55,35 +51,8 @@
 
     </div>
   </div>
-  <?php include 'redirects/input_validation.php' ?>
 
-  <!-- <script defer src="../node_modules/jquery/dist/jquery.js"></script> -->
+  <?php include 'redirects/input_validation.php' ?>
 </body>
 
 </html>
-<!--
-<script defer type="module">
-  // $('input[type="submit"]').on(
-  //   'click',
-  //   (e) => {
-  //     // e.preventDefault();
-
-  //     $.ajax({
-  //       type: "POST",
-  //       url: 'login/submit',
-  //       success: function(html) {
-  //         // console.log(html);
-  //         // console.log('potato');
-  //       }
-  //     })
-  //   });
-  
-
-  // document.querySelector("form").addEventListener(
-  //   "click", 
-  //   (event) => {
-  //     event.preventDefault();
-  //     console.log('potato');
-  // });
-</script>
--->

@@ -9,15 +9,12 @@
     }
 
     public function index(){
-      // $this->loadTemplate('createPosts');
       $this->help->pagesLoginViewTyp(['admin', 'writer'], 'createPosts');
     }
 
     public function submit(){
       $r = new posts();
       $data = $r -> setPostInformations($_POST['pos_title'], $_POST['pos_description'], $_FILES['pos_image'], $_SESSION['loginId']);
-
-      // print_r($data);
 
       if (isset($data[0]) && $data[0]) { //true = validation true (pass)
         array_shift($data);
@@ -31,6 +28,7 @@
       }
 
     }
+    
   }
 
 ?>

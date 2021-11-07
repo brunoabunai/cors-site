@@ -1,13 +1,4 @@
 <?php
-//Users
-// unset(
-//   $_SESSION['reg_name'],
-//   $_SESSION['reg_password'],
-//   $_SESSION['reg_confirmPassword'],
-//   //Post
-//   $_SESSION['pos_title'],
-//   $_SESSION['pos_register']
-// );
 $view = $_SESSION['loginType'];
 include_once 'features/boxConfigure.php';
 ?>
@@ -46,35 +37,23 @@ include_once 'features/boxConfigure.php';
   </div>
   <div class="infosars-page">
 
+    <div class="prevention-box">
+      <a href="/TCC/cors-site/covidInformations/preventions">
+        <div class="box-firstLine">
+          <img src="./public/img/cv2.png" alt="">
+          <h2> Para evitar a propagação da COVID-19:</h2>
+        </div>
+      </a>
+    </div>
 
-    
-
-      <div class="prevention-box">
-        <a href="/TCC/cors-site/covidInformations/preventions">
-          <div class="box-firstLine">
-            <img src="./public/img/cv2.png" alt="">
-            <h2> Para evitar a propagação da COVID-19:</h2>
-          </div>
-        </a>
-      </div>
-
-  
-
-
-
-    
-
-      <div class="symptoms-box">
-        <a href="/TCC/cors-site/covidInformations/symptoms">
-          <div class="box-firstLine">
-            <img src="./public/img/cv3.png" alt="">
-            <h2> Fique atento aos sintomas da COVID-19:</h2>
-          </div>
-        </a>
-      </div>
-
-
-
+    <div class="symptoms-box">
+      <a href="/TCC/cors-site/covidInformations/symptoms">
+        <div class="box-firstLine">
+          <img src="./public/img/cv3.png" alt="">
+          <h2> Fique atento aos sintomas da COVID-19:</h2>
+        </div>
+      </a>
+    </div>
 
   </div>
   <?php include 'redirects/box.php' ?>

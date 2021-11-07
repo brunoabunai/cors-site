@@ -1,6 +1,4 @@
 <?php
-// $view = "writer";
-// $view = "admin";
 $view = $_SESSION['loginType'];
 include_once 'features/boxConfigure.php';
 ?>
@@ -84,10 +82,6 @@ include_once 'features/boxConfigure.php';
         <?php
         }
         ?>
-
-
-
-
 
       </div>
     </div>

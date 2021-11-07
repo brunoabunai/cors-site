@@ -1,10 +1,3 @@
-<?php
-  // print_r($data);
-  // echo $name;
-  // echo $pos_idPk;
-  // session_destroy();
-?>
-
 <!DOCTYPE html>
 <html lang="pt">
 

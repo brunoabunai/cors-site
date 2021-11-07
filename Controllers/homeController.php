@@ -13,7 +13,7 @@
     public function index(){
       $this->help->pagesLoginView('home');
     }
-    
+
     public function recentViews(){
       $h = new home();
       $this->data = $h->recentPosts();
@@ -22,13 +22,12 @@
     }
 
     public function getPostFromTitle($title = null){
-      // if($title != null){
-        $p = new home();
-        $this->data = (!empty($p->getPostPerTitle($title))) ? $p->getPostPerTitle($title) : array();
-        // }
-        $this->help->pagesLoginView('notice', '', $this->data);
-      }
-      
+      $p = new home();
+      $this->data = (!empty($p->getPostPerTitle($title))) ? $p->getPostPerTitle($title) : array();
+
+      $this->help->pagesLoginView('notice', 'unplugged', $this->data);
     }
 
-    ?>
+  }
+
+?>

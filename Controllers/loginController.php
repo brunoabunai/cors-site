@@ -12,7 +12,7 @@
     public function index(){
       $this->help->pagesLoginView('home', 'login');
     }
-    
+
     public function submit() {
       $l = new login();
       $this->data = $l -> setLoginValues($_POST['log_email'], $_POST['log_password']);

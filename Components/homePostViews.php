@@ -57,9 +57,9 @@
               <img src="<?= $value['image']; ?>" alt="">
             </div>
           </a>
-          
+
         <?php } ?>
-        
+
       <?php } ?>
     </div>
     <script src="/TCC/cors-site/utils/analysis_space.js"></script>

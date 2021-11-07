@@ -18,7 +18,7 @@ require_once('connection.php');
                                   FROM posts
                                   ORDER BY pos_idPk DESC
                                 ") or die ($this->conn->error);
-        
+
       foreach ($cmd as $row) {
         $this->data[] = [
           'user' => $this->help->getUserPerId($row['use_idFk']),
@@ -30,10 +30,7 @@ require_once('connection.php');
         ];
       }
 
-      // print_r($cmd);
-
       return ['posts' => $this->data];
-      // return $this->data;
     }
 
     /**
@@ -43,10 +40,11 @@ require_once('connection.php');
       $title = str_replace("-", " ", $title);
       $cmd = $this->conn->query(' SELECT use_idFk, pos_title, pos_description, pos_image 
                                   FROM posts 
-                                  WHERE pos_title = "'.$title.'" 
-                                ') or die ($this->conn->error);
+                                  WHERE pos_title = "'.$title.'"
+                                  LIMIT 1 
+                                ') or die ($this->help->loadTemplate('unplugged'));
       $this->data = $cmd->fetch_assoc();
-      
+
       if(empty($this->data)){
         return '';
       }

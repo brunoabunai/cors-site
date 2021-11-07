@@ -29,7 +29,7 @@ require_once('connection.php');
     /**
      * Validade tinformations from users
      */
-    private function validateInformations(){      
+    private function validateInformations(){
 
       if(strlen($this->name) == 0){ //Vê se o campo "Name" está vazio
         $this->err[] = "Preencha o nome.";

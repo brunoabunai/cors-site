@@ -8,21 +8,17 @@
       $this->help = new auxiliary();
     }
 
-    // public function index(){
-    // }
-
     public function administradores(){
       $g = new auxiliary();
       $data = $g -> getType();
 
-      // $this->loadTemplate('register', $data);
       $this->help->pagesLoginViewTyp(['admin'], 'register', 'unplugged', $data);
     }
 
     public function member(){
       $this->loadTemplate('registerMember');
     }
-    
+
     public function submitAdmin(){
       $r = new register();
       $data = $r -> submit($_POST['reg_email'], $_POST['reg_name'], $_POST['reg_password'], $_POST['reg_confirmPassword'], '', $_POST['typ_reg'], true);
@@ -37,7 +33,7 @@
         array_shift($data);
         $this->loadTemplate('errorLog', $data);
       }
-      
+
     }
 
     public function submitMember(){
@@ -54,9 +50,9 @@
         array_shift($data);
         $this->loadTemplate('errorLog', $data);
       }
-      
+
     }
-    
+
   }
 
 ?>

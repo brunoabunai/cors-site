@@ -1,15 +1,4 @@
 <?php
-//Users
-// unset(
-//   $_SESSION['reg_name'],
-//   $_SESSION['reg_password'],
-//   $_SESSION['reg_confirmPassword'],
-//   //Post
-//   $_SESSION['pos_title'],
-//   $_SESSION['pos_register']
-// );
-
-// $view = "admin";
 $view = $_SESSION['loginType'];
 include_once 'features/boxConfigure.php';
 ?>
@@ -57,9 +46,6 @@ include_once 'features/boxConfigure.php';
     </div>
   </div>
 
-  <!-- <div class="analysis-space">
-    AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-  </div> -->
   <?php include 'redirects/box.php' ?>
 
 </body>

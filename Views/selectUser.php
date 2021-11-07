@@ -40,7 +40,6 @@
     </div>
 
   </div>
-  <!-- <script defer src="./node_modules/jquery/dist/jquery.js"></script> -->
 </body>
 
 </html>
@@ -57,10 +56,6 @@
           actualPage: page,
           action: query
         },
-        // dataType: "json",
-        // beforeSend: function() {
-
-        // },
         success: function(html) {
           $('.users').html(html);
         },

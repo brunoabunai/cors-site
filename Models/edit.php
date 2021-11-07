@@ -2,7 +2,7 @@
 require_once ('connection.php');
 
   Class edit {
-    
+
     private $conn;
     private $err;
     private $help;
@@ -158,44 +158,44 @@ require_once ('connection.php');
       for($count = 0; $count < count($pageArray); $count++){
         if($pages == $pageArray[$count]){
           $pageLink .= '
-          
+
             <a class="" href="#">'.$pageArray[$count].'</a>
-          
+
           ';
-    
+
           $previousId = $pageArray[$count] - 1;
           if($previousId > 0){
             $previewsLink = '<a class="" href="javascript:void(0)" data-page_number="'.$previousId.'">Previous</a>';
           }else{
             $previewsLink = '
-            
+
             <a class="" href="#">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M15.535 3.515L7.05005 12L15.535 20.485L16.95 19.071L9.87805 12L16.95 4.929L15.535 3.515Z" fill="var(--text-color)"></path>
               </svg>
-            
+
             </a>
             ';
           }
-    
+
           $nextId = $pageArray[$count] + 1;
           if($nextId > $totalLinks){
             $nextLink = '
-            
+
               <a class="page-link" href="#">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M8.46495 20.485L16.95 12L8.46495 3.515L7.04995 4.929L14.122 12L7.04995 19.071L8.46495 20.485Z" fill="var(--text-color)"></path>
                 </svg>
-              
+
               </a>
-           
+
               ';
           }else{
             $nextLink = '<a class="page-link" href="javascript:void(0)" data-page_number="'.$nextId.'">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M8.46495 20.485L16.95 12L8.46495 3.515L7.04995 4.929L14.122 12L7.04995 19.071L8.46495 20.485Z" fill="var(--text-color)"></path>
               </svg>
-            
+
             </a>';
           }
         }else{
@@ -221,7 +221,7 @@ require_once ('connection.php');
 
       echo $output;
     }
-    
+
     /**
      * ------------------------------------------------------------
      * Submit edit from database
@@ -229,9 +229,9 @@ require_once ('connection.php');
      */
     private function editValidation() {
       /** Validar name */
-      // if(strlen($this->name) == 0) {
-      //   $this->err[] = 'Preencha o nome';
-      // } else
+      if(strlen($this->name) == 0) {
+        $this->err[] = 'Preencha o nome';
+      } else
       if(strlen($this->name) <= 5) {
         $this->err[] = 'Nome muito pequeno';
       }
@@ -267,11 +267,11 @@ require_once ('connection.php');
 
           $extensions = array('png', 'jpg', 'jpeg');
           $extension = strtolower(pathinfo($fileName, PATHINFO_EXTENSION));
-  
+
           if(in_array($extension, $extensions) === false) {
             $this->err[] = "Extensão invalida! (png, jpg, jpeg)";
           }
-          
+
           /** Image settings */
           $right = move_uploaded_file($this->image['tmp_name'], $directory . $newNameFile . '.' . $extension);
           if(!$right) {
@@ -296,7 +296,6 @@ require_once ('connection.php');
 
       /** Visualiza se existe alguma falha e qual será o redirecionamento */
       if(count($this->err) == 0) {
-
         return [true, $this->editUserSubmit()];
       } else {
         return [false, $this->err, 'previousPage' => 'edit/editUser/'.$this->help->getUserPerId($this->id)['name']];
