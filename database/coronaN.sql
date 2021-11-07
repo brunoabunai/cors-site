@@ -58,7 +58,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `typ_idFk` int(11) NOT NULL DEFAULT 1,
   `use_name` varchar(150) NOT NULL,
   `use_email` varchar(150) NOT NULL,
-  `use_password` varchar(32) NOT NULL,
+  `use_password` varchar(255) NOT NULL,
   `use_avatar` varchar(150) NOT NULL DEFAULT ('database/userImages/404.jpg'),
   PRIMARY KEY (`use_idPk`),
   KEY `typ_idFk` (`typ_idFk`)
@@ -92,7 +92,7 @@ INSERT INTO `types` (`typ_name`) VALUES
 --
 
 INSERT INTO `users` (`typ_idFk`, `use_name`, `use_email`, `use_password`) VALUES
-((SELECT typ_idPk from types WHERE typ_name='admin'), 'admin', 'admin@gmail.com', 'c3284d0f94606de1fd2af172aba15bf3');
+((SELECT typ_idPk from types WHERE typ_name='admin'), 'admin', 'admin@gmail.com', '$2y$10$yHvpUWXgdkUFmUz2yjdUoug8kMNs.iDcJf7UoU7FYqaoZsp6vRdIK');
 
 --
 -- Dumping data for table `posts`

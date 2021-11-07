@@ -43,15 +43,15 @@ require_once('connection.php');
     private function login() {
       /** pull from database */
       $cmd = "
-        SELECT use_idPk, typ_idFk 
+        SELECT use_idPk, typ_idFk, use_password 
         FROM users 
         WHERE use_email = '".$this->email."' 
-        AND use_password = '".md5(md5($this->password))."'
+        LIMIT 1
       ";
       $query = $this->conn->query($cmd) or die ($this->conn->error);
       $data = $query->fetch_assoc();
-      
-      if(empty($data)){
+
+      if(empty($data) && !password_verify($this->password, $data['use_password'])){
         $this->err[] = "User not Found";
       }
 

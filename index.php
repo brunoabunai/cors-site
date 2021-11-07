@@ -1,4 +1,10 @@
 <?php
+  // $password = 'admin';
+  // $cryp = password_hash($password, PASSWORD_DEFAULT);
+  // print_r($cryp);
+  // echo "<br />";
+  // echo password_verify($password, $cryp);
+
   clearstatcache();
   
   if(!isset($_SESSION)){

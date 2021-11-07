@@ -57,7 +57,8 @@ require_once('connection.php');
        */
       $cmd = $this->conn->query(' SELECT use_name 
                                   FROM users 
-                                  WHERE use_email = "'.$this->email.'" 
+                                  WHERE use_email = "'.$this->email.'"
+                                  LIMIT 1 
                                 ') or die ($this->conn->error);
       $data = $cmd->fetch_assoc();
                                 
@@ -106,7 +107,7 @@ require_once('connection.php');
                                       '".$this->type."',
                                       '".$this->email."',
                                       '".$this->name."',
-                                      '".md5(md5($this->password))."'
+                                      '".password_hash($this->password, PASSWORD_DEFAULT)."'
                                     );
                                   ")
         ) : ( //User avatar is not empty
@@ -120,7 +121,7 @@ require_once('connection.php');
                                     '".$this->type."',
                                     '".$this->name."',
                                     '".$this->email."',
-                                    '".md5(md5($this->password))."',
+                                    '".password_hash($this->password, PASSWORD_DEFAULT)."',
                                     '".$this->avatar."'
                                   );
                                 ") or die ($this->conn->error)
@@ -147,7 +148,7 @@ require_once('connection.php');
                                       '".$this->type."',
                                       '".$this->email."',
                                       '".$this->name."',
-                                      '".md5(md5($this->password))."'
+                                      '".password_hash($this->password, PASSWORD_DEFAULT)."'
                                     );
                                   ")
       ) : ( //User avatar is not empty
@@ -161,7 +162,7 @@ require_once('connection.php');
                                       '".$this->type."',
                                       '".$this->name."',
                                       '".$this->email."',
-                                      '".md5(md5($this->password))."',
+                                      '".password_hash($this->password, PASSWORD_DEFAULT)."',
                                       '".$this->avatar."'
                                     );
                                   ") or die ($this->conn->error)
