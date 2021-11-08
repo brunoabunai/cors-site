@@ -1,4 +1,4 @@
-# To Run this project You need:
+# To Run this project You Need:
 - node.js
 - yarn || npx || npm
 - jquery (we used: yarn add jquery)
