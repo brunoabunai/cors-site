@@ -41,7 +41,8 @@
   background-color: #ebe9e9;
   border-radius: 0.5rem;
   padding: 1rem;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.062);
+  margin-bottom: 1rem;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.027);
 }
 
 .recommendationsList-page .rec-list .rec .rec-author {
