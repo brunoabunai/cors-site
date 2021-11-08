@@ -33,9 +33,22 @@
   width: 100%;
 }
 
+.link-rec{
+  display: flex;
+  align-items: center;
+}
+
+.link-rec button{
+  background-color: transparent;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+  border: 0;
+  height: 1rem;
+}
+
 .recommendationsList-page .rec-list .rec {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   width: 100%;
   background-color: #ebe9e9;
@@ -65,6 +78,7 @@
 .recommendationsList-page .rec-list .rec .rec-infos {
   display: flex;
   flex-direction: column;
+  margin-left: 4rem;
 }
 
 .recommendationsList-page .rec-list .rec .rec-infos h3 {
@@ -79,6 +93,8 @@
 
 .recommendationsList-page .rec-list .rec button {
   background-color: transparent;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
   border: 0;
 }
 

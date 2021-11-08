@@ -15,7 +15,6 @@
   margin-top: 1rem;
 }
 
-
 .recommendationsList-page  .rec {
   margin-top: 8.5rem;
   margin-bottom: 2rem;
@@ -27,6 +26,14 @@
   border-radius: 0.5rem;
   padding: 1rem;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.062);
+}
+
+
+.recommendationsList-page .rec a{
+  display: flex;
+  flex-direction: column-reverse;
+ width: 100%;
+ height: 100%;
 }
 
 .recommendationsList-page  .rec .rec-author{
@@ -62,11 +69,6 @@
   max-width: 18rem;
   font-size: 1.2rem;
   font-weight: 300;
-}
-
-.recommendationsList-page  .rec button{
-  background-color: transparent;
-  border: 0;
 }
 
 .recommendationsList-page .rec-content {
