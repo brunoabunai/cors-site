@@ -77,7 +77,7 @@ require_once ('connection.php');
 
             <td class="options-user options">
               <button class="btn-delete-user">
-                <a href="./edit/removeUser/'.str_replace(" ", "-", $row["use_name"]).'">
+                <a href="./edit/removeUsers/'.str_replace(" ", "-", $row["use_name"]).'">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M17 22H7C5.89543 22 5 21.1046 5 20V7H3V5H7V4C7 2.89543 7.89543 2 9 2H15C16.1046 2 17 2.89543 17 4V5H21V7H19V20C19 21.1046 18.1046 22 17 22ZM7 7V20H17V7H7ZM9 4V5H15V4H9Z" fill="var(--danger)"></path>
                   </svg>
@@ -335,11 +335,13 @@ require_once ('connection.php');
     /** Rever código */
     public function removeUser($userName) {
       // DELETE from livros WHERE id=2; <- deletar uma linha do database
-      $userName = str_replace("-", " ", $userName);
       $cmd = $this->conn->query("
         DELETE from users
-      WHERE use_idPk = ".$this->help->getUserPerName($userName)['id']."
+        WHERE use_idPk = ".$this->help->getUserPerName($userName)['id']."
+        LIMIT 1
       ") or die ($this->conn->error);
+
+      print_r('potato: '.$cmd);
 
       return array(
         'text' => $userName.' removido ',

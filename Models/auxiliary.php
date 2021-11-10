@@ -28,15 +28,18 @@ require_once('connection.php');
 
     public function getUserPerName($name) {
       $name = str_replace("-", " ", $name);
+
       $cmd = $this->conn->query(' SELECT use_idPk, use_name, use_email, use_avatar
                                   FROM users
-                                  WHERE use_name = "'.$name.'" ');
+                                  WHERE use_name = "'.$name.'"
+                                  LIMIT 1 
+                                ') or die ($this->help->loadTemplate('unplugged'));
       $this->ret = $cmd->fetch_assoc();
 
       if (!$this->ret) {
         $this->loadTemplate('unplugged');
       }
-
+      
       return ([
         'id' => $this->ret['use_idPk'],
         'name' => $this->ret['use_name'],

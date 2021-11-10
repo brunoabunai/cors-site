@@ -33,16 +33,18 @@
       }
     }
 
-    public function removeUser($userName) {
+    public function removeUsers($userName) {
       $u = new edit();
       $data = $u -> removeUser($userName);
-      if(isset($data[0]) && $data[0]){
-        array_shift($data);
-        $this->loadTemplate('success', $data[0]);
-      } else {
-        array_shift($data);
-        $this->loadTemplate('errorLog', $data);
-      }
+      print_r($data);
+
+      // if(isset($data[0]) && $data[0]){
+      //   array_shift($data);
+      //   $this->loadTemplate('success', $data[0]);
+      // } else {
+      //   array_shift($data);
+      //   $this->loadTemplate('errorLog', $data);
+      // }
     }
 
   }
