@@ -182,6 +182,22 @@ require_once('connection.php');
       ];
     }
 
+    public function removeRecommendation($id) {
+      // DELETE from livros WHERE id=2; <- deletar uma linha do database
+      $cmd = $this->conn->query("
+        DELETE from recommendations
+        WHERE rec_idPk = ".$id."
+        LIMIT 1
+      ") or die ($this->conn->error);
+  
+      return array(
+        'text' => $this->help->getRecommendationPerId($id).' removido ',
+        'previousPage' => 'menu',
+        'buttonText' => 'Menu',
+        'pos' => '../../'
+      );
+    }
+
   }
 
 ?>

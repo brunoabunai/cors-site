@@ -74,6 +74,17 @@ require_once('connection.php');
       return ($this->ret['typ_name']);
     }
 
+    
+    /** Recommendation */
+    public function getRecommendationPerId($id) {
+      $cmd = $this->conn->query(' SELECT rec_name 
+                                  FROM recommendations
+                                  WHERE rec_idPk = "'.$id.'" ');
+      $this->ret = $cmd->fetch_assoc(); //retorno
+
+      return ($this->ret['rec_name']);
+    }
+
 
     /** Gerais */
     public function removeDoubleSpace($something) {

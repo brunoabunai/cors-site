@@ -341,8 +341,6 @@ require_once ('connection.php');
         LIMIT 1
       ") or die ($this->conn->error);
 
-      print_r('potato: '.$cmd);
-
       return array(
         'text' => $userName.' removido ',
         'previousPage' => 'menu',
