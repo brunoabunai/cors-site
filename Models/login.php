@@ -51,7 +51,7 @@ require_once('connection.php');
       $query = $this->conn->query($cmd) or die ($this->conn->error);
       $data = $query->fetch_assoc();
 
-      if(empty($data) && !password_verify($this->password, $data['use_password'])){
+      if(!password_verify($this->password, $data['use_password'])){
         $this->err[] = "User not Found";
       }
 
@@ -59,7 +59,7 @@ require_once('connection.php');
       if(count($this->err) == 0){
         $_SESSION['loginId'] = $data['use_idPk'];
         $_SESSION['loginType'] = $this->help->getTypePerId($data['typ_idFk']);
-
+        
         return [
           true,
           // array(
