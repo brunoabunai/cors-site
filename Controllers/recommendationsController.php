@@ -22,7 +22,7 @@
 
     public function submit(){
       $r = new recommendations();
-      $data = $r->setRecommendationsInformations($_POST['rec_title'], $_POST['rec_description']);
+      $data = $r->setRecommendationsInformations($_POST['rec_title'], $_POST['rec_description'], $_SESSION['loginId']);
 
       if(isset($data[0]) && $data[0]){
         array_shift($data);

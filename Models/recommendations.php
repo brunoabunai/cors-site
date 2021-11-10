@@ -57,13 +57,14 @@ require_once('connection.php');
     /**
      * Set var to informations
      */
-    public function setRecommendationsInformations($title, $description, $user = 1) {
+    public function setRecommendationsInformations($title, $description, $user) {
       (strpos($title, "  ") != 0) ? $title = $this->help->removeDoubleSpace($title) : $title = $title;
       (strpos($description, "  ") != 0) ? $description = $this->help->removeDoubleSpace($description) : $description = $description;
 
       date_default_timezone_set('America/Sao_Paulo');
       $date = date("Y-m-d H:i:S");
 
+      print_r($user);
       $this->user = $user;
       $this->title = $title;
       $this->description = trim($description);
@@ -128,7 +129,8 @@ require_once('connection.php');
           OR rec_description LIKE "%'.str_replace(' ', '%', $action).'%" 
         '
       ) : null;
-      $query .= ' ORDER BY rec_title DESC ';
+      // $query .= ' ORDER BY rec_title DESC ';
+      $query .= ' ORDER BY rec_title ASC ';
   
       //Limit pulls from database
       $queryLimit = $query . 'LIMIT ' . $start . ', ' . $limit;
