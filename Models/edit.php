@@ -319,7 +319,7 @@ require_once ('connection.php');
         UPDATE users
         SET use_name = '".$this->name."',
         use_email = '".$this->email."',
-        use_password = '".md5(md5($this->password))."',
+        use_password = '".password_hash($this->password, PASSWORD_DEFAULT)."',
         use_avatar = '".$this->image."'
         WHERE use_idPk = ".$this->id."
       ") or die ($this->conn->error);
@@ -335,9 +335,10 @@ require_once ('connection.php');
     /** Rever código */
     public function removeUser($userName) {
       // DELETE from livros WHERE id=2; <- deletar uma linha do database
+      $userName = str_replace("-", " ", $userName);
       $cmd = $this->conn->query("
         DELETE from users
-        WHERE use_idPk = ".$this->help->getUserPerName($userName)['id']."
+      WHERE use_idPk = ".$this->help->getUserPerName($userName)['id']."
       ") or die ($this->conn->error);
 
       return array(
