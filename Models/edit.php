@@ -342,6 +342,7 @@ require_once ('connection.php');
       ") or die ($this->conn->error);
 
       return array(
+        true,
         'text' => $userName.' removido ',
         'previousPage' => 'menu',
         'buttonText' => 'Menu',

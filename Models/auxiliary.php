@@ -77,12 +77,13 @@ require_once('connection.php');
     
     /** Recommendation */
     public function getRecommendationPerId($id) {
-      $cmd = $this->conn->query(' SELECT rec_name 
+      $cmd = $this->conn->query(' SELECT rec_title 
                                   FROM recommendations
-                                  WHERE rec_idPk = "'.$id.'" ');
+                                  WHERE rec_idPk = "'.$id.'" 
+                                ') or die ($this->conn->error);
       $this->ret = $cmd->fetch_assoc(); //retorno
 
-      return ($this->ret['rec_name']);
+      return ($this->ret['rec_title']);
     }
 
 

@@ -55,11 +55,11 @@
     public function removeRecommendations($id) {
       $u = new recommendations();
       $data = $u -> removeRecommendation($id);
-      print_r($data);
+      // print_r($data);
 
       if(isset($data[0]) && $data[0]){
         array_shift($data);
-        $this->loadTemplate('success', $data[0]);
+        $this->loadTemplate('success', $data);
       } else {
         array_shift($data);
         $this->loadTemplate('errorLog', $data);
