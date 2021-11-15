@@ -24,12 +24,15 @@
 
     public function submitEditUser($userId) {
       $u = new edit();
+      // exit;
       $data = $u -> setEditValues($_POST['edi_id'], $_POST['edi_name'], $_POST['edi_email'], $_POST['edi_password'], $_FILES['edi_image']);
-      print_r($data);
 
       if(isset($data[0]) && $data[0]){
         array_shift($data);
         $this->loadTemplate('success', $data[0]);
+      } else {
+        array_shift($data);
+        $this->loadTemplate('errorLog', $data);
       }
     }
 

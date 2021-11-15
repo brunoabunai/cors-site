@@ -64,7 +64,7 @@ require_once('connection.php');
       date_default_timezone_set('America/Sao_Paulo');
       $date = date("Y-m-d H:i:S");
 
-      print_r($user);
+      // print_r($user);
       $this->user = $user;
       $this->title = $title;
       $this->description = trim($description);

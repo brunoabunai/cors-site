@@ -39,12 +39,12 @@
     
     <div class='main'>
       
-      <form enctype="multipart/form-data" name="form_edit" action="../submitEditUser/<?php echo $name ?>" method="POST">
+      <form enctype="multipart/form-data" name="form_edit" action="../../edit/submitEditUser/<?php echo $id ?>" method="POST">
         <input style="display: none;" name='edi_image' id="file-upload" type="file" onchange="previewFile()">
         <input class='user' name='edi_id' id='user' type='text' placeholder='Id' value='<?php echo $id; ?>' readonly style="display: none">
         <input class='user' name='edi_name' id='user' type='text' placeholder='Usuário' value='<?php echo $name; ?>'>
         <input class='user' name='edi_email' id='user' type='email' placeholder='Email' value='<?php echo $email; ?>'>
-        <input class='password' name='edi_password' id='password' type='password' placeholder='Senha'>
+        <input style="display: block;" class='password' name='edi_password' id='password' type='password' placeholder='Senha'>
         <input id='sub' type='submit' class='btn-register opacty-button' value='Concluir Edição'>
       </form>
 

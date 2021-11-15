@@ -8,7 +8,7 @@ require_once ('connection.php');
     private $help;
     public $data;
 
-    private $id, $name, $email, $password, $image;
+    private $id, $name, $email, $password, $newPass, $image;
 
     public function __construct() {
       $this->conn = connection::getConnection();
@@ -246,6 +246,8 @@ require_once ('connection.php');
       } else
       if(strlen($this->password) <= 7) {
         $this->err[] = 'Senha muito pequena';
+      } else {
+        $this->newPass = (password_hash($this->password, PASSWORD_DEFAULT));
       }
 
       /** Validar image */
@@ -295,10 +297,11 @@ require_once ('connection.php');
       }
 
       /** Visualiza se existe alguma falha e qual será o redirecionamento */
+      // exit;
       if(count($this->err) == 0) {
         return [true, $this->editUserSubmit()];
       } else {
-        return [false, $this->err, 'previousPage' => 'edit/editUser/'.$this->help->getUserPerId($this->id)['name']];
+        return [false, $this->err, 'previousPage' => 'edit/editUser/'.$this->id];
       }
 
     }
@@ -314,16 +317,16 @@ require_once ('connection.php');
     }
 
     public function editUserSubmit() {
-      // DELETE from livros WHERE id=2; <- deletar uma linha do database
-      $cmd = $this->conn->query("
-        UPDATE users
-        SET use_name = '".$this->name."',
-        use_email = '".$this->email."',
-        use_password = '".password_hash($this->password, PASSWORD_DEFAULT)."',
-        use_avatar = '".$this->image."'
+      $cmd = $this->conn->query(
+      " UPDATE users 
+        SET use_name = '".$this->name."', 
+        use_email = '".$this->email."', 
+        use_password = '".$this->newPass."', 
+        use_avatar = '".$this->image."' 
         WHERE use_idPk = ".$this->id."
       ") or die ($this->conn->error);
 
+      // exit;
       return array(
         'text' => $this->name.' alterado ',
         'previousPage' => 'menu',
@@ -334,20 +337,39 @@ require_once ('connection.php');
 
     /** Rever código */
     public function removeUser($userName) {
-      // DELETE from livros WHERE id=2; <- deletar uma linha do database
-      $cmd = $this->conn->query("
-        DELETE from users
-        WHERE use_idPk = ".$this->help->getUserPerName($userName)['id']."
-        LIMIT 1
-      ") or die ($this->conn->error);
+      /** Impedir o usuário deletar ele mesmo */
+      if ($this->help->getUserPerName($userName)['id'] === $_SESSION['loginId']) {
+        $this->err[] = 'Você não pode remover um usuário logado';
+        return [false, $this->err, 'previousPage' => 'edit'];
 
-      return array(
-        true,
-        'text' => $userName.' removido ',
-        'previousPage' => 'menu',
-        'buttonText' => 'Menu',
-        'pos' => '../../'
-      );
+      } else {
+        /** Remove tudo relacionado a esse user da tebela posts */
+        $cmd = $this->conn->query(
+        " DELETE from posts
+          WHERE use_idFk = ".$this->help->getUserPerName($userName)['id'].";
+          ") or die ($this->conn->error);
+
+        /** Remove tudo relacionado a esse user da tebela recommendations */
+        $cmd = $this->conn->query(
+        " DELETE from recommendations
+          WHERE use_idFk = ".$this->help->getUserPerName($userName)['id'].";
+          ") or die ($this->conn->error);
+
+        /** Remove tudo relacionado a esse user da tebela users */
+        $cmd = $this->conn->query(
+        " DELETE from users
+          WHERE use_idPk = ".$this->help->getUserPerName($userName)['id']."
+          LIMIT 1; ") or die ($this->conn->error);
+
+        return array(
+          true,
+          'text' => $userName.' removido ',
+          'previousPage' => 'menu',
+          'buttonText' => 'Menu',
+          'pos' => '../../'
+        );
+      }
+
     }
 
   }
