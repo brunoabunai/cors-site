@@ -14,13 +14,14 @@ require_once('connection.php');
     }
 
     public function recentPosts() {
-      $cmd = $this->conn->query(" SELECT use_idFk, pos_title, pos_description, pos_image, pos_date, pos_dateEdit
+      $cmd = $this->conn->query(" SELECT pos_idPk, use_idFk, pos_title, pos_description, pos_image, pos_date, pos_dateEdit
                                   FROM posts
                                   ORDER BY pos_idPk DESC
                                 ") or die ($this->conn->error);
 
       foreach ($cmd as $row) {
         $this->data[] = [
+          'id' => $row['pos_idPk'],
           'user' => $this->help->getUserPerId($row['use_idFk']),
           'title' => $row['pos_title'],
           'description' => $row['pos_description'],
@@ -34,13 +35,13 @@ require_once('connection.php');
     }
 
     /**
-     * Get Post from title
+     * Get Post from id
      */
-    public function getPostPerTitle($title) {
-      $title = str_replace("-", " ", $title);
+    public function getPostPerTitle($id) {
+      // $title = str_replace("-", " ", $title);
       $cmd = $this->conn->query(' SELECT use_idFk, pos_title, pos_description, pos_image 
                                   FROM posts 
-                                  WHERE pos_title = "'.$title.'"
+                                  WHERE pos_idPk = "'.$id.'"
                                   LIMIT 1 
                                 ') or die ($this->help->loadTemplate('unplugged'));
       $this->data = $cmd->fetch_assoc();

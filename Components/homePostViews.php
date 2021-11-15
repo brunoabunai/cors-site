@@ -19,7 +19,7 @@
 
         <?php if ($row == 0) { ?>
 
-        <a href="./home/getPostFromTitle/<?= str_replace(" ", "-", $help->removeAccents($value['title'])); ?>">
+        <a href="./home/getPostFromTitle/<?= $value['id']; ?>">
           <div class="noticie noticieOne">
             <img src="<?= $value['image']; ?>" alt="">
 
