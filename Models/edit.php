@@ -241,14 +241,14 @@ require_once ('connection.php');
       }
 
       /** Validar password */
-      if(strlen($this->password) == 0) {
-        $this->err[] = 'Preencha a senha';
-      } else
-      if(strlen($this->password) <= 7) {
-        $this->err[] = 'Senha muito pequena';
-      } else {
-        $this->newPass = (password_hash($this->password, PASSWORD_DEFAULT));
-      }
+      if(strlen($this->password) !== 0) {
+        if(strlen($this->password) <= 7) {
+          $this->err[] = 'Senha muito pequena';
+        } else {
+          $this->newPass = (password_hash($this->password, PASSWORD_DEFAULT));
+        }
+      } 
+      
 
       /** Validar image */
       // if(!isset($this->image)) {
