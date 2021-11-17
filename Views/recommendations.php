@@ -21,7 +21,7 @@
 
     <div class="rec">
       <div class="rec-author">
-        <img src="<?= $user['avatar']; ?>" alt="avatar">
+        <img src="<?= '../../'.$user['avatar']; ?>" alt="avatar">
         <span><?= $user['name']; ?></span>
       </div>
 
