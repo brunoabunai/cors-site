@@ -64,7 +64,7 @@ $nameOfNotice = $title;
         <?= $title; ?>
       </h3>
       <span class="head-author">- <?= $user['name']; ?></span>
-      <img src="<?= "../".$image; ?>" alt="">
+      <img src="<?= "../../".$image; ?>" alt="">
       <span class="head-desc">
         <?= $description; ?>
       </span>

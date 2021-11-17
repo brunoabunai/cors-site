@@ -32,18 +32,16 @@ require_once('connection.php');
         $this->err[] = "Descrição muito pequeno.";
       }
 
-
       $cmd = $this->conn->query(' SELECT pos_idPk, pos_description 
                                   FROM posts 
                                   WHERE pos_description = "'.$this->description.'"
                                   or pos_title = "'.$this->title.'"
-                                ') or die ($this->conn->error);
+                                ');
       $data = $cmd->fetch_assoc();
 
       if(isset($data) && count($data) != 0){ //Vê se usuário já está cadastrado...
         $this->err[] = "Post já cadastrado";
       }
-
 
       if(!isset($this->image)) {
         $this->err[] = "Imagem não selecionada";
@@ -70,7 +68,7 @@ require_once('connection.php');
           $this->err[] = "Não foi possível fazer o salvamento";
         }
 
-        $this->image = $directory.$newNameFile.'(abunai)'.$data['pos_idPk'].'.' . $extension;
+        $this->image = $directory.$newNameFile.'.' . $extension;
       }
 
       if(count($this->err) == 0){ //Vê se passou pela verificação...
