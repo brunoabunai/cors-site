@@ -247,7 +247,7 @@ require_once ('connection.php');
         } else {
           $this->newPass = (password_hash($this->password, PASSWORD_DEFAULT));
         }
-      } 
+      }
       
 
       /** Validar image */
@@ -317,14 +317,24 @@ require_once ('connection.php');
     }
 
     public function editUserSubmit() {
-      $cmd = $this->conn->query(
-      " UPDATE users 
-        SET use_name = '".$this->name."', 
-        use_email = '".$this->email."', 
-        use_password = '".$this->newPass."', 
-        use_avatar = '".$this->image."' 
-        WHERE use_idPk = ".$this->id."
-      ") or die ($this->conn->error);
+      if($this->newPass !== null){
+        $cmd = $this->conn->query(
+        " UPDATE users 
+          SET use_name = '".$this->name."', 
+          use_email = '".$this->email."', 
+          use_password = '".$this->newPass."', 
+          use_avatar = '".$this->image."' 
+          WHERE use_idPk = ".$this->id."
+        ") or die ($this->conn->error);
+      } else {
+        $cmd = $this->conn->query(
+          " UPDATE users 
+            SET use_name = '".$this->name."', 
+            use_email = '".$this->email."', 
+            use_avatar = '".$this->image."' 
+            WHERE use_idPk = ".$this->id."
+          ") or die ($this->conn->error);
+      }
 
       // exit;
       return array(
