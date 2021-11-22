@@ -25,3 +25,19 @@
 .sucessInputValidation{
     box-shadow: 0.05rem 0.05rem 0.05rem var(--secondary-green-transparent);
 }
+
+
+.bt-ops img{
+    height: 2rem;
+    width: 2rem;
+    border-radius: 100%;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.062);
+    border: 1px solid #555;
+    
+}
+
+.bt-ops svg{
+    transform: translateX(2rem);
+    display: none;
+   
+}

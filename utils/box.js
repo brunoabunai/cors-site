@@ -124,7 +124,15 @@ function getValidationsToMouseClick(evt) {
 
 
 function makeProcessToCreateBox(op) {
-  document.querySelector(`.${prefix + op} > svg > path`).style.fill = '#c6c6c6';
+  let svg= document.querySelector(`.${prefix + op} > svg > path`);
+  let img=document.querySelector(`.${prefix + op} > img`);
+  if(svg){
+    svg.style.fill = '#c6c6c6';
+  }
+  if(img){
+    img.style.borderColor = '#d4d4d4';
+  }
+ 
   createBox(op);
   changeStateBox(op);
   mapAllTagsA();
@@ -132,7 +140,15 @@ function makeProcessToCreateBox(op) {
 }
 
 function makeProcessToRemoveBox() {
-  document.querySelector(`.${prefix + getBoxOpen()} > svg > path`).style.fill = 'var(--text-color)';
+  let svg=document.querySelector(`.${prefix + getBoxOpen()} > svg > path`);
+  let img=document.querySelector(`.${prefix + getBoxOpen()} > img`);
+  if(svg){
+    svg.style.fill = 'var(--text-color)';
+  }
+  if(img){
+    img.style.borderColor = '#555';
+  }
+  
   removeBox();
   setTimeout(function () {
     changeStateBox(getBoxOpen());
