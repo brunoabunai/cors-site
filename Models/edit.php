@@ -309,7 +309,7 @@ require_once ('connection.php');
       if(count($this->err) == 0) {
         return [true, $this->editUserSubmit()];
       } else {
-        return [false, $this->err, 'previousPage' => 'edit/editUser/'.$this->id];
+        return [false, $this->err, 'previousPage' => 'edit/editUser/'.$this->name];
       }
 
     }
