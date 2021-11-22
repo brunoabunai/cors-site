@@ -18,6 +18,20 @@
   margin-left: 1rem;
 }
 
+.home-page .news > div{
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: top; 
+  justify-content: flex-end;
+}
+
+.home-page .news > div .remove-post{
+  margin-top: 2rem;
+ 
+  color: #cabe0d;
+
+}
+
 .home-page .news .noticie {
   display: flex;
   margin-top: 2rem;
@@ -130,6 +144,8 @@
   color: var(--title-animed);
 }
 
+
+
 @media (min-width: 1080px) {
   .home-page .title {
     margin-top: 7.3rem;
@@ -169,6 +185,9 @@
   .home-page .news {
     width: 60%;
   }
+
+  
+
   .home-page .news .noticie {
     margin-top: 1rem;
   }
