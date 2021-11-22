@@ -43,7 +43,7 @@ require_once('connection.php');
     private function login() {
       /** pull from database */
       $cmd = "
-        SELECT use_idPk, typ_idFk, use_password 
+        SELECT use_idPk, typ_idFk, use_password, use_avatar 
         FROM users 
         WHERE use_email = '".$this->email."' 
         LIMIT 1
@@ -59,6 +59,7 @@ require_once('connection.php');
       if(count($this->err) == 0){
         $_SESSION['loginId'] = $data['use_idPk'];
         $_SESSION['loginType'] = $this->help->getTypePerId($data['typ_idFk']);
+        $_SESSION['loginAvatar'] = $data['use_avatar'];
         
         return [
           true,
