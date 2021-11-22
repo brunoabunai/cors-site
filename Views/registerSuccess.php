@@ -28,7 +28,7 @@
             <path d="M19 22H5C4.44772 22 4 21.5523 4 21V13H2L11.292 3.70698C11.4796 3.51921 11.7341 3.4137 11.9995 3.4137C12.2649 3.4137 12.5194 3.51921 12.707 3.70698L22 13H20V21C20 21.5523 19.5523 22 19 22ZM10 15H14V20H18V11.828L12 5.82798L6 11.828V20H10V15Z" fill="#fbfbfb"></path>
           </svg>
 
-          Ir Para Home
+          Ir Para Menu
         </a> <!-- //fix this tab in future -->
 
         <a href="<?php echo '/TCC/cors-site/edit/editUser/'.$name; ?>" class="btn opacty-button">
