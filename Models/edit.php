@@ -228,6 +228,14 @@ require_once ('connection.php');
      * ------------------------------------------------------------
      */
     private function editValidation() {
+      /** Vê se o name está em uso */
+      $cmd = $this->conn->query('
+                            SELECT use_name, use_avatar 
+                            FROM users 
+                            WHERE use_idPk = "'.$this->id.'"
+                          ') or die ($this->conn->error);
+      $data = $cmd->fetch_assoc();
+
       /** Validar name */
       if(strlen($this->name) == 0) {
         $this->err[] = 'Preencha o nome';
@@ -248,7 +256,6 @@ require_once ('connection.php');
           $this->newPass = (password_hash($this->password, PASSWORD_DEFAULT));
         }
       }
-      
 
       /** Validar image */
       // if(!isset($this->image)) {
@@ -256,7 +263,8 @@ require_once ('connection.php');
       // } else
       if(isset($this->image)) {
         if($this->image['error']) {
-          $this->err[] = "Falha ao enviar a imagem";
+          // $this->err[] = "Falha ao enviar a imagem";
+          $this->image = $data['use_avatar'];
         } else
         if($this->image['size'] > 2097152) { //2MB
           $this->err[] = "Imagem muito grande! Max: 2MB";
