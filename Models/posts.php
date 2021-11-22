@@ -5,6 +5,7 @@ require_once('connection.php');
 
     private $conn;
     private $err;
+    private $help;
 
     private $user;
     private $title;
@@ -15,6 +16,7 @@ require_once('connection.php');
     public function __construct(){
       $this->err = array();
       $this->conn = connection::getConnection();
+      $this->help = new auxiliary();
     }
 
     private function validarInformations(){
@@ -132,6 +134,22 @@ require_once('connection.php');
         'text' => '"'.$this->title.'" Criado ',
         'previousPage' => 'menu',
         'buttonText' => 'Menu'
+      );
+    }
+
+    public function removePost($postId) {
+      $title = $this->help->getPostPerId($postId);
+      $cmd = $this->conn->query(
+        " DELETE from posts
+          WHERE pos_idPk = ".$postId.";
+          ") or die ($this->conn->error);
+
+      return array(
+        true,
+        'text' => $title.' removido ',
+        'previousPage' => 'menu',
+        'buttonText' => 'Menu',
+        'pos' => '../../'
       );
     }
   }

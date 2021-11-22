@@ -28,6 +28,20 @@
       }
 
     }
+
+    public function removePost($postId) {
+      $u = new posts();
+      $data = $u -> removePost($postId);
+      // print_r($data);
+
+      if(isset($data[0]) && $data[0]){
+        array_shift($data);
+        $this->loadTemplate('success', $data);
+      } else {
+        array_shift($data);
+        $this->loadTemplate('errorLog', $data);
+      }
+    }
     
   }
 

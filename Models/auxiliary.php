@@ -87,6 +87,18 @@ require_once('connection.php');
     }
 
 
+    /** Posts */
+    public function getPostPerId($id) {
+      $cmd = $this->conn->query(' SELECT pos_title 
+                                  FROM posts
+                                  WHERE pos_idPk = "'.$id.'" 
+                                ') or die ($this->conn->error);
+      $this->ret = $cmd->fetch_assoc(); //retorno
+
+      return ($this->ret['pos_title']);
+    }
+
+
     /** Gerais */
     public function removeDoubleSpace($something) {
       while(strpos($something, "  ") != 0) {
