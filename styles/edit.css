@@ -223,6 +223,15 @@ body {
   color: var(--background-purple);
 }
 
+.group-password {
+  display: flex;
+  align-items: center;
+}
+
+.group-password a{
+  margin-left: 1rem;
+}
+
 @media (min-width: 820px) {
   .edit-page .main {
     width: 50%;

@@ -66,7 +66,7 @@ left:1rem;
   border: 0;
 }
 
-.login-page .main form input[type=email],.main form input[type=password]{
+.login-page .main form input{
   border:0.1rem solid #e4e4e4;
   margin-bottom: 0.2rem;
   width: 100%;
@@ -77,7 +77,7 @@ left:1rem;
 }
 
 .login-page .main form input[type=email]:focus,
-.main form input[type=password]:focus{
+.main form input:focus{
   background-color: #fbfbfb;
 }
 
@@ -107,6 +107,15 @@ left:1rem;
   color: var(--primary-green);
 }
 
+.group-password {
+  display: flex;
+  align-items: center;
+}
+
+.group-password a{
+  margin-left: 1rem;
+}
+
 @media (min-width: 1080px) {
   .login-page {
       background-size: 10%;
@@ -127,7 +136,7 @@ left:1rem;
       left:3rem;
   }
 
-  .login-page .main form input[type=email],.main form input[type=password]{
+  .login-page .main form input{
       border:0.1rem solid #e4e4e4;
   }
 }

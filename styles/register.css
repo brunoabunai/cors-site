@@ -162,6 +162,15 @@ body {
   color: var(--background-purple);
 }
 
+.group-password {
+  display: flex;
+  align-items: center;
+}
+
+.group-password a{
+  margin-left: 1rem;
+}
+
 #box {
   position: absolute;
   top: 5.8rem;

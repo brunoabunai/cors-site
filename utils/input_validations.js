@@ -15,8 +15,7 @@ allInputs.forEach((input, indexOfInput) => {
       return;
     }
     if (inputIsActive[indexOfInput]) {
-      addClass(input, "errInputValidation");
-      inputIsActive[indexOfInput] = false;
+      UserDigitedIn(input, indexOfInput);
     }
   };
 })
@@ -33,8 +32,9 @@ allTextareas.forEach((textarea, indexOfInput) => {
 })
 
 function UserDigitedIn(input, indexOfInput) {
-  const exception = (input.title == "true"); // to use, have that a attribute called title in input with value false
+  const exception = (input.title == "true"); // to use, have that a attribute called title in input with value false[]
   const inputArray = toArray(input.value);
+  const inputNameArray = toArray(input.name);
   const [
     haveDoubleSpace,
     areEmpty,
@@ -44,11 +44,19 @@ function UserDigitedIn(input, indexOfInput) {
     havePoorCharacterNAME,
     havePoorCharacterPASSWORD,
     notHaveSign,
-    notHavePoint
+    notHavePoint,
+    itsTextPassword
   ] = getValidations();
   makeValidations();
 
   function getValidations() {
+    let itsInputPassword=false;
+    inputNameArray.forEach((letter,indexLetter) => {
+      const word= letter+inputNameArray[indexLetter+1]+inputNameArray[indexLetter+2]+inputNameArray[indexLetter+3]+inputNameArray[indexLetter+4]+inputNameArray[indexLetter+5]+inputNameArray[indexLetter+6]+inputNameArray[indexLetter+7];
+      if(word=="password"){
+        itsInputPassword=true;
+      }
+    })
     return [
       (inputArray.map(
         (x, y) => (x == " " && x == inputArray[y - 1]) || (x == " " && x == inputArray[y + 1]))).filter(
@@ -57,10 +65,12 @@ function UserDigitedIn(input, indexOfInput) {
       (inputArray[0] == " "), // if space in begin
       (inputArray[inputArray.length - 1] == " "), //if space in end
       (inputArray.length > 0 && inputArray.length < 3), //if have a few characters
-      (inputArray.length > 0 && inputArray.length < 20), //if have a few characters to NAME
+      (inputArray.length > 0 && inputArray.length < 10), //if have a few characters to NAME
       (inputArray.length > 0 && inputArray.length < 8), //if have a few characters to PASSWORD
       (inputArray.indexOf("@") == -1) ? true : false, //if not have @
       (inputArray.indexOf(".") == -1) ? true : false, //if not have .
+      itsInputPassword
+     
     ]
   };
 
@@ -75,7 +85,7 @@ function UserDigitedIn(input, indexOfInput) {
       return;
     }
 
-    if (input.type == "password") {
+    if (input.type == "password" || itsTextPassword) {
       if ((havePoorCharacterPASSWORD)) {
         callErrorColor();
       } else {
@@ -83,7 +93,7 @@ function UserDigitedIn(input, indexOfInput) {
       }
     }
 
-    if (input.type == "text") {
+    if (input.type == "text" && !itsTextPassword) {
       if (input.title == "name") {
         console.log('é name')
         if (haveDoubleSpace || haveSpaceInBegin || haveSpaceInEnd || havePoorCharacterNAME) {

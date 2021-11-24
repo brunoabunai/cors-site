@@ -62,11 +62,11 @@ left:1rem;
   flex-direction: column;
 }
 
-.registerMember-page .main .group input[type=password]{
+.registerMember-page .main .group .group-password input{
   max-width: 20rem;
 }
 
-.registerMember-page .main .group input[type=text]{
+.registerMember-page .main .group input.txt{
   max-width: 30rem;
 }
 
@@ -87,8 +87,7 @@ left:1rem;
   border: 0;
 }
 
-.registerMember-page .main form input[type=text],
-.registerMember-page .main form input[type=email],.main form input[type=password]{
+.registerMember-page .main form input{
   border:0.1rem solid #e4e4e4;
   margin-bottom: 0.2rem;
   width: 100%;
@@ -131,6 +130,15 @@ left:1rem;
 
 .toRegisterMember a{
   color: var(--primary-green);
+}
+
+.group-password {
+  display: flex;
+  align-items: center;
+}
+
+.group-password a{
+  margin-left: 1rem;
 }
 
 @media (min-width: 1340px) {
@@ -189,12 +197,12 @@ left:1rem;
     margin-right: 5rem;
   }
   
-  .registerMember-page .main .group input[type=password]{
+  .registerMember-page .main .group .group-password input{
     max-width: 20rem;
     min-width: 20rem;
   }
   
-  .registerMember-page .main .group input[type=text]{
+  .registerMember-page .main .group input.txt{
     max-width: 30rem;
     min-width: 30rem;
   }
