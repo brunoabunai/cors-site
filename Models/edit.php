@@ -213,7 +213,7 @@ require_once ('connection.php');
         }
       }
 
-      $output .= "<div class='pagination'> ". $previewsLink . $pageLink . $nextLink . "</div>";
+      //$output .= "<div class='pagination'> ". $previewsLink . $pageLink . $nextLink . "</div>";
       $output .= '
         </>
       </div>
