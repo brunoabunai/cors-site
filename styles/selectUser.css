@@ -11,6 +11,10 @@
   align-items: center;
 }
 
+.info-name{
+  max-width: 10rem;
+}
+
 .search {
   margin-top: 9.3rem;
   width: 100%;

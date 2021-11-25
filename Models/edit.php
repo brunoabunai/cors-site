@@ -71,7 +71,7 @@ require_once ('connection.php');
           <tr class="column-user">
 
             <td><img src="'.$row["use_avatar"].'"/></td>
-            <td>'.$row["use_name"].'</td>
+            <td class="info-name">'.$row["use_name"].'</td>
             
             <td class="id">'.$this->help->getTypePerId($row["typ_IdFk"]).'</td>
 
