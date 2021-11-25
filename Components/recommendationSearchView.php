@@ -28,7 +28,7 @@
           </div>
 
           <div class="rec-infos">
-            <h3 class="rec-title">
+            <h3 class="rec-title analysis-space">
               <?= $key['title']; ?>
             </h3>
             <span class="analysis-space rec-desc">
