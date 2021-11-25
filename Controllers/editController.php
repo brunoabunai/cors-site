@@ -19,7 +19,11 @@
 
     public function editUser($nameUser = null) {
       $data = (!empty($this->help->getUserPerName($nameUser))) ? $this->help->getUserPerName($nameUser) : array();
-      $this->help->pagesLoginViewTyp(['admin'], 'edit', 'unplugged', $data);
+      if($this->help->getUserPerName($nameUser)['id'] == $_SESSION['loginId']){
+        $this->help->pagesLoginViewTyp(['admin', 'user', 'writer'], 'edit', 'unplugged', $data);
+      } else {
+        $this->help->pagesLoginViewTyp(['admin'], 'edit', 'unplugged', $data);
+      }
     }
 
     public function submitEditUser($userId) {
