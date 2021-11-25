@@ -24,7 +24,7 @@ require_once ('connection.php');
      */
     public function getUsersSearch() {
       /** Vars of controller */
-      $limit = 5;
+      $limit = '';
       $action = $_POST['action'];
       
       if ($_POST['actualPage'] > 1) {
