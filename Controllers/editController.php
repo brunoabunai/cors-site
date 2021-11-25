@@ -9,7 +9,7 @@
     }
 
     public function index(){
-      $this->help->pagesLoginViewTyp(['admin'], 'selectUser');
+      $this->help->pagesLoginViewTyp(['admin'], 'selectUser', 'unplugged', array(), array(), ['mensagem' => "Você não tem permissão!"]);
     }
 
     public function search() {

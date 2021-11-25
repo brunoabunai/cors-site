@@ -1,3 +1,7 @@
+<?php
+  $msg = $mensagem != null ? $mensagem : 'Você não está logado!';
+?>
+
 <!DOCTYPE html>
 <html lang="pt">
 
@@ -15,7 +19,7 @@
   <div class="unpg-content">
     <div class="firstTitles">
       <h1 class="ops">Ops...</h1>
-      <h1>&nbsp;Você não está logado!</h1>
+      <h1>&nbsp;<?= $msg ?></h1>
 
     </div>
     <span class="subtitle"> Por favor volte ao início e na página de login verifique sua conta.</span>

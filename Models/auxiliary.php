@@ -131,8 +131,8 @@ require_once('connection.php');
         $this->loadTemplate($noLoged);
       }
     }
-    
-    public function pagesLoginViewTyp($permission = array(), $pageName, $noLoged = 'unplugged', $dataModel = array(''), $data = array()) {
+
+    public function pagesLoginViewTyp($permission = array(), $pageName, $noLoged = 'unplugged', $dataModel = array(''), $data = array(), $msg = array('')) {
       if (isset($_SESSION['loginId']) && !empty($dataModel)){
         foreach ($permission as $key => $value) {
           if($value === $_SESSION['loginType']) {
@@ -141,9 +141,9 @@ require_once('connection.php');
           }
         }
 
-        $this->loadTemplate($noLoged);
+        $this->loadTemplate($noLoged, $msg);
       } else {
-        $this->loadTemplate($noLoged);
+        $this->loadTemplate($noLoged, $msg);
       }
     }
 
