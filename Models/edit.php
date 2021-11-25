@@ -344,6 +344,17 @@ require_once ('connection.php');
           ") or die ($this->conn->error);
       }
 
+      /** pull from database */
+      $query = $this->conn->query(
+      " SELECT use_idPk, typ_idFk, use_password, use_avatar 
+        FROM users 
+        WHERE use_idPk = '".$this->id."' 
+        LIMIT 1
+      ") or die ($this->conn->error);
+      $data = $query->fetch_assoc();
+      
+      $_SESSION['loginAvatar'] = $data['use_avatar'];
+
       // exit;
       return array(
         'text' => $this->name.' alterado ',
