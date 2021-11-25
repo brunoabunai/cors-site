@@ -51,6 +51,9 @@ require_once('connection.php');
       $query = $this->conn->query($cmd) or die ($this->conn->error);
       $data = $query->fetch_assoc();
 
+      if(empty($data)){
+        $this->err[] = "User not Found";
+      } else
       if(!password_verify($this->password, $data['use_password'])){
         $this->err[] = "User not Found";
       }

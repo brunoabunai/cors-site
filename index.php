@@ -14,12 +14,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <?php include "cssm.php" ?>
-    <link rel="shortcut icon" type="imagex/png" href="public/img/covid.png">
+    <link rel="shortcut icon" type="imagex/png" href="../../../TCC/cors-site/public/img/covid.png">
     
   </head>
   <body>
     <script defer src="./node_modules/jquery/dist/jquery.js"></script>
-
   </body>
 </html>
 
