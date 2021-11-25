@@ -27,10 +27,10 @@
 
       <div class="rec-infos">
 
-        <h3 class="rec-title">
+        <h3 class="rec-title analysis-space">
           <?= $title; ?>
         </h3>
-        <span class="rec-desc">
+        <span class="rec-desc analysis-space">
         <?= mb_strimwidth(rtrim(($description)), 0, 83, "..."); ?>
         </span>
       </div>
