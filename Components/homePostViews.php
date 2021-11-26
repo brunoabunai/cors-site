@@ -57,7 +57,7 @@ $help = new auxiliary();
 
       <?php } else { ?>
         <div class="at-notice">
-          <a href="./getPostFromTitle/<?= $value['id']; ?>">
+          <a href="./home/getPostFromTitle/<?= $value['id']; ?>">
             <div class="noticie">
               <div class="headline">
                 <span class="head-author"><?= $value['user']['name']; ?> - <small> <?php echo $value['date']; ?></small></span>
