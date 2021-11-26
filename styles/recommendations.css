@@ -52,6 +52,7 @@
 }
 
 .recommendationsList-page  .rec .rec-author span{
+  text-align: center;
   font-size: 0.9rem;
   font-family: 'roboto',sans-serif;
   font-weight: 400;
