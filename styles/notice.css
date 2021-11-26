@@ -16,6 +16,7 @@
   flex-direction: column;
   margin-top: 8rem;
   width: 85%;
+  padding-bottom: 2rem;
 }
 
 .notice-page .notice img{
