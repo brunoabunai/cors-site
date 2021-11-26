@@ -63,6 +63,8 @@
   flex-direction: column;
   align-items: center;
   background-color: #ebe9e9;
+  max-width:10rem;
+  min-width:10rem;
 }
 
 .recommendationsList-page .rec-list .rec .rec-author img {
@@ -70,9 +72,10 @@
 }
 
 .recommendationsList-page .rec-list .rec .rec-author span {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-family: 'roboto', sans-serif;
   font-weight: 400;
+  
 }
 
 .recommendationsList-page .rec-list .rec .rec-infos {
